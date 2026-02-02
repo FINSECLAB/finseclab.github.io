@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getLatestNews } from '../data/newsData';
 
 const Home = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [fixedBlur, setFixedBlur] = useState(null);
 
   // 컴포넌트 마운트 시 초기화
@@ -13,10 +12,9 @@ const Home = () => {
     
     // 블러 상태 리셋
     setFixedBlur(null);
-    setScrollY(0);
     
-    // 배경 블러 초기화 (Home 페이지는 스크롤에 따라 관리)
-    document.documentElement.style.setProperty('--bg-blur', '0px');
+    // 배경 블러를 처음부터 적용 (스크롤 내렸을 때 수준)
+    document.documentElement.style.setProperty('--bg-blur', '5px');
     
     // setupPageAnimations() 호출 제거 - App.js에서 처리
   }, []);
@@ -30,8 +28,6 @@ const Home = () => {
           const currentScroll = window.scrollY;
           const heroHeight = window.innerHeight; // hero 섹션 높이 (100vh)
           const scrollDownThreshold = heroHeight * 0.8; // SCROLL DOWN이 사라지는 시점
-          
-          setScrollY(currentScroll);
           
           // SCROLL DOWN이 사라지는 시점에 도달했으면 블러 고정
           if (currentScroll >= scrollDownThreshold && fixedBlur === null) {
@@ -57,8 +53,8 @@ const Home = () => {
     // SCROLL DOWN이 사라진 후에는 고정된 블러 값 사용
     blurAmount = fixedBlur;
   } else {
-    // SCROLL DOWN이 보이는 동안만 블러 증가 (더 약하게)
-    blurAmount = Math.min(scrollY / 150, 5); // 최대 5px, 더 천천히 증가
+    // 처음부터 5px 블러 유지 (스크롤과 관계없이)
+    blurAmount = 5; // 항상 5px 블러 적용
   }
 
   useEffect(() => {

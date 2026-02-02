@@ -3,6 +3,7 @@ import './Papers.css';
 
 const Papers = () => {
   const papers = [
+    { year: '2025', title: '탈중앙화 금융(DeFi) 환경에서의 실거래 데이터 기반 금융보안 리스크 분석', authors: '배준호, 박천호, 고철수, 강형우 - 한국정보보호학회 학술발표논문집 35 (2), 968-971' },
     { year: '2024', title: 'Concurrent two-party key exchange with forward unlinkability in internet of drones', authors: 'JY Jeong, HW Kang, IR Jeong - IEEE Access 12, 77250-77256' },
     { year: '2021', title: 'The Meaning and Issues of the Reform of the Electronic Financial Transaction Act', authors: 'H Kang - KISO Journal 44 (KISO), pp. 19-22' },
     { year: '2008', title: 'Security Assessment Framework Using Static Analysis and Fault Injection', authors: 'H Kang - International Conference on Intelligent Computing, 679-687' },

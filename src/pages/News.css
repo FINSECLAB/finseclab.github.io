@@ -38,6 +38,7 @@
   line-height: 1.8;
   color: var(--text-primary);
   margin: 0;
+  margin-bottom: var(--space-4);
 }
 
 /* ===== Responsive Design ===== */

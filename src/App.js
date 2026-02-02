@@ -25,14 +25,8 @@ function AppContent() {
   }, [location.pathname]);
 
   useEffect(() => {
-    // Home 페이지가 아닌 경우 배경 블러 적용
-    if (location.pathname !== '/' && location.pathname !== '/home') {
-      // 스크롤 내려서 흐려졌을 때처럼 블러 적용 (약 5px)
-      document.documentElement.style.setProperty('--bg-blur', '5px');
-    } else {
-      // Home 페이지는 블러 초기화 (Home 컴포넌트에서 스크롤에 따라 관리)
-      document.documentElement.style.setProperty('--bg-blur', '0px');
-    }
+    // 모든 페이지에서 처음부터 블러 적용 (5px)
+    document.documentElement.style.setProperty('--bg-blur', '5px');
 
     return () => {
       // 컴포넌트 언마운트 시 블러 초기화는 하지 않음 (다음 페이지로 전환 시 유지)
