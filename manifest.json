@@ -1,0 +1,27 @@
+{
+  "short_name": "Finsec Lab",
+  "name": "Finsec Lab - 금융보안 연구실",
+  "icons": [
+    {
+      "src": "finsecc_ico.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "finsecc_ico.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
+
+
+
+
+
+
+
