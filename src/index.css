@@ -50,6 +50,35 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Google Translate Overrides ===== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate iframe,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none !important;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+  display: none !important;
+}
+
 /* ===== Reset & Base ===== */
 * {
     margin: 0;
@@ -510,6 +539,18 @@ body::before {
   min-height: 450px;
 }
 
+/* 연구 분야 섹션 박스 높이 조정 */
+.research-section .home-card {
+  height: auto;
+  padding-bottom: var(--space-8);
+}
+
+/* 뉴스 섹션 박스 높이 조정 */
+.news-section .home-card {
+  height: auto;
+  padding-bottom: var(--space-8);
+}
+
 .home-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
@@ -547,7 +588,8 @@ body::before {
 .research-grid.compact {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-4);
-  align-content: center;
+  align-content: start;
+  padding-bottom: var(--space-4);
 }
 
 .research-card {
@@ -557,6 +599,10 @@ body::before {
   padding: var(--space-6);
   text-align: center;
   transition: all 0.2s ease;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .research-card:hover {
@@ -626,7 +672,7 @@ body::before {
   flex-direction: row;
   align-items: center;
   gap: var(--space-8);
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -786,6 +832,9 @@ body::before {
   transition: all 0.2s ease;
   overflow: hidden;
   word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
 }
 
 .news-item:hover {
@@ -861,8 +910,8 @@ body::before {
   padding: var(--space-8);
   margin: 0 auto var(--space-4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 90%;
-  max-width: 1200px;
+  width: calc(100% - var(--space-8) * 2);
+  max-width: calc(1000px - var(--space-8) * 2);
   box-sizing: border-box;
 }
 

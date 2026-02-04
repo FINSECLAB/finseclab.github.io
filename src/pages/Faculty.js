@@ -2,51 +2,51 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const faculty = {
-  name: '강형우',
+  name: 'Hyungwoo Kang',
   email: 'kanghw@korea.ac.kr',
-  office: '정운오IT교양관 315호',
-  researchArea: '금융보안, 가상자산보안',
+  office: 'Room 315, Jung Woonoh IT & General Education Center',
+  researchArea: 'Financial Security, Virtual Asset Security',
   photo: `${process.env.PUBLIC_URL}/people-photos/강형우 교수님.jpg`,
 };
 
 const fullTimeStudents = [
   {
-    name: '배준호',
-    degree: '석사',
-    cohort: '47기',
-    major: '융합보안',
+    name: 'Junho Bae',
+    degree: 'M.S.',
+    cohort: '47th',
+    major: 'Convergence Security',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/배준호.png`,
   },
   {
     name: '손예원',
-    degree: '석사',
-    cohort: '48기',
-    major: '정보보안',
+    degree: 'M.S.',
+    cohort: '48th',
+    major: 'Information Security',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/손예원.jpg`,
   },
   {
-    name: '박천호',
-    degree: '석사',
-    cohort: '50기',
-    major: '정보보안',
+    name: 'Cheonho Park',
+    degree: 'M.S.',
+    cohort: '50th',
+    major: 'Information Security',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/박천호.jpg`,
   },
   {
     name: '임시온',
-    degree: '석사',
-    cohort: '50기',
-    major: '정보보안',
+    degree: 'M.S.',
+    cohort: '50th',
+    major: 'Information Security',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/임시온.JPG`,
   },
   {
     name: '민기단',
-    degree: '석사',
-    cohort: '51기',
-    major: '융합보안',
+    degree: 'M.S.',
+    cohort: '51st',
+    major: 'Convergence Security',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/민기단.jpg`,
   },
@@ -308,9 +308,9 @@ const Faculty = () => {
               <div className="members-info">
                 <h3 className="members-name">{faculty.name}</h3>
                 <ul className="members-meta">
-                  <li>이메일: <a href={`mailto:${faculty.email}`}>{faculty.email}</a></li>
-                  <li>연구실: {faculty.office}</li>
-                  <li>분야: {faculty.researchArea}</li>
+                  <li>Email:<br></br><a href={`mailto:${faculty.email}`}>{faculty.email}</a></li>
+                  <li>Office:<br></br>{faculty.office}</li>
+                  <li>Research:<br></br>{faculty.researchArea}</li>
                 </ul>
                 <div style={{ marginTop: 'var(--space-2)' }}>
                   <Link to="/professor-kang" className="homepage-link">Profile</Link>
@@ -321,7 +321,7 @@ const Faculty = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">Full-time</h2>
+          <h2 className="members-heading">Master Students (Full-time)</h2>
           <div className="members-grid">
             {fullTimeStudents.map((student) => (
               <div className="members-card" key={student.name}>

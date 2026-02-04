@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-content">
           <div className="contact-item map-item">
-            <h3>지도</h3>
+            <h3>Map</h3>
             <div className="map-wrapper">
               <img 
                 src={`${process.env.PUBLIC_URL}/연구실위치.png`} 
@@ -16,8 +16,8 @@ const Contact = () => {
               />
               <div className="map-text">
                 <div className="contact-info-item">
-                  <h4>위치</h4>
-                  <p>서울 성북구 안암로 145<br />고려대학교 안암캠퍼스<br />로봇융합관 204호</p>
+                  <h4>Address</h4>
+                  <p>Room 204, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
                 </div>
                 <div className="contact-info-item">
                   <h4>랩장</h4>

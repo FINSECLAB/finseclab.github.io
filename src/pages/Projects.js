@@ -14,7 +14,7 @@ const Projects = () => {
                   <p><strong>[2024-2026]</strong> 디지털 자산 시장에서의 악의적 금융 행위 방지를 위한 디지털 자산 거래 추적기술 개발 - IITP</p>
                 </div>
                 <div className="project-item">
-                  <p><strong>[2025-2026]</strong> Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector - AWS 코리아</p>
+                  <p><strong>[2025-2026]</strong> Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector - AWS Korea</p>
                 </div>
               </div>
             </div>

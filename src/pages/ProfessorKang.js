@@ -7,7 +7,7 @@ const ProfessorKang = () => {
     <div className="page professor-page">
       <div className="professor-container">
         <div className="professor-header">
-          <Link to="/members" className="back-link">← Members로 돌아가기</Link>
+          <Link to="/members" className="back-link">← Members</Link>
         </div>
 
         <div className="professor-content">
@@ -22,12 +22,12 @@ const ProfessorKang = () => {
               </div>
               <div className="info-grid">
                 <div className="info-item">
-                  <span className="info-label">성명</span>
-                  <span className="info-value">강 형 우</span>
+                  <span className="info-label">Name</span>
+                  <span className="info-value">Hyungwoo Kang</span>
                 </div>
                 <div className="info-item">
-                  <span className="info-label">소속</span>
-                  <span className="info-value">고려대학교 정보보호대학원 전임교수</span>
+                  <span className="info-label">Affiliations</span>
+                  <span className="info-value">Professor, Korea University</span>
                 </div>
                 <div className="info-item">
                   <span className="info-value">
@@ -46,16 +46,16 @@ const ProfessorKang = () => {
           </div>
 
           <div className="professor-section">
-            <h2 className="section-title">학력</h2>
+            <h2 className="section-title">Education</h2>
             <ul className="info-list">
-              <li>1997.2. 고려대 전산학과(학사)</li>
-              <li>1999.2. 고려대 전산학과(석사)</li>
-              <li>2006.8. 고려대 정보보호대학원 정보보호학과(박사)</li>
+              <li>1997.02. B.S. in computer science, Korea University, South Korea</li>
+              <li>1999.02. M.S. in computer science, Korea University, South Korea</li>
+              <li>2006.08. Ph.D. in information security, Korea University, South Korea</li>
             </ul>
           </div>
 
           <div className="professor-section">
-            <h2 className="section-title">주요경력</h2>
+            <h2 className="section-title">Professional Experience</h2>
             <ul className="info-list">
               <li>2025.03～현재 고려대학교 정보보호대학원 교수</li>
               <li>2023.02～2024.01 금융위원회 "금융보안규제선진화TF" 민간자문위원</li>
@@ -69,7 +69,7 @@ const ProfessorKang = () => {
           </div>
 
           <div className="professor-section">
-            <h2 className="section-title">현직</h2>
+            <h2 className="section-title">Affiliations</h2>
             <ul className="info-list">
               <li>2025.3월～현재 금융위원회 소프트웨어사업 과업심의위원회</li>
               <li>2025.05～현재 금감원 금융데이터분야 외부평가위원</li>
