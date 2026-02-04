@@ -1,0 +1,183 @@
+/* ===== Professor Page Styles ===== */
+.professor-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.professor-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-8);
+  background: white;
+  border-radius: 0;
+}
+
+.professor-header {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 2px solid var(--border);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-4);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.professor-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  margin-top: var(--space-4);
+}
+
+.basic-info-wrapper {
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+.professor-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.professor-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.professor-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.professor-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.scholar-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.scholar-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.info-list li {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .professor-container {
+    width: 90%;
+    padding: var(--space-6) var(--space-6);
+  }
+
+  .basic-info-wrapper {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .professor-photo {
+    width: 150px;
+    height: 180px;
+  }
+
+  .professor-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .professor-container {
+    width: 95%;
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .professor-photo {
+    width: 120px;
+    height: 150px;
+  }
+
+  .professor-title {
+    font-size: 1.75rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

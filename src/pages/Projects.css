@@ -1,0 +1,146 @@
+/* ===== Projects Page Styles ===== */
+.projects-page {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.projects-container {
+  width: 80%;
+  max-width: 1200px;
+  background: white;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 70px; /* 헤더 높이만큼만 */
+}
+
+.projects-card {
+  background: white;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-8);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-2) 0 var(--space-8) 0;
+}
+
+.projects-card .intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.projects-card .intro-text p {
+  margin-bottom: var(--space-6);
+  margin: 0;
+}
+
+.projects-card .intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.project-item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-item p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.project-item strong {
+  color: var(--crimson);
+  font-weight: 600;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .projects-container {
+    width: 90%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .projects-content {
+    padding: var(--space-12) var(--space-6);
+    padding-top: var(--space-16);
+  }
+
+  .projects-title {
+    font-size: 2rem;
+    margin-top: var(--space-6);
+  }
+
+  .projects-card .intro-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    width: 95%;
+  }
+
+  .projects-content {
+    padding: var(--space-8) var(--space-4);
+    padding-top: var(--space-16);
+  }
+
+  .projects-title {
+    font-size: 1.75rem;
+    margin-top: var(--space-6);
+  }
+
+  .projects-card .intro-text {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
