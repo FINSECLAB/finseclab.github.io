@@ -50,14 +50,6 @@ const fullTimeStudents = [
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/민기단.jpg`,
   },
-  {
-    name: '김준호',
-    degree: '',
-    cohort: '학부연구생',
-    major: '',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/김준호.jpg`,
-  },
 ];
 
 const undergraduateInterns = [
