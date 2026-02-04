@@ -594,12 +594,10 @@ body::before {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-6);
 }
-
-/* Undergraduate Intern 전용: 넓을 때 3열 고정, 아래에서 반응형 조정 */
 .members-grid-intern {
+  /* Undergraduate Intern 전용: 넓을 때 3열 고정, 아래에서 반응형 조정 */
   grid-template-columns: repeat(3, minmax(220px, 1fr));
 }
-
 .members-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -959,7 +957,6 @@ body::before {
     padding: 0 var(--space-6);
     max-width: 900px;
   }
-
   /* Undergraduate Intern: 태블릿에서는 2열 */
   .members-grid-intern {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
@@ -1034,7 +1031,6 @@ body::before {
     padding-top: 0;
     margin-top: 0;
   }
-
   /* Undergraduate Intern: 모바일에서는 1열 */
   .members-grid-intern {
     grid-template-columns: 1fr;
