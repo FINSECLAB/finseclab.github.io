@@ -21,48 +21,6 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <title>Finsec Lab</title>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'ko',
-          autoDisplay: false
-        }, 'google_translate_element');
-      }
-
-      function toggleLanguage() {
-        var iframe = document.querySelector('.goog-te-menu-frame');
-        if (iframe) {
-          var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-          var koreanOption = innerDoc.querySelector('a.goog-te-menu2-item span.text:first-child');
-          if (koreanOption) {
-            koreanOption.click();
-          }
-        } else {
-          var select = document.querySelector('.goog-te-combo');
-          if (select) {
-            select.value = 'ko';
-            select.dispatchEvent(new Event('change'));
-          }
-        }
-      }
-
-      function showOriginal() {
-        var iframe = document.querySelector('.goog-te-banner-frame');
-        if (iframe) {
-          var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-          var restoreBtn = innerDoc.querySelector('.goog-te-button button');
-          if (restoreBtn) {
-            restoreBtn.click();
-          }
-        }
-        // Alternative: remove the cookie
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname;
-        location.reload();
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

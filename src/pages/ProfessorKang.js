@@ -48,23 +48,22 @@ const ProfessorKang = () => {
           <div className="professor-section">
             <h2 className="section-title">Education</h2>
             <ul className="info-list">
-              <li>1997.02. B.S. in computer science, Korea University, South Korea</li>
-              <li>1999.02. M.S. in computer science, Korea University, South Korea</li>
               <li>2006.08. Ph.D. in information security, Korea University, South Korea</li>
+              <li>1999.02. M.S. in computer science, Korea University, South Korea</li>
+              <li>1997.02. B.S. in computer science, Korea University, South Korea</li>
             </ul>
           </div>
 
           <div className="professor-section">
             <h2 className="section-title">Professional Experience</h2>
             <ul className="info-list">
-              <li>2025.03～현재 고려대학교 정보보호대학원 교수</li>
+              <li>Mar. 2025 – Present: Professor, School of Cybersecurity, Korea University</li>
               <li>2023.02～2024.01 금융위원회 "금융보안규제선진화TF" 민간자문위원</li>
-              <li>2022.3~2024.2 (주)KG이니시스 사외이사</li>
-              <li>2021.04～2025.02 김·장 법률사무소 전문위원</li>
-              <li>2018.09～2019.12 건국대학교 정보통신대학원 겸임교수</li>
-              <li>2006.09～2021.02 금융감독원 정보보안팀 팀장</li>
-              <li>2000.01～2006.09 ETRI 부설 국가보안기술연구소 선임연구원</li>
-              <li>1999.02～1999.12 한국전자통신연구원(ETRI) 부호기술부 연구원</li>
+              <li>Mar. 2022 – Feb. 2024: Outside Director, KG Inicis</li>
+              <li>Apr. 2021 – Feb. 2025: Expert Advisor, Kim & Chang Law Office</li>
+              <li>Sep. 2018 - Dec. 2019: Adjunct Professor, Konkuk University</li>
+              <li>Sep. 2006 – Feb. 2021: Head of Information Security Team, Financial Supervisory Service (FSS)</li>
+              <li>Feb. 1999 – Sep. 2006: Senior Researcher, National Security Research Institute</li>
             </ul>
           </div>
 
@@ -72,12 +71,12 @@ const ProfessorKang = () => {
             <h2 className="section-title">Affiliations</h2>
             <ul className="info-list">
               <li>2025.3월～현재 금융위원회 소프트웨어사업 과업심의위원회</li>
-              <li>2025.05～현재 금감원 금융데이터분야 외부평가위원</li>
+              <li>May. 2025 – Present: External Evaluation Committee Member (Financial Data Sector), Financial Supervisory Service (FSS)</li>
               <li>2024년～현재 개인정보보호위원회 개인정보 안심구역 지정심사위원</li>
-              <li>2023.05～현재 디지털자산정책포럼 운영위원</li>
-              <li>2023.01～현재 금융보안포럼 운영위원</li>
-              <li>2021.01～현재 한국정보보호학회 금융보안연구회 위원장</li>
-              <li>2020.01～현재 미래보안기술포럼 전문위원</li>
+              <li>May. 2023 – Present: Steering Committee Member, Digital Asset Policy Forum</li>
+              <li>Jan. 2023 – Present: Steering Committee Member, Financial Security Forum</li>
+              <li>Jan. 2021 – Present: Chair, Financial Security Research Group, Korea Institute of Information Security & Cryptology (KIISC)</li>
+              <li>Jan. 2020 – Present: Expert Committee Member, Future Security Technology Forum</li>
             </ul>
           </div>
         </div>

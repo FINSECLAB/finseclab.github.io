@@ -5,7 +5,6 @@ import './Header.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isKorean, setIsKorean] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,32 +16,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    // Check if currently translated
-    const checkTranslation = () => {
-      const googtrans = document.cookie.match(/googtrans=([^;]+)/);
-      setIsKorean(googtrans && googtrans[1].includes('/ko'));
-    };
-    checkTranslation();
-  }, []);
-
-  const handleTranslate = () => {
-    if (isKorean) {
-      // Show original
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
-      window.location.reload();
-    } else {
-      // Translate to Korean
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = 'ko';
-        select.dispatchEvent(new Event('change'));
-        setIsKorean(true);
-      }
-    }
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -69,7 +42,7 @@ const Header = () => {
   const shouldShowCrimson = location.pathname !== '/';
 
   return (
-    <header className={`header notranslate ${isScrolled || shouldShowCrimson ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled || shouldShowCrimson ? 'scrolled' : ''}`}>
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
@@ -132,12 +105,6 @@ const Header = () => {
               >
                 Contact
               </Link>
-            </li>
-            <li className="nav-item translate-item">
-              <button className="lang-toggle" onClick={handleTranslate}>
-                {isKorean ? 'EN' : 'KO'}
-              </button>
-              <div id="google_translate_element" style={{ display: 'none' }}></div>
             </li>
           </ul>
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>

@@ -15,7 +15,7 @@ const Papers = () => {
     { year: '2004', title: 'Matching connection pairs', authors: 'HW Kang, SJ Hong, DH Lee - International Conference on Parallel and Distributed Computing: Applications ...' },
     { year: '2003', title: 'A New Intruder Traceback Mechanism based on System Process Structure.', authors: 'H Kang, J Park, G Nam, S Park, J Lee - CAINE, 117-121' },
     { year: '2002', title: 'The Internet Mapping Framework for Security Management', authors: 'Dae-Sik Choi, Hyung-Woo Kang, Geon-Woo Nam - Korean Institute of Information Scientists and Engineers 29 (21), 481-483' },
-    { year: '2000', title: '역공학에 기초한 악성코드분석시스템의 설계', authors: '송진국, 오염덕, 강형우, 이진석 - Korean Society for Internet Information 1 (2), 273-276' },
+    { year: '2000', title: 'Design of Malicious Code Analysis System Based on Reverse Engineering', authors: 'JK Song, YD Oh, HW Kang, JS Lee - Korean Society for Internet Information 1 (2), 273-276' },
     { year: '1999', title: 'Design of Authentication Protocol for IMT-2000', authors: 'HU Gang, LJ Yun, SY Lee, CS Park, DH Lee - The Transactions of the Korea Information Processing Society 6 (8), 2133-2144' },
     { year: '1997', title: 'Properties of k-BNLC Languages', authors: 'Hyung-Woo Kang, Dong-Hoon Lee - Korean Institute of Information Scientists and Engineers 24 (2IV), 520-523' },
   ];
