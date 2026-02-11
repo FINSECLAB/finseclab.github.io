@@ -26,6 +26,13 @@
   box-sizing: border-box;
 }
 
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-2) 0 var(--space-8) 0;
+}
+
 .contact-item {
   padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
@@ -117,6 +124,11 @@
     padding-top: var(--space-16);
   }
 
+  .contact-title {
+    font-size: 2rem;
+    margin-top: var(--space-6);
+  }
+
   .contact-item h3 {
     font-size: 1.1rem;
   }
@@ -167,6 +179,11 @@
   .contact-content {
     padding: var(--space-8) var(--space-4);
     padding-top: var(--space-16);
+  }
+
+  .contact-title {
+    font-size: 1.75rem;
+    margin-top: var(--space-6);
   }
 
   .contact-item h3 {

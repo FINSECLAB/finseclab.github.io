@@ -30,7 +30,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: var(--space-2) 0 var(--space-8) 0;
+  margin: var(--space-2) 0 1.65rem 0;
 }
 
 .papers-content p {

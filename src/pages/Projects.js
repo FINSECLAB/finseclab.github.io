@@ -11,10 +11,12 @@ const Projects = () => {
             <div className="intro-text">
               <div className="projects-list">
                 <div className="project-item">
-                  <p><strong>[2024-2026]</strong> Development of Digital Asset Transaction Tracking Technology to Prevent Malicious Financial Conduct in the Digital Asset Market - IITP</p>
+                  <span className="project-period">[2024-2026]</span>
+                  <p className="project-title">Development of Digital Asset Transaction Tracking Technology to Prevent Malicious Financial Conduct in the Digital Asset Market - IITP</p>
                 </div>
                 <div className="project-item">
-                  <p><strong>[2025-2026]</strong> Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector - AWS Korea</p>
+                  <span className="project-period">[2025-2026]</span>
+                  <p className="project-title">Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector - AWS Korea</p>
                 </div>
               </div>
             </div>

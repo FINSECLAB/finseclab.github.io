@@ -12,7 +12,7 @@ const Papers = () => {
     { year: '2006', title: 'A model for security vulnerability pattern', authors: 'H Kang, K Kim, S Hong, DH Lee - International Conference on Computational Science and Its Applications, 385-394' },
     { year: '2006', title: 'Design an Algorithm Matching TCP Connection Pairs for Intruder Traceback', authors: 'K Hyung-Woo, H Soon-Jwa - The KIPS Transactions: PartC 13 (1), 11-18' },
     { year: '2005', title: 'Security Protocol Design for Wireless Mobile Communication', authors: 'Hyung-Woo Kang, Sy-Youn Lee, Chang-Seop Park, Dong-Hoon Lee, E-Joong Yoon - Korean Institute of Information Scientists and Engineers' },
-    { year: '2004', title: 'Matching connection pairs', authors: 'HW Kang, SJ Hong, DH Lee - International Conference on Parallel and Distributed Computing: Applications ...' },
+    { year: '2004', title: 'Matching connection pairs', authors: 'HW Kang, SJ Hong, DH Lee - International Conference on Parallel and Distributed Computing: Applications and Technologies, 642-649' },
     { year: '2003', title: 'A New Intruder Traceback Mechanism based on System Process Structure.', authors: 'H Kang, J Park, G Nam, S Park, J Lee - CAINE, 117-121' },
     { year: '2002', title: 'The Internet Mapping Framework for Security Management', authors: 'Dae-Sik Choi, Hyung-Woo Kang, Geon-Woo Nam - Korean Institute of Information Scientists and Engineers 29 (21), 481-483' },
     { year: '2000', title: 'Design of Malicious Code Analysis System Based on Reverse Engineering', authors: 'JK Song, YD Oh, HW Kang, JS Lee - Korean Society for Internet Information 1 (2), 273-276' },

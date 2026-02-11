@@ -6,8 +6,8 @@ const Contact = () => {
     <div className="page contact-page">
       <div className="contact-container">
         <div className="contact-content">
+          <h1 className="contact-title">Contact</h1>
           <div className="contact-item map-item">
-            <h3>Map</h3>
             <div className="map-wrapper">
               <img 
                 src={`${process.env.PUBLIC_URL}/연구실위치.png`} 
@@ -20,16 +20,16 @@ const Contact = () => {
                   <p>Room 204, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
                 </div>
                 <div className="contact-info-item">
-                  <h4>랩장</h4>
-                  <p>배준호, bjhbae@korea.ac.kr</p>
+                  <h4>Lab Director</h4>
+                  <p>Junho Bae, bjhbae@korea.ac.kr</p>
                 </div>
                 <div className="contact-info-item">
-                  <h4>연락처</h4>
-                  <p>02-3290-5944<br />finseclab0717@gmail.com</p>
+                  <h4>Contact</h4>
+                  <p>+82-2-3290-5944<br />finseclab0717@gmail.com</p>
                 </div>
                 <div className="contact-info-item">
                   <p style={{ marginTop: 'var(--space-4)', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-                    연구실에 관심있으신 분들은 랩장 혹은 위 이메일로 연락주시기 바랍니다.
+                    If you are interested in the FinSec Lab, please contact the Lab Director.
                   </p>
                 </div>
               </div>

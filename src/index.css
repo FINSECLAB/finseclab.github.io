@@ -1055,6 +1055,16 @@ body::before {
     height: auto;
     min-height: 350px;
     padding: var(--space-6);
+  }
+
+  .research-grid,
+  .research-grid.compact {
+    grid-template-columns: 1fr;
+  }
+
+  .research-section .home-card {
+    height: auto;
+    min-height: auto;
     }
 
     .footer-box-content {
@@ -1090,7 +1100,7 @@ body::before {
     .container {
     padding: 0 var(--space-4);
   }
-  
+
   .hero-section {
     padding: var(--space-16) 0;
 }
@@ -1099,7 +1109,11 @@ body::before {
     padding: var(--space-4);
     min-height: 300px;
   }
-  
+
+  .footer-box {
+    width: calc(100% - var(--space-4) * 2);
+  }
+
   .section-title {
     font-size: 1.5rem;
   }

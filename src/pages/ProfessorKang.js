@@ -48,9 +48,9 @@ const ProfessorKang = () => {
           <div className="professor-section">
             <h2 className="section-title">Education</h2>
             <ul className="info-list">
-              <li>2006.08. Ph.D. in information security, Korea University, South Korea</li>
-              <li>1999.02. M.S. in computer science, Korea University, South Korea</li>
-              <li>1997.02. B.S. in computer science, Korea University, South Korea</li>
+              <li>Aug. 2006: Ph.D. in information security, Korea University, South Korea</li>
+              <li>Feb. 1999: M.S. in computer science, Korea University, South Korea</li>
+              <li>Feb. 1997: B.S. in computer science, Korea University, South Korea</li>
             </ul>
           </div>
 
@@ -58,7 +58,7 @@ const ProfessorKang = () => {
             <h2 className="section-title">Professional Experience</h2>
             <ul className="info-list">
               <li>Mar. 2025 – Present: Professor, School of Cybersecurity, Korea University</li>
-              <li>2023.02～2024.01 금융위원회 "금융보안규제선진화TF" 민간자문위원</li>
+              <li>Feb. 2023 – Jan. 2024: Financial Supervisory Service (FSS) "Financial Security Regulation Advancement Task Force" External Advisor</li>
               <li>Mar. 2022 – Feb. 2024: Outside Director, KG Inicis</li>
               <li>Apr. 2021 – Feb. 2025: Expert Advisor, Kim & Chang Law Office</li>
               <li>Sep. 2018 - Dec. 2019: Adjunct Professor, Konkuk University</li>
@@ -70,9 +70,9 @@ const ProfessorKang = () => {
           <div className="professor-section">
             <h2 className="section-title">Affiliations</h2>
             <ul className="info-list">
-              <li>2025.3월～현재 금융위원회 소프트웨어사업 과업심의위원회</li>
+              <li>Mar. 2025 - Present: 금융위원회 소프트웨어사업 과업심의위원회</li>
               <li>May. 2025 – Present: External Evaluation Committee Member (Financial Data Sector), Financial Supervisory Service (FSS)</li>
-              <li>2024년～현재 개인정보보호위원회 개인정보 안심구역 지정심사위원</li>
+              <li>     2024 - Present: 개인정보보호위원회 개인정보 안심구역 지정심사위원</li>
               <li>May. 2023 – Present: Steering Committee Member, Digital Asset Policy Forum</li>
               <li>Jan. 2023 – Present: Steering Committee Member, Financial Security Forum</li>
               <li>Jan. 2021 – Present: Chair, Financial Security Research Group, Korea Institute of Information Security & Cryptology (KIISC)</li>
