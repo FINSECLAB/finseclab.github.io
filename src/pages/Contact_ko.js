@@ -9,10 +9,11 @@ const Contact_ko = () => {
           <h1 className="contact-title">Contact</h1>
           <div className="contact-item map-item">
             <div className="map-wrapper">
-              <img
-                src={`${process.env.PUBLIC_URL}/연구실위치.png`}
-                alt="연구실 위치 지도"
-                className="map-image"
+              <iframe
+                src="https://maps.google.com/maps?q=고려대학교+로봇융합관&output=embed&hl=ko&z=17"
+                title="고려대학교 서울캠퍼스 로봇융합관"
+                className="map-iframe"
+                allowFullScreen
               />
               <div className="map-text">
                 <div className="contact-info-item">
