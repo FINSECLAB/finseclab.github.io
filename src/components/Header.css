@@ -124,6 +124,35 @@
 }
 
 
+.lang-toggle-item {
+  display: flex;
+  align-items: center;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  margin-left: var(--space-2);
+}
+
+.lang-toggle.scrolled {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.lang-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -251,6 +280,17 @@
   .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .lang-toggle-item {
+    justify-content: center;
+    padding: var(--space-3) 0;
+  }
+
+  .lang-toggle {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-left: 0;
   }
 
 }

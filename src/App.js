@@ -3,49 +3,57 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import HomeKo from './pages/Home_ko';
 import Contact from './pages/Contact';
+import ContactKo from './pages/Contact_ko';
 import Faculty from './pages/Faculty';
+import FacultyKo from './pages/Faculty_ko';
 import ProfessorKang from './pages/ProfessorKang';
+import ProfessorKangKo from './pages/ProfessorKang_ko';
 import Papers from './pages/Papers';
+import PapersKo from './pages/Papers_ko';
 import Projects from './pages/Projects';
+import ProjectsKo from './pages/Projects_ko';
 import About from './pages/About';
+import AboutKo from './pages/About_ko';
 import News from './pages/News';
+import NewsKo from './pages/News_ko';
 import { setupPageAnimations } from './utils/scrollAnimation';
+import { LanguageProvider, useLanguage } from './LanguageContext';
 
 function AppContent() {
   const location = useLocation();
+  const { lang } = useLanguage();
 
   useEffect(() => {
-    // DOM이 완전히 로드된 후 애니메이션 초기화
     const timer = setTimeout(() => {
       setupPageAnimations();
     }, 300);
-    
+
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [location.pathname, lang]);
 
   useEffect(() => {
-    // 모든 페이지에서 처음부터 블러 적용 (5px)
     document.documentElement.style.setProperty('--bg-blur', '5px');
 
-    return () => {
-      // 컴포넌트 언마운트 시 블러 초기화는 하지 않음 (다음 페이지로 전환 시 유지)
-    };
+    return () => {};
   }, [location.pathname]);
+
+  const isKo = lang === 'KO';
 
   return (
     <div className="App">
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/members" element={<Faculty />} />
-          <Route path="/professor-kang" element={<ProfessorKang />} />
-          <Route path="/publications" element={<Papers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/" element={isKo ? <HomeKo /> : <Home />} />
+          <Route path="/about" element={isKo ? <AboutKo /> : <About />} />
+          <Route path="/news" element={isKo ? <NewsKo /> : <News />} />
+          <Route path="/members" element={isKo ? <FacultyKo /> : <Faculty />} />
+          <Route path="/professor-kang" element={isKo ? <ProfessorKangKo /> : <ProfessorKang />} />
+          <Route path="/publications" element={isKo ? <PapersKo /> : <Papers />} />
+          <Route path="/contact" element={isKo ? <ContactKo /> : <Contact />} />
+          <Route path="/projects" element={isKo ? <ProjectsKo /> : <Projects />} />
         </Routes>
       </main>
     </div>
@@ -54,10 +62,12 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <AppContent />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <AppContent />
+      </Router>
+    </LanguageProvider>
   );
 }
 

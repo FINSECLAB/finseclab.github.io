@@ -705,6 +705,7 @@ body::before {
 }
 
 .faculty-card .members-info {
+  flex: 1;
   text-align: center;
   align-items: center;
 }

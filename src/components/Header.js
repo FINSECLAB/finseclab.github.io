@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
+import { useLanguage } from '../LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { lang, setLang } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +50,7 @@ const Header = () => {
           <div className="nav-logo">
             <Link to="/" onClick={handleLogoClick}>
               <img src={`${process.env.PUBLIC_URL}/finsec.png`} alt="FinSec Lab Logo" className="nav-logo-img" />
-              <h1>Finsec Lab</h1>
+              <h1>{lang === 'KO' ? '금융보안 연구실' : 'FinSec Lab'}</h1>
             </Link>
           </div>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -105,6 +107,14 @@ const Header = () => {
               >
                 Contact
               </Link>
+            </li>
+            <li className="nav-item lang-toggle-item">
+              <button
+                className={`lang-toggle ${isScrolled || shouldShowCrimson ? 'scrolled' : ''}`}
+                onClick={() => setLang(lang === 'EN' ? 'KO' : 'EN')}
+              >
+                {lang === 'EN' ? 'KO' : 'EN'}
+              </button>
             </li>
           </ul>
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
