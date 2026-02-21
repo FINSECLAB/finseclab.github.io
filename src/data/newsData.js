@@ -15,7 +15,7 @@ export const newsData = [
   {
     id: 3,
     date: 'Aug 12, 2025',
-    title: '제3차 사이버 복합 넥서스 세미나 참여',
+    title: 'Participation in the Third Cyber Complex Nexus Seminar',
     sortDate: '2025-08-12'
   },
   {
@@ -27,25 +27,25 @@ export const newsData = [
   {
     id: 5,
     date: 'Apr 02, 2025',
-    title: '디지털자산정책포럼 국회 토론회 참여',
+    title: 'Participation in the National Assembly Discussion Session of the Digital Asset Policy Forum',
     sortDate: '2025-04-02'
   },
   {
     id: 6,
     date: 'Nov 06, 2025',
-    title: '금융권 사이버보안 사고 사례 및 사이버보험 트렌드 세미나 강연',
+    title: 'Seminar Lecture on Financial Sector Cybersecurity Incident Cases and Cyber Insurance Trends',
     sortDate: '2025-11-06'
   },
   {
     id: 7,
     date: 'Dec 10, 2025',
-    title: '금융연수원 25년도 하반기 IBK Pre-CEO과정 출강',
+    title: 'Participation in the IBK Pre-CEO Program at the Banking Institute (Second Half of 2025)',
     sortDate: '2025-12-10'
   },
   {
     id: 8,
     date: 'Nov 07, 2025',
-    title: 'Busan Bank Special Lecture - 금융 망분리 제도의 한계와 제로트러스트 도입방안',
+    title: 'Busan Bank Special Lecture - Limitations of the Financial Network Separation System and Implementation Plan for Zero Trust',
     sortDate: '2025-11-07'
   },
   {
@@ -73,7 +73,3 @@ export const getLatestNews = (count = 5) => {
 export const getAllNewsSorted = () => {
   return [...newsData].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
 };
-
-
-
-

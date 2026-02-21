@@ -379,7 +379,7 @@ const Faculty = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">Part-time</h2>
+          <h2 className="members-heading">Master Students (Part-time)</h2>
           <div className="members-grid">
             {partTimeStudents.map((student) => (
               <div className="members-card" key={student.name}>

@@ -70,9 +70,9 @@ const ProfessorKang = () => {
           <div className="professor-section">
             <h2 className="section-title">Affiliations</h2>
             <ul className="info-list">
-              <li>Mar. 2025 - Present: 금융위원회 소프트웨어사업 과업심의위원회</li>
+              <li>Mar. 2025 - Present: Software Project Task Deliberation Committee, Financial Services Commission(FSC)</li>
               <li>May. 2025 – Present: External Evaluation Committee Member (Financial Data Sector), Financial Supervisory Service (FSS)</li>
-              <li>     2024 - Present: 개인정보보호위원회 개인정보 안심구역 지정심사위원</li>
+              <li>     2024 - Present: Member of the Personal Information Safe Zone Designation Review Committee, Personal Information Protection Commission (PIPC)</li>
               <li>May. 2023 – Present: Steering Committee Member, Digital Asset Policy Forum</li>
               <li>Jan. 2023 – Present: Steering Committee Member, Financial Security Forum</li>
               <li>Jan. 2021 – Present: Chair, Financial Security Research Group, Korea Institute of Information Security & Cryptology (KIISC)</li>
