@@ -21,7 +21,7 @@ const Contact = () => {
                   <p>Room 204, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
                 </div>
                 <div className="contact-info-item">
-                  <h4>Lab Director</h4>
+                  <h4>Lab Leader</h4>
                   <p>Junho Bae, bjhbae@korea.ac.kr</p>
                 </div>
                 <div className="contact-info-item">
@@ -30,7 +30,7 @@ const Contact = () => {
                 </div>
                 <div className="contact-info-item">
                   <p style={{ marginTop: 'var(--space-4)', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-                    If you are interested in the FinSec Lab, please contact the Lab Director.
+                    If you are interested in the FinSec Lab, please contact the Lab Leader.
                   </p>
                 </div>
               </div>
