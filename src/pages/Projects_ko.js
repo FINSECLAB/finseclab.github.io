@@ -16,7 +16,7 @@ const Projects_ko = () => {
                 </div>
                 <div className="project-item">
                   <span className="project-period">[2025-2026]</span>
-                  <p className="project-title">국내 금융권 R&D 네트워크 고도화를 위한 클라우드 활용 연구 논문 - AWS 코리아</p>
+                  <p className="project-title">국내 금융권 R&D 네트워크 고도화를 위한 클라우드 활용 연구 - AWS 코리아</p>
                 </div>
               </div>
             </div>
