@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import './ProfessorKang.css';
 
 const ProfessorKang = () => {
   return (
     <div className="page professor-page">
+      <Helmet>
+        <title>강형우 교수 | 고려대학교 Finsec Lab</title>
+        <meta name="description" content="고려대학교 정보보호대학원 강형우 교수 프로필. 고려대 강형우, 고려대학교 강형우 교수, 금융보안연구실 지도교수." />
+      </Helmet>
       <div className="professor-container">
         <div className="professor-header">
           <Link to="/members" className="back-link">← Members</Link>

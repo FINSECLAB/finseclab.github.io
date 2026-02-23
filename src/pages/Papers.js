@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Papers.css';
 
 const Papers = () => {
@@ -22,6 +23,10 @@ const Papers = () => {
 
   return (
     <div className="page papers-page">
+      <Helmet>
+        <title>Publications | 고려대 금융보안연구실</title>
+        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 연구 논문 및 발표 목록. 고려대 정보보호대학원 금융보안 연구 성과." />
+      </Helmet>
       <div className="papers-container">
         <div className="papers-content">
           <h1 className="papers-title">Publications</h1>

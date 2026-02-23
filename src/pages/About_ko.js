@@ -1,9 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const About_ko = () => {
   return (
     <div className="page about-page">
+      <Helmet>
+        <title>About | 고려대 금융보안연구실</title>
+        <meta name="description" content="고려대학교 정보보호대학원 소속 금융보안연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실." />
+      </Helmet>
       <div className="about-container">
         <div className="about-content">
           <h1 className="about-title">About</h1>

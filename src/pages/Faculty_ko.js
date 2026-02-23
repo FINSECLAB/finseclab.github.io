@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const faculty = {
@@ -293,6 +294,10 @@ const partTimeStudents = [
 const Faculty_ko = () => {
   return (
     <div className="page">
+      <Helmet>
+        <title>Members | 고려대 금융보안연구실</title>
+        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 구성원 소개. 고려대 정보보호대학원 금융보안 연구원." />
+      </Helmet>
       <div className="container members-page">
         <section className="members-section">
           <h2 className="members-heading">교수</h2>
