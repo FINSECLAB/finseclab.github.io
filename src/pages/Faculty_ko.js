@@ -91,44 +91,39 @@ const doctoralStudents = [
   },
 ];
 
-const partTimeStudents = [
+const alumniKo = [
   {
     name: '박민주',
     degree: '석사',
     cohort: '47기',
     company: 'UBS 증권',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
     name: '이상훈',
     degree: '석사',
     cohort: '47기',
     company: '금융감독원',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
-  },
-  {
-    name: '남현수',
-    degree: '석사',
-    cohort: '47기',
-    company: '금융감독원',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
     name: '김강철',
     degree: '석사',
     cohort: '47기',
     company: '한국예탁결제원',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/김강철.png`,
   },
   {
     name: '유범석',
     degree: '석사',
     cohort: '47기',
     company: 'LS 증권',
+  },
+];
+
+const partTimeStudents = [
+  {
+    name: '남현수',
+    degree: '석사',
+    cohort: '47기',
+    company: '금융감독원',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
@@ -542,7 +537,7 @@ const Faculty_ko = () => {
 
         <section className="members-section">
           <h2 className="members-heading">박사 과정</h2>
-          <div className="members-grid">
+          <div className="members-grid members-grid-phd">
             {sortedDoctoralStudentsKo.map((student) => (
               <div className="members-card" key={student.name}>
                 <div className="members-photo-wrapper">
@@ -595,6 +590,20 @@ const Faculty_ko = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="members-section">
+          <h2 className="members-heading">Alumni</h2>
+          <div className="alumni-card">
+            <ul className="alumni-list">
+              {alumniKo.map((person) => (
+                <li key={person.name} className="alumni-item">
+                  <span className="alumni-name">{person.name}</span>
+                  <span className="alumni-meta">{person.degree} {person.cohort} · {person.company}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>

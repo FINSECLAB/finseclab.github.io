@@ -635,13 +635,53 @@ body::before {
   text-align: left;
 }
 
+.alumni-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.alumni-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.alumni-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.alumni-item:last-child {
+  border-bottom: none;
+}
+
+.alumni-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.alumni-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-6);
 }
-.members-grid-intern {
-  /* Undergraduate Intern 전용: 넓을 때 3열 고정, 아래에서 반응형 조정 */
+.members-grid-intern,
+.members-grid-phd {
+  /* Undergraduate Intern / Ph.D. 전용: 넓을 때 3열 고정, 아래에서 반응형 조정 */
   grid-template-columns: repeat(3, minmax(220px, 1fr));
 }
 .members-card {
@@ -1007,8 +1047,9 @@ body::before {
     padding: 0 var(--space-6);
     max-width: 900px;
   }
-  /* Undergraduate Intern: 태블릿에서는 2열 */
-  .members-grid-intern {
+  /* Undergraduate Intern / Ph.D.: 태블릿에서는 2열 */
+  .members-grid-intern,
+  .members-grid-phd {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
   
@@ -1091,8 +1132,9 @@ body::before {
     padding-top: 0;
     margin-top: 0;
   }
-  /* Undergraduate Intern: 모바일에서는 1열 */
-  .members-grid-intern {
+  /* Undergraduate Intern / Ph.D.: 모바일에서는 1열 */
+  .members-grid-intern,
+  .members-grid-phd {
     grid-template-columns: 1fr;
   }
 }

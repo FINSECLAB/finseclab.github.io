@@ -77,17 +77,17 @@ const doctoralStudents = [
   { name: 'Youngmin Lee', nameKo: '이영민', degree: 'Ph.D.', cohort: '51th', company: 'Hanwha Life', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
 ];
 
+const alumniEn = [
+  { name: 'Minju Park', degree: 'M.S.', cohort: '47th', company: 'UBS Securities' },
+  { name: 'Sanghoon Lee', degree: 'M.S.', cohort: '47th', company: 'FSS' },
+  { name: 'Kangcheol Kim', degree: 'M.S.', cohort: '47th', company: 'Korea Securities Depository' },
+  { name: 'Beomseok Yoo', degree: 'M.S.', cohort: '47th', company: 'LS Securities' },
+];
+
 const partTimeStudents = [
   {
-    name: '박민주',
-    degree: 'M.S.',
-    cohort: '47th',
-    company: 'UBS Securities',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
-  },
-  {
-    name: '이상훈',
+    name: 'Hyunsoo Nam',
+    nameKo: '남현수',
     degree: 'M.S.',
     cohort: '47th',
     company: 'FSS',
@@ -95,31 +95,8 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
-    name: '남현수',
-    degree: 'M.S.',
-    cohort: '47th',
-    company: 'FSS',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
-  },
-  {
-    name: '김강철',
-    degree: 'M.S.',
-    cohort: '47th',
-    company: 'Korea Securities Depository',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/김강철.png`,
-  },
-  {
-    name: '유범석',
-    degree: 'M.S.',
-    cohort: '47th',
-    company: 'LS Securities',
-    email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
-  },
-  {
-    name: '성호열',
+    name: 'Hoyeol Seong',
+    nameKo: '성호열',
     degree: 'M.S.',
     cohort: '49th',
     company: 'Woori Bank',
@@ -412,7 +389,7 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/이호연.jpeg`,
   },
   {
-    name: 'Jingyu Lee',
+    name: 'Jin-gyu Lee',
     nameKo: '이진규',
     degree: 'M.S.',
     cohort: '51th',
@@ -439,6 +416,15 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
 ];
+
+const cohortOrderEn = { '47th': 1, '49th': 2, '50th': 3, '51th': 4 };
+const sortedPartTimeStudentsEn = [...partTimeStudents].sort((a, b) => {
+  const co = (cohortOrderEn[a.cohort] || 9) - (cohortOrderEn[b.cohort] || 9);
+  if (co !== 0) return co;
+  const na = a.nameKo != null ? a.nameKo : a.name;
+  const nb = b.nameKo != null ? b.nameKo : b.name;
+  return na.localeCompare(nb, 'ko-KR');
+});
 
 const formatDegreeCohort = (degree, cohort) => [degree, cohort].filter(Boolean).join(' ');
 
@@ -535,8 +521,8 @@ const Faculty = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">Ph.D. Students</h2>
-          <div className="members-grid">
+          <h2 className="members-heading">Ph.D. Students (Part-time)</h2>
+          <div className="members-grid members-grid-phd">
             {doctoralStudents.map((student) => (
               <div className="members-card" key={student.name}>
                 <div className="members-photo-wrapper">
@@ -566,7 +552,7 @@ const Faculty = () => {
         <section className="members-section">
           <h2 className="members-heading">Master Students (Part-time)</h2>
           <div className="members-grid">
-            {partTimeStudents.map((student) => (
+            {sortedPartTimeStudentsEn.map((student) => (
               <div className="members-card" key={student.name}>
                 <div className="members-photo-wrapper">
                   <img
@@ -589,6 +575,20 @@ const Faculty = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="members-section">
+          <h2 className="members-heading">Alumni</h2>
+          <div className="alumni-card">
+            <ul className="alumni-list">
+              {alumniEn.map((person) => (
+                <li key={person.name} className="alumni-item">
+                  <span className="alumni-name">{person.name}</span>
+                  <span className="alumni-meta">{person.degree} {person.cohort} · {person.company}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>
