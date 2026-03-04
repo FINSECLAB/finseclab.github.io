@@ -157,7 +157,7 @@ const Home = () => {
               <h4 className="footer-box-title">
                 Address
               </h4>
-              <p>Room 204, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
+              <p>Room 211, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
             </div>
             <div className="footer-box-section">
               <h4 className="footer-box-title">

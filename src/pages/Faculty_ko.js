@@ -16,7 +16,7 @@ const fullTimeStudents = [
     degree: '석사',
     cohort: '47기',
     major: '융합보안',
-    email: '',
+    email: 'bjhbae@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/배준호.png`,
   },
   {
@@ -24,7 +24,7 @@ const fullTimeStudents = [
     degree: '석사',
     cohort: '48기',
     major: '정보보안',
-    email: '',
+    email: 'fjqm4155@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/손예원.jpg`,
   },
   {
@@ -32,7 +32,7 @@ const fullTimeStudents = [
     degree: '석사',
     cohort: '50기',
     major: '정보보안',
-    email: '',
+    email: 'pch3467@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/박천호.jpg`,
   },
   {
@@ -40,7 +40,7 @@ const fullTimeStudents = [
     degree: '석사',
     cohort: '50기',
     major: '정보보안',
-    email: '',
+    email: 'ssionn02@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/임시온.JPG`,
   },
   {
@@ -48,7 +48,7 @@ const fullTimeStudents = [
     degree: '석사',
     cohort: '51기',
     major: '융합보안',
-    email: '',
+    email: 'airmass22@gmail.com',
     photo: `${process.env.PUBLIC_URL}/people-photos/민기단.jpg`,
   },
 ];
@@ -59,7 +59,7 @@ const undergraduateInterns = [
     degree: '',
     cohort: '',
     major: '',
-    email: '',
+    email: 'wlsgh0062@naver.com',
     photo: `${process.env.PUBLIC_URL}/people-photos/정진호.png`,
   },
   {
@@ -67,7 +67,7 @@ const undergraduateInterns = [
     degree: '',
     cohort: '',
     major: '',
-    email: '',
+    email: 's1lv3r@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/조은.jpg`,
   },
 ];
@@ -267,7 +267,7 @@ const partTimeStudents = [
     name: '김효진',
     degree: '석사',
     cohort: '50기',
-    company: '신한DS',
+    company: '신한 DS',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
@@ -283,7 +283,7 @@ const partTimeStudents = [
     name: '지상희',
     degree: '석사',
     cohort: '50기',
-    company: '신한DS',
+    company: '신한 DS',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
@@ -315,7 +315,7 @@ const partTimeStudents = [
     name: '박원민',
     degree: '석사',
     cohort: '51기',
-    company: '(주)카카오',
+    company: '카카오',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/박원민.png`,
   },
@@ -355,7 +355,7 @@ const partTimeStudents = [
     name: '이호연',
     degree: '석사',
     cohort: '51기',
-    company: '신한금융지주회사',
+    company: '신한금융지주',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/이호연.jpeg`,
   },
@@ -379,7 +379,7 @@ const partTimeStudents = [
     name: '이원중',
     degree: '석사',
     cohort: '51기',
-    company: '(주)지슨',
+    company: '지슨',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/이원중.jpeg`,
   },
@@ -387,7 +387,7 @@ const partTimeStudents = [
     name: '국태호',
     degree: '석사',
     cohort: '51기',
-    company: '오늘의집(버킷플레이스)',
+    company: '오늘의집',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/국태호.jpg`,
   },
@@ -536,7 +536,7 @@ const Faculty_ko = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">박사 과정</h2>
+          <h2 className="members-heading">박사 과정 (풀타임)</h2>
           <div className="members-grid members-grid-phd">
             {sortedDoctoralStudentsKo.map((student) => (
               <div className="members-card" key={student.name}>

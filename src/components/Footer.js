@@ -13,7 +13,7 @@ const Footer = () => {
                 <span className="footer-icon">📍</span>
                 연구실 위치
               </h4>
-              <p>서울 성북구 안암로 145<br />고려대학교 안암캠퍼스<br />로봇융합관 204호</p>
+              <p>서울 성북구 안암로 145<br />고려대학교 안암캠퍼스<br />로봇융합관 211호</p>
             </div>
             <div className="footer-box-section">
               <h4 className="footer-box-title">

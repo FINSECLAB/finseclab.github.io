@@ -28,7 +28,7 @@ const ProfessorKang = () => {
               <div className="info-grid">
                 <div className="info-item">
                   <span className="info-label">Name</span>
-                  <span className="info-value">Hyungwoo Kang</span>
+                  <span className="info-value">Hyung Woo Kang</span>
                 </div>
                 <div className="info-item">
                   <span className="info-label">Affiliations</span>

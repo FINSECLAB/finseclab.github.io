@@ -141,7 +141,7 @@ const Home_ko = () => {
           <div className="footer-box-content">
             <div className="footer-box-section">
               <h4 className="footer-box-title">연구실 위치</h4>
-              <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 204호</p>
+              <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 211호</p>
             </div>
             <div className="footer-box-section">
               <h4 className="footer-box-title">연락처</h4>
