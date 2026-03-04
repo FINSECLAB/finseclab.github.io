@@ -23,7 +23,7 @@ const Contact_ko = () => {
               <div className="map-text">
                 <div className="contact-info-item">
                   <h4>위치</h4>
-                  <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 204호</p>
+                  <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 211호</p>
                 </div>
                 <div className="contact-info-item">
                   <h4>랩장</h4>

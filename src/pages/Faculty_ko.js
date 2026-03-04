@@ -72,6 +72,25 @@ const undergraduateInterns = [
   },
 ];
 
+const doctoralStudents = [
+  {
+    name: '이영광',
+    degree: '박사',
+    cohort: '51기',
+    company: '금융감독원',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '이영민',
+    degree: '박사',
+    cohort: '51기',
+    company: '한화생명',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+];
+
 const partTimeStudents = [
   {
     name: '박민주',
@@ -289,7 +308,145 @@ const partTimeStudents = [
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/어진철.jpeg`,
   },
+  {
+    name: '이진규',
+    degree: '석사',
+    cohort: '51기',
+    company: '한국정보통신기술협회',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '박원민',
+    degree: '석사',
+    cohort: '51기',
+    company: '(주)카카오',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/박원민.png`,
+  },
+  {
+    name: '배성민',
+    degree: '석사',
+    cohort: '51기',
+    company: '생명보험협회',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/배성민.jpg`,
+  },
+  {
+    name: '김민혁',
+    degree: '석사',
+    cohort: '51기',
+    company: '금융보안원',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/김민혁.jpg`,
+  },
+  {
+    name: '유지안',
+    degree: '석사',
+    cohort: '51기',
+    company: 'KB국민은행',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/유지안.jpeg`,
+  },
+  {
+    name: '이한석',
+    degree: '석사',
+    cohort: '51기',
+    company: '우리은행',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/이한석.jpeg`,
+  },
+  {
+    name: '이호연',
+    degree: '석사',
+    cohort: '51기',
+    company: '신한금융지주회사',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/이호연.jpeg`,
+  },
+  {
+    name: '김호창',
+    degree: '석사',
+    cohort: '51기',
+    company: '우리금융지주',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '김효진',
+    degree: '석사',
+    cohort: '51기',
+    company: '금융감독원',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '이원중',
+    degree: '석사',
+    cohort: '51기',
+    company: '(주)지슨',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/이원중.jpeg`,
+  },
+  {
+    name: '국태호',
+    degree: '석사',
+    cohort: '51기',
+    company: '오늘의집(버킷플레이스)',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/국태호.jpg`,
+  },
+  {
+    name: '고병산',
+    degree: '석사',
+    cohort: '51기',
+    company: '한국투자증권',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/고병산.jpg`,
+  },
+  {
+    name: '김승주',
+    degree: '석사',
+    cohort: '51기',
+    company: 'KB국민은행',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/김승주.jpg`,
+  },
+  {
+    name: '제하성',
+    degree: '석사',
+    cohort: '51기',
+    company: '한국투자캐피탈',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '고영천',
+    degree: '석사',
+    cohort: '51기',
+    company: '금융감독원',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '이지유',
+    degree: '석사',
+    cohort: '51기',
+    company: '한화생명',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
 ];
+
+const cohortOrderKo = { '47기': 1, '49기': 2, '50기': 3, '51기': 4 };
+const sortedPartTimeStudentsKo = [...partTimeStudents].sort((a, b) => {
+  const co = (cohortOrderKo[a.cohort] || 9) - (cohortOrderKo[b.cohort] || 9);
+  if (co !== 0) return co;
+  return a.name.localeCompare(b.name, 'ko-KR');
+});
+const sortedDoctoralStudentsKo = [...doctoralStudents].sort((a, b) => a.name.localeCompare(b.name, 'ko-KR'));
+
+const formatDegreeCohort = (degree, cohort) => [degree, cohort].filter(Boolean).join(' ');
 
 const Faculty_ko = () => {
   return (
@@ -340,9 +497,9 @@ const Faculty_ko = () => {
                 <div className="members-info">
                   <h3 className="members-name">{student.name}</h3>
                   {student.major && <p className="members-major">{student.major}</p>}
-                  <p className="members-cohort">
-                    {student.degree && `${student.degree} `}{student.cohort}
-                  </p>
+                  {formatDegreeCohort(student.degree, student.cohort) && (
+                    <p className="members-cohort">{formatDegreeCohort(student.degree, student.cohort)}</p>
+                  )}
                   {student.email && (
                     <p className="members-email">
                       <a href={`mailto:${student.email}`}>{student.email}</a>
@@ -369,9 +526,38 @@ const Faculty_ko = () => {
                 <div className="members-info">
                   <h3 className="members-name">{student.name}</h3>
                   {student.major && <p className="members-major">{student.major}</p>}
-                  <p className="members-cohort">
-                    {student.degree && `${student.degree} `}{student.cohort}
-                  </p>
+                  {formatDegreeCohort(student.degree, student.cohort) && (
+                    <p className="members-cohort">{formatDegreeCohort(student.degree, student.cohort)}</p>
+                  )}
+                  {student.email && (
+                    <p className="members-email">
+                      <a href={`mailto:${student.email}`}>{student.email}</a>
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="members-section">
+          <h2 className="members-heading">박사 과정</h2>
+          <div className="members-grid">
+            {sortedDoctoralStudentsKo.map((student) => (
+              <div className="members-card" key={student.name}>
+                <div className="members-photo-wrapper">
+                  <img
+                    src={student.photo}
+                    alt={`${student.name} 프로필`}
+                    className="members-photo"
+                  />
+                </div>
+                <div className="members-info">
+                  <h3 className="members-name">{student.name}</h3>
+                  <p className="members-company">{student.company}</p>
+                  {formatDegreeCohort(student.degree, student.cohort) && (
+                    <p className="members-cohort">{formatDegreeCohort(student.degree, student.cohort)}</p>
+                  )}
                   {student.email && (
                     <p className="members-email">
                       <a href={`mailto:${student.email}`}>{student.email}</a>
@@ -386,7 +572,7 @@ const Faculty_ko = () => {
         <section className="members-section">
           <h2 className="members-heading">석사 과정 (파트타임)</h2>
           <div className="members-grid">
-            {partTimeStudents.map((student) => (
+            {sortedPartTimeStudentsKo.map((student) => (
               <div className="members-card" key={student.name}>
                 <div className="members-photo-wrapper">
                   <img
@@ -398,9 +584,9 @@ const Faculty_ko = () => {
                 <div className="members-info">
                   <h3 className="members-name">{student.name}</h3>
                   <p className="members-company">{student.company}</p>
-                  <p className="members-cohort">
-                    {student.degree && `${student.degree} `}{student.cohort}
-                  </p>
+                  {formatDegreeCohort(student.degree, student.cohort) && (
+                    <p className="members-cohort">{formatDegreeCohort(student.degree, student.cohort)}</p>
+                  )}
                   {student.email && (
                     <p className="members-email">
                       <a href={`mailto:${student.email}`}>{student.email}</a>

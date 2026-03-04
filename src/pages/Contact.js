@@ -23,7 +23,7 @@ const Contact = () => {
               <div className="map-text">
                 <div className="contact-info-item">
                   <h4>Address</h4>
-                  <p>Room 204, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
+                  <p>Room 211, Robot Convergence Building,<br />145 Anam-ro, Seongbuk-gu, Seoul, 02841</p>
                 </div>
                 <div className="contact-info-item">
                   <h4>Lab Leader</h4>
