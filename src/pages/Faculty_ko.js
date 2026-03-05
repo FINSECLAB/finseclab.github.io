@@ -89,6 +89,14 @@ const doctoralStudents = [
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
+  {
+    name: '손영설',
+    degree: '박사',
+    cohort: '51기',
+    company: '삼성카드',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
 ];
 
 const alumniKo = [
@@ -594,7 +602,7 @@ const Faculty_ko = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">Alumni</h2>
+          <h2 className="members-heading">졸업생</h2>
           <div className="alumni-card">
             <ul className="alumni-list">
               {alumniKo.map((person) => (

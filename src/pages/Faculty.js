@@ -74,6 +74,15 @@ const undergraduateInterns = [
 
 const doctoralStudents = [
   {
+    name: 'Young Seol Son',
+    nameKo: '손영설',
+    degree: 'Ph.D.',
+    cohort: '51th',
+    company: 'Samsung Card',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`
+  },
+  {
     name: 'Yeong Gwang Lee',
     nameKo: '이영광',
     degree: 'Ph.D.',
