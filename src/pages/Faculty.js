@@ -383,6 +383,15 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/김승주.jpg`,
   },
   {
+    name: 'Jae Kwan Kim',
+    nameKo: '김재관',
+    degree: 'M.S.',
+    cohort: '51th',
+    company: '-',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg`,
+  },
+  {
     name: 'Ho Chang Kim',
     nameKo: '김호창',
     degree: 'M.S.',

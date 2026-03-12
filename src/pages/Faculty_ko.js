@@ -439,6 +439,14 @@ const partTimeStudents = [
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
+  {
+    name: '김재관',
+    degree: '석사',
+    cohort: '51기',
+    company: '-',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg`,
+  },
 ];
 
 const cohortOrderKo = { '47기': 1, '49기': 2, '50기': 3, '51기': 4 };
