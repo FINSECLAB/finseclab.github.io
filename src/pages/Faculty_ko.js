@@ -544,7 +544,7 @@ const Faculty_ko = () => {
         </section>
 
         <section className="members-section">
-          <h2 className="members-heading">박사 과정 (풀타임)</h2>
+          <h2 className="members-heading">박사 과정 (파트타임)</h2>
           <div className="members-grid members-grid-phd">
             {sortedDoctoralStudentsKo.map((student) => (
               <div className="members-card" key={student.name}>
