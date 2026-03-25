@@ -312,6 +312,22 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/어진철.jpeg`,
   },
   {
+    name: '김동하',
+    degree: '석사',
+    cohort: '51기',
+    company: '농협은행',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
+    name: '박현민',
+    degree: '석사',
+    cohort: '51기',
+    company: '법무법인(유한) 세종',
+    email: '',
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+  },
+  {
     name: '이진규',
     degree: '석사',
     cohort: '51기',
