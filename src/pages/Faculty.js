@@ -194,7 +194,7 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/정혜성.jpg`,
   },
   {
-    name: 'Hyo Joon Yoo',
+    name: 'Hyo Jong Yoo',
     nameKo: '유효종',
     degree: 'M.S.',
     cohort: '49th',
@@ -365,7 +365,7 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/국태호.jpg`,
   },
   {
-    name: 'Kim Dong Ha',
+    name: 'Dong Ha Kim',
     nameKo: '김동하',
     degree: 'M.S.',
     cohort: '51th',
@@ -428,7 +428,7 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/박원민.png`,
   },
   {
-    name: 'Park Hyun Min',
+    name: 'Hyun Min Park',
     nameKo: '박현민',
     degree: 'M.S.',
     cohort: '51th',
