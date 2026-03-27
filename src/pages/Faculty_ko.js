@@ -333,7 +333,7 @@ const partTimeStudents = [
     cohort: '51기',
     company: '한국정보통신기술협회',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/이진규.png`,
   },
   {
     name: '박원민',

@@ -488,7 +488,7 @@ const partTimeStudents = [
     cohort: '51th',
     company: 'TTA',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/이진규.png`,
   },
   {
     name: 'Ji Yu Lee',
