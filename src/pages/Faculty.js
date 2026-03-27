@@ -48,7 +48,7 @@ const fullTimeStudents = [
     degree: 'M.S.',
     cohort: '51th',
     major: 'Convergence Security',
-    email: 'airmass22@gmail.com',
+    email: 'airmass@korea.ac.kr',
     photo: `${process.env.PUBLIC_URL}/people-photos/민기단.jpg`,
   },
 ];
@@ -329,7 +329,7 @@ const partTimeStudents = [
     photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
-    name: 'Jin Cheol Oh',
+    name: 'Jin Cheol Eo',
     nameKo: '어진철',
     degree: 'M.S.',
     cohort: '50th',
