@@ -189,7 +189,7 @@ const partTimeStudents = [
     cohort: '49기',
     company: '한국산업은행',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/유효종.png`,
   },
   {
     name: '정용준',
@@ -325,7 +325,7 @@ const partTimeStudents = [
     cohort: '51기',
     company: '법무법인(유한) 세종',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/박현민.jpg`,
   },
   {
     name: '이진규',
