@@ -59,7 +59,31 @@ export const newsData = [
     date: 'Jun 24, 2025',
     title: 'Participation in the SECUI Seminar',
     sortDate: '2025-06-24'
-  }
+  },
+  {
+    id: 11,
+    date: 'Mar 26, 2026',
+    title: 'Woori Financial Group Lecture on Electronic Financial Security',
+    sortDate: '2026-03-26'
+  },
+  {
+    id: 12,
+    date: 'Mar 18, 2026',
+    title: 'Korea-Thailand AI Conference Lecture',
+    sortDate: '2026-03-18'
+  },
+  {
+    id: 13,
+    date: 'Mar 03, 2026',
+    title: "Special Lecture at the Financial Supervisory Service's Business Briefing (IT Division)",
+    sortDate: '2026-03-03'
+  },
+  {
+    id: 14,
+    date: 'Feb 24, 2026',
+    title: 'Samsung Financial Campus Zero Trust Lecture',
+    sortDate: '2026-02-24'
+  },
 ];
 
 // 날짜 기준으로 정렬하여 최신 5개 반환

@@ -62,6 +62,8 @@ const ProfessorKang_ko = () => {
           <div className="professor-section">
             <h2 className="section-title">주요 경력</h2>
             <ul className="info-list">
+              <li>2026. 03. ～ [현재] JB금융지주 자문교수</li>
+              <li>2025. 11. ～ [현재] (주)엔키 사외이사</li>
               <li>2025. 03. ～ [현재] 고려대학교 정보보호대학원 전임교수</li>
               <li>2023. 02. ～ 2024. 01. 금융위원회 "금융보안규제선진화TF" 민간자문위원</li>
               <li>2022. 03. ～ 2024. 02. (주)KG이니시스 사외이사</li>

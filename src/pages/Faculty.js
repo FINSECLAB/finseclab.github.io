@@ -396,7 +396,7 @@ const partTimeStudents = [
     nameKo: '김재관',
     degree: 'M.S.',
     cohort: '51th',
-    company: '-',
+    company: 'SECUDAim',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg`,
   },

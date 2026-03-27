@@ -459,7 +459,7 @@ const partTimeStudents = [
     name: '김재관',
     degree: '석사',
     cohort: '51기',
-    company: '-',
+    company: '시큐다임',
     email: '',
     photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg`,
   },

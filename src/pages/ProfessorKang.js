@@ -62,6 +62,8 @@ const ProfessorKang = () => {
           <div className="professor-section">
             <h2 className="section-title">Professional Experience</h2>
             <ul className="info-list">
+              <li>Mar. 2026 – Present: Advisory Professor, JB Financial Group</li>
+              <li>Nov. 2025 – Present: Outside Director, ENKI Co.</li>
               <li>Mar. 2025 – Present: Professor, School of Cybersecurity, Korea University</li>
               <li>Feb. 2023 – Jan. 2024: Financial Supervisory Service (FSS) "Financial Security Regulation Advancement Task Force" External Advisor</li>
               <li>Mar. 2022 – Feb. 2024: Outside Director, KG Inicis</li>
