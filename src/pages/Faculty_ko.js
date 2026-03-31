@@ -173,7 +173,7 @@ const partTimeStudents = [
     cohort: '49기',
     company: '신한투자증권',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/이재형.png`,
   },
   {
     name: '정혜성',
@@ -189,7 +189,7 @@ const partTimeStudents = [
     cohort: '49기',
     company: '한국산업은행',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/유효종.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
     name: '정용준',

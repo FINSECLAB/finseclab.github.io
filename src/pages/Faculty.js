@@ -182,7 +182,7 @@ const partTimeStudents = [
     cohort: '49th',
     company: 'Shinhan Securities',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/이재형.png`,
   },
   {
     name: 'Hye Sung Jeong',
@@ -200,7 +200,7 @@ const partTimeStudents = [
     cohort: '49th',
     company: 'Korea Development Bank',
     email: '',
-    photo: `${process.env.PUBLIC_URL}/people-photos/유효종.png`,
+    photo: `${process.env.PUBLIC_URL}/people-photos/익명.png`,
   },
   {
     name: 'Yong Jun Jeong',
