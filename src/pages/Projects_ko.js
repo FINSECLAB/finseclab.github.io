@@ -16,12 +16,16 @@ const Projects_ko = () => {
             <div className="intro-text">
               <div className="projects-list">
                 <div className="project-item">
-                  <span className="project-period">[2024-2026]</span>
-                  <p className="project-title">디지털자산 시장의 악의적 금융행위 방지를 위한 디지털자산 거래 추적 기술 개발 - 정보통신기획평가원(IITP)</p>
+                  <span className="project-period">[2026] 국가보안기술연구소(NSR)</span>
+                  <p className="project-title">국가·공공기관 정보인프라의 N2SF 적용을 위한 보안체계 구성 방안 연구</p>
                 </div>
                 <div className="project-item">
-                  <span className="project-period">[2025-2026]</span>
-                  <p className="project-title">국내 금융권 R&D 네트워크 고도화를 위한 클라우드 활용 연구 - AWS 코리아</p>
+                  <span className="project-period">[2025-2026] AWS 코리아</span>
+                  <p className="project-title">국내 금융권 R&D 네트워크 고도화를 위한 클라우드 활용 연구</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-period">[2024-2026] 정보통신기획평가원(IITP)</span>
+                  <p className="project-title">디지털자산 시장의 악의적 금융행위 방지를 위한 디지털자산 거래 추적 기술 개발</p>
                 </div>
               </div>
             </div>
