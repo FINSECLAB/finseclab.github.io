@@ -21,7 +21,7 @@ const Projects_ko = () => {
                 </div>
                 <div className="project-item">
                   <span className="project-period">[2025-2026] AWS 코리아</span>
-                  <p className="project-title">국내 금융권 R&D 네트워크 고도화를 위한 클라우드 활용 연구</p>
+                  <p className="project-title">Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector</p>
                 </div>
                 <div className="project-item">
                   <span className="project-period">[2024-2026] 정보통신기획평가원(IITP)</span>

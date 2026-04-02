@@ -17,11 +17,11 @@ const Projects = () => {
               <div className="projects-list">
                 <div className="project-item">
                   <span className="project-period">[2026] National Security Research Institute(NSR)</span>
-                  <p className="project-title">Research on Security System Configuration for N2SF Application in National and Public Institution Information Infrastructure</p>
+                  <p className="project-title">국가·공공기관 정보인프라의 N2SF 적용을 위한 보안체계 구성 방안 연구</p>
                 </div>
                 <div className="project-item">
                   <span className="project-period">[2025-2026] AWS Korea</span>
-                  <p className="project-title">Research on leveraging cloud for enhanced R&D networks in Korea's financial sector</p>
+                  <p className="project-title">Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector</p>
                 </div>
                 <div className="project-item">
                   <span className="project-period">[2024-2026] Institute of Information & communications Technology Planning & Evaluation(IITP)</span>
