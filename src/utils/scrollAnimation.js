@@ -30,7 +30,7 @@ export const initScrollAnimation = () => {
   }, observerOptions);
 
   // 모든 섹션에 애니메이션 적용
-  const sections = document.querySelectorAll('.section');
+  const sections = document.querySelectorAll('.section, .scroll-animate');
   sections.forEach(el => {
     scrollObserver.observe(el);
   });

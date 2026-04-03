@@ -1,8 +1,6 @@
 /* ===== Papers Page Styles ===== */
 .papers-page {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
+  background: #ffffff;
 }
 
 .papers-container {

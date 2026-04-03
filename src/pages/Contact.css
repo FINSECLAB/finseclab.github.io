@@ -1,8 +1,6 @@
 /* ===== Contact Page Styles ===== */
 .contact-page {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
+  background: #ffffff;
 }
 
 .contact-container {

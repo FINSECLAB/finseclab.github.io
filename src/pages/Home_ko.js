@@ -1,58 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { getLatestNewsKo } from '../data/newsData_ko';
+import { getLatestNewsKo, getAllNewsSortedKo } from '../data/newsData_ko';
+
+const researchCards = [
+  { text: '금융보안\n정책 및 법규 연구', bg: '#EDD5D5', color: '#1a1a1a' },
+  { text: '금융권\n해킹방지 연구', bg: '#D4ABAB', color: '#1a1a1a' },
+  { text: '전자금융\n인증기법 연구', bg: '#D4ABAB', color: '#1a1a1a' },
+  { text: '디지털자산\n보안기술 연구', bg: '#A06060', color: '#ffffff' },
+  { text: '전자금융기반시설\n취약점 분석 및 모의해킹 연구', bg: '#7B2020', color: '#ffffff' },
+];
 
 const Home_ko = () => {
-  const [fixedBlur, setFixedBlur] = useState(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setFixedBlur(null);
-    document.documentElement.style.setProperty('--bg-blur', '5px');
-  }, []);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScroll = window.scrollY;
-          const heroHeight = window.innerHeight;
-          const scrollDownThreshold = heroHeight * 0.8;
-
-          if (currentScroll >= scrollDownThreshold && fixedBlur === null) {
-            const blurAtThreshold = Math.min(scrollDownThreshold / 150, 5);
-            setFixedBlur(blurAtThreshold);
-          }
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [fixedBlur]);
-
-  let blurAmount;
-  if (fixedBlur !== null) {
-    blurAmount = fixedBlur;
-  } else {
-    blurAmount = 5;
-  }
-
-  useEffect(() => {
-    document.documentElement.style.setProperty('--bg-blur', `${blurAmount}px`);
-
-    return () => {
-      document.documentElement.style.setProperty('--bg-blur', '0px');
-    };
-  }, [blurAmount]);
+  const latestNews = getLatestNewsKo(5);
+  const allNews = getAllNewsSortedKo();
+  const totalCount = allNews.length;
 
   return (
     <div className="home-page">
@@ -60,96 +22,72 @@ const Home_ko = () => {
         <title>고려대학교 금융보안연구실 | Finsec Lab</title>
         <meta name="description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 고려대학교 금융보안, 금융보안연구실, 강형우 교수 연구실." />
       </Helmet>
+
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background/main.jpg)` }}>
         <div className="hero-content animate-slide-up">
+          <p className="hero-subtitle">고려대학교</p>
           <h1 className="hero-title notranslate">금융보안 연구실</h1>
-          <p className="hero-subtitle">Financial Security Lab</p>
-        </div>
-        <div className="scroll-hint">
-          아래로 스크롤
         </div>
       </section>
 
-      {/* Row 1: 연구소 소개 */}
-      <section id="about" className="section intro-section">
-        <div className="container">
-          <div className="home-row one-col">
-            <div className="home-card">
-              <div className="intro-text">
-                <p>금융 서비스의 안전성은 엄격한 컴플라이언스 준수와 선제적인 위험 관리에서 시작됩니다.</p>
-                <p>우리 금융보안연구실은 해킹과 정보 유출 위협을 기술적 관점에서 깊이 있게 이해하고, 이를 효과적으로 통제·관리하기 위한 법·제도적 대응 방안과 보안성 검증 체계를 중점적으로 연구합니다.</p>
-                <p>특히 전자금융거래법, 신용정보법 등 복잡한 규제 환경을 심층 분석하여 금융 인프라에 최적화된 보안 가이드라인과 정책 모델을 수립하고, 클라우드, AI 등 신기술 도입 시 발생할 수 있는 리스크를 정책적 관점에서 진단하며, 망분리 규제 개선과 같은 현업의 핵심 난제에 대해 실효성 있는 해법을 제시합니다.</p>
-              </div>
+      {/* Main Research Subjects */}
+      <div className="home-section scroll-animate">
+        <h2 className="home-section-title">주요 연구 분야</h2>
+        <div className="research-grid-home">
+          {researchCards.slice(0, 3).map((card, i) => (
+            <div
+              key={i}
+              className="research-card-home"
+              style={{ backgroundColor: card.bg, color: card.color }}
+            >
+              <h4 style={{ whiteSpace: 'pre-line' }}>{card.text}</h4>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+        <div className="research-grid-home-row2">
+          {researchCards.slice(3).map((card, i) => (
+            <div
+              key={i}
+              className="research-card-home"
+              style={{ backgroundColor: card.bg, color: card.color }}
+            >
+              <h4 style={{ whiteSpace: 'pre-line' }}>{card.text}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/* Row 2: 주요 연구 분야 */}
-      <section className="section research-section">
-        <div className="container">
-          <div className="home-row one-col">
-            <div className="home-card">
-              <h2 className="section-title small">주요 연구 분야</h2>
-              <div className="research-grid compact">
-                <div className="research-card">
-                  <h4>금융보안 정책 및 법규 연구</h4>
-                </div>
-                <div className="research-card">
-                  <h4>금융권 해킹방지 연구</h4>
-                </div>
-                <div className="research-card">
-                  <h4>전자금융 인증기법 연구</h4>
-                </div>
-                <div className="research-card">
-                  <h4>전자금융기반시설 취약점 분석 및 모의해킹 연구</h4>
-                </div>
-                <div className="research-card">
-                  <h4>디지털자산 보안기술 연구</h4>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* News Section */}
+      <div className="home-section scroll-animate">
+        <div className="home-news-header">
+          <h2>뉴스</h2>
+          <Link to="/news" className="btn-more">더보기</Link>
         </div>
-      </section>
-
-      {/* Row 3: 최근 소식 */}
-      <section className="section news-section">
-        <div className="container">
-          <div className="home-row one-col">
-            <div className="home-card">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-6)' }}>
-                <h2 className="section-title small" style={{ marginBottom: 0 }}>최근 소식</h2>
-                <Link to="/news" className="text-link" style={{ fontSize: '0.9rem' }}>더보기</Link>
-              </div>
-              <div className="news-list" style={{ overflow: 'hidden' }}>
-                {getLatestNewsKo(5).map((news) => (
-                  <div key={news.id} className="news-item">
-                    <p>[{news.date}] {news.title}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="table-scroll-wrapper">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th className="num-col">No.</th>
+                <th className="title-col">제목</th>
+                <th className="date-col">날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+              {latestNews.map((news, index) => {
+                const displayNo = totalCount - index;
+                return (
+                  <tr key={news.id}>
+                    <td className="num-col">{displayNo}</td>
+                    <td className="title-col">{news.title}</td>
+                    <td className="date-col">{news.date}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
-      </section>
-
-      {/* Footer Box */}
-      <section className="section footer-section">
-        <div className="footer-box notranslate">
-          <div className="footer-box-content">
-            <div className="footer-box-section">
-              <h4 className="footer-box-title">연구실 위치</h4>
-              <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 211호</p>
-            </div>
-            <div className="footer-box-section">
-              <h4 className="footer-box-title">연락처</h4>
-              <p>02-3290-5944<br />finseclab0717@gmail.com</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

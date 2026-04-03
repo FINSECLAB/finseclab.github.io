@@ -1,38 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import { useLanguage } from '../LanguageContext';
 
+const GlobeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </svg>
+);
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { lang, setLang } = useLanguage();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
-    };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   const handleLogoClick = (e) => {
-    // 메인 화면에 있을 때도 맨 위로 스크롤
     if (location.pathname === '/') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -40,83 +29,66 @@ const Header = () => {
     closeMenu();
   };
 
-  // 메인 페이지가 아닐 때는 항상 크림슨 색상 표시
-  const shouldShowCrimson = location.pathname !== '/';
+  const logoSrc = `${process.env.PUBLIC_URL}/logo/금융보안연구실 로고 02.png`;
 
   return (
-    <header className={`header ${isScrolled || shouldShowCrimson ? 'scrolled' : ''}`}>
+    <header className="header">
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
             <Link to="/" onClick={handleLogoClick}>
-              <img src={`${process.env.PUBLIC_URL}/finsec.png`} alt="FinSec Lab Logo" className="nav-logo-img" />
-              <h1>{lang === 'KO' ? '금융보안 연구실' : 'FinSec Lab'}</h1>
+              <img src={logoSrc} alt="Finsec Lab Logo" className="nav-logo-img" />
+              <h1>Finsec Lab</h1>
             </Link>
           </div>
+
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <Link 
-                to="/about" 
-                className={`nav-link ${isActive('/about') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>
                 About
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/members" 
-                className={`nav-link ${isActive('/members') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/members" className={`nav-link ${isActive('/members') || isActive('/professor-kang') ? 'active' : ''}`} onClick={closeMenu}>
                 Members
               </Link>
+              <div className="nav-dropdown">
+                <Link to="/members?tab=professor" className="nav-dropdown-item" onClick={closeMenu}>Professor</Link>
+                <Link to="/members?tab=researcher" className="nav-dropdown-item" onClick={closeMenu}>Researcher</Link>
+                <Link to="/members?tab=alumni" className="nav-dropdown-item" onClick={closeMenu}>Alumni</Link>
+              </div>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/publications" 
-                className={`nav-link ${isActive('/publications') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/publications" className={`nav-link ${isActive('/publications') ? 'active' : ''}`} onClick={closeMenu}>
                 Publications
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/news" 
-                className={`nav-link ${isActive('/news') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/news" className={`nav-link ${isActive('/news') ? 'active' : ''}`} onClick={closeMenu}>
                 News
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/projects" 
-                className={`nav-link ${isActive('/projects') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>
                 Projects
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/contact"
-                className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
+              <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>
                 Contact
               </Link>
             </li>
             <li className="nav-item lang-toggle-item">
               <button
-                className={`lang-toggle ${isScrolled || shouldShowCrimson ? 'scrolled' : ''}`}
+                className="lang-toggle"
                 onClick={() => setLang(lang === 'EN' ? 'KO' : 'EN')}
+                title={lang === 'EN' ? '한국어로 전환' : 'Switch to English'}
               >
-                {lang === 'EN' ? 'KO' : 'EN'}
+                <GlobeIcon />
               </button>
             </li>
           </ul>
+
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
             <span className="bar"></span>
             <span className="bar"></span>

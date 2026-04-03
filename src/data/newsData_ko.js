@@ -2,8 +2,8 @@
 export const newsDataKo = [
   {
     id: 1,
-    date: '2025년 09월 11~12일',
-    title: '제 4회 금융보안워크샵 참여',
+    date: '2025년 09월 11일',
+    title: '제4회 금융보안워크샵 참여',
     sortDate: '2025-09-12'
   },
   {

@@ -3,45 +3,51 @@ import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const Contact_ko = () => {
+  const bannerSrc = `${process.env.PUBLIC_URL}/background/contact.jpg`;
+
   return (
-    <div className="page contact-page">
+    <div className="contact-page">
       <Helmet>
         <title>Contact | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 위치 및 연락처 안내. 고려대학교 정보보호대학원 금융보안연구실." />
+        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 위치 및 연락처 안내." />
       </Helmet>
-      <div className="contact-container">
-        <div className="contact-content">
-          <h1 className="contact-title">Contact</h1>
-          <div className="contact-item map-item">
-            <div className="map-wrapper">
-              <iframe
-                src="https://maps.google.com/maps?q=고려대학교+로봇융합관&output=embed&hl=ko&z=17"
-                title="고려대학교 서울캠퍼스 로봇융합관"
-                className="map-iframe"
-                allowFullScreen
-              />
-              <div className="map-text">
-                <div className="contact-info-item">
-                  <h4>위치</h4>
-                  <p>서울특별시 성북구 안암로 145<br />고려대학교 안암캠퍼스 로봇융합관 211호</p>
-                </div>
-                <div className="contact-info-item">
-                  <h4>랩장</h4>
-                  <p>배준호, bjhbae@korea.ac.kr</p>
-                </div>
-                <div className="contact-info-item">
-                  <h4>연락처</h4>
-                  <p>02-3290-5944<br />finseclab0717@gmail.com</p>
-                </div>
-                <div className="contact-info-item">
-                  <p style={{ marginTop: 'var(--space-4)', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-                    금융보안연구실에 관심이 있으신 분들은 랩장에게 연락주시기 바랍니다.
-                  </p>
-                </div>
-              </div>
+
+      <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
+        <h1>Contact</h1>
+      </div>
+
+      <div className="page-content">
+        <h2 className="page-section-title">위치</h2>
+        <hr className="page-section-divider" />
+
+        <div className="contact-map-wrapper">
+          <iframe
+            src="https://maps.google.com/maps?q=고려대학교+로봇융합관&output=embed&hl=ko&z=17"
+            title="고려대학교 서울캠퍼스 로봇융합관"
+            allowFullScreen
+          />
+        </div>
+
+        <div className="contact-info-boxes">
+          <div className="contact-info-box">
+            <img src={`${process.env.PUBLIC_URL}/call.png`} alt="전화" className="contact-info-box-icon" />
+            <div>
+              <p className="contact-info-box-label">전화</p>
+              <p className="contact-info-box-value">02-3290-5944</p>
+            </div>
+          </div>
+          <div className="contact-info-box">
+            <img src={`${process.env.PUBLIC_URL}/mail.png`} alt="이메일" className="contact-info-box-icon" />
+            <div>
+              <p className="contact-info-box-label">이메일</p>
+              <p className="contact-info-box-value">finseclab0717@gmail.com</p>
             </div>
           </div>
         </div>
+
+        <p className="contact-cta">
+          금융보안 연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
+        </p>
       </div>
     </div>
   );
