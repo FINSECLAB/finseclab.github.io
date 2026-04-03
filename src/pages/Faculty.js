@@ -84,7 +84,7 @@ const partTimeStudents = [
   { name: 'Sang Hee Ji', nameKo: '지상희', degree: 'M.S.', cohort: '50th', company: 'Shinhan DS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Jeong Geun Kang', nameKo: '강정근', degree: 'M.S.', cohort: '50th', company: 'PNPSecure', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Jin Cheol Eo', nameKo: '어진철', degree: 'M.S.', cohort: '50th', company: 'SECUI', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/어진철.png` },
-  { name: 'Byeong San Ko', nameKo: '고병산', degree: 'M.S.', cohort: '51th', company: 'Korea Investment & Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/고병산.png` },
+  { name: 'Byeong San Ko', nameKo: '고병산', degree: 'M.S.', cohort: '51th', company: 'Korea Investment & Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/고병산.png` },
   { name: 'Yeong Cheon Go', nameKo: '고영천', degree: 'M.S.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Tae Ho Kuk', nameKo: '국태호', degree: 'M.S.', cohort: '51th', company: 'Bucketplace', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/국태호.png` },
   { name: 'Dong Ha Kim', nameKo: '김동하', degree: 'M.S.', cohort: '51th', company: 'NH Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
