@@ -50,6 +50,7 @@ const About = () => {
             {bar.text}
           </div>
         ))}
+        <br></br>
 
         <p className="about-intro-text" style={{ marginTop: '2rem' }}>
           In particular, we are focusing our research on methodologies for security inspections of financial institutions to ensure compliance with relevant laws such as the ELECTRONIC FINANCIAL TRANSACTIONS ACT, the PERSONAL INFORMATION PROTECTION ACT, and the CREDIT INFORMATION USE AND PROTECTION ACT; network segregation regulations within the financial sector; security verification of electronic financial systems; and electronic financial authentication techniques.

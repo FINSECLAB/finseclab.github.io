@@ -118,7 +118,7 @@ h1, h2, h3,
   position: relative;
   z-index: 1;
   color: #ffffff;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -530,7 +530,7 @@ h1, h2, h3,
 /* Professor Hero Section */
 .professor-hero-outer {
   overflow: hidden; /* clips full-width gray bg extension */
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-top: 2rem;
 }
 
@@ -591,7 +591,7 @@ h1, h2, h3,
 /* Professor Experience Gray Section */
 .professor-exp-bg {
   background: #f2f2f2;
-  margin-bottom: var(--space-12);
+  margin-bottom: 0;
 }
 
 /* Two-column layout for Experience & Affiliations */
@@ -681,7 +681,7 @@ h1, h2, h3,
 
 /* Education Timeline */
 .education-section {
-  margin-bottom: var(--space-12);
+  margin-bottom: 0;
 }
 
 .education-section h2 {
@@ -825,11 +825,11 @@ h1, h2, h3,
 
 .researcher-card {
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
   padding: var(--space-5);
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
+  overflow: hidden;
 }
 
 .researcher-card-info {
@@ -867,12 +867,14 @@ h1, h2, h3,
 }
 
 .researcher-photo {
-  width: 100px;
-  height: 120px;
+  width: 135px;
+  height: 170px;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  object-position: center top;
   flex-shrink: 0;
-  background: #f0f0f0;
+  align-self: flex-end;
+  margin-right: calc(-1 * var(--space-5));
+  margin-bottom: calc(-1 * var(--space-5));
 }
 
 /* Alumni Table */
@@ -1100,7 +1102,7 @@ h1, h2, h3,
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1.1rem; }
-  .page-banner h1 { font-size: 4rem; }
+  .page-banner h1 { font-size: 3rem; }
   .page-banner { height: 200px; }
 
   .research-grid-home {

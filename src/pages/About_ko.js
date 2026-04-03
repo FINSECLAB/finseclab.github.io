@@ -50,6 +50,7 @@ const About_ko = () => {
             {bar.text}
           </div>
         ))}
+        <br></br>
 
         <p className="about-intro-text" style={{ marginTop: '2rem' }}>
           특히, 전자금융거래법, 개인정보보호법, 신용정보보호법 등 관련 법규 준수를 위한 금융회사 보안점검 방법론, 금융권 망분리 규제, 전자금융시스템 보안성 검증, 전자금융 인증기법 등을 중점 연구를 하고 있습니다.
