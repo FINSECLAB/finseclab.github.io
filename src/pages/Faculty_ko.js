@@ -14,29 +14,29 @@ const faculty = {
 
 const education = [
   { year: '2006', desc: '고려대학교 정보보호 박사' },
-  { year: '1999', desc: '고려대학교 컴퓨터과학 석사' },
-  { year: '1997', desc: '고려대학교 컴퓨터과학 학사' },
+  { year: '1999', desc: '고려대학교 전산학 석사' },
+  { year: '1997', desc: '고려대학교 전산학 학사' },
 ];
 
 const experience = [
-  { title: '고려대학교 정보보호대학원 교수', date: '2025.03 – 현재' },
-  { title: '금융감독원 금융보안 규제 혁신 태스크포스 외부 자문위원', date: '2023.02 – 2024.01' },
-  { title: 'KG이니시스 사외이사', date: '2022.03 – 2024.02' },
-  { title: '김앤장 법률사무소 전문위원', date: '2021.04 – 2025.02' },
-  { title: '건국대학교 겸임교수', date: '2018.09 – 2019.12' },
-  { title: '금융감독원 정보보호팀장', date: '2006.09 – 2021.02' },
-  { title: '국가보안기술연구소 선임연구원', date: '1999.02 – 2006.09' },
+  { title: '고려대학교 정보보호대학원 전임교수', date: '2025.03 – 현재' },
+  { title: '금융위원회 "금융보안규제선진화TF" 민간자문위원', date: '2023.02 – 2024.01' },
+  { title: '(주)KG이니시스 사외이사', date: '2022.03 – 2024.02' },
+  { title: '김·장 법률사무소 전문위원', date: '2021.04 – 2025.02' },
+  { title: '건국대학교 정보통신대학원 겸임교수', date: '2018.09 – 2019.12' },
+  { title: '금융감독원 정보보안팀 팀장', date: '2006.09 – 2021.02' },
+  { title: '한국전자통신연구원(ETRI) 부호기술부 선임연구원', date: '1999.02 – 2006.09' },
 ];
 
 const affiliations = [
-  { title: 'JB금융그룹 석좌교수', date: '2026.03 – 현재' },
-  { title: 'ENKI 사외이사', date: '2025.11 – 현재' },
-  { title: '금융위원회 소프트웨어사업과제심의위원회', date: '2025.03 – 현재' },
-  { title: '금융감독원 외부평가위원 (금융데이터 분야)', date: '2025.05 – 현재' },
-  { title: '개인정보보호위원회 개인정보 안전지대 지정 검토위원', date: '2025.05 – 현재' },
+  { title: 'JB금융지주 자문교수', date: '2026.03 – 현재' },
+  { title: '(주)엔키 사외이사', date: '2025.11 – 현재' },
+  { title: '금융위원회 소프트웨어사업 과업심의위원회', date: '2025.03 – 현재' },
+  { title: '금융감독원 금융데이터분야 외부평가위원', date: '2025.05 – 현재' },
+  { title: '개인정보보호위원회 개인정보 안심구역 지정심사위원', date: '2025.05 – 현재' },
   { title: '디지털자산정책포럼 운영위원', date: '2023.05 – 현재' },
   { title: '금융보안포럼 운영위원', date: '2023.01 – 현재' },
-  { title: '한국정보보호학회 금융보안연구회 회장', date: '2021.01 – 현재' },
+  { title: '한국정보보호학회 금융보안연구회 위원장', date: '2021.01 – 현재' },
   { title: '미래보안기술포럼 전문위원', date: '2020.01 – 현재' },
 ];
 
@@ -81,25 +81,25 @@ const partTimeStudents = [
   { name: '김효진', degree: '석사', cohort: '50기', company: '신한 DS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '권성민', degree: '석사', cohort: '50기', company: '기업은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '지상희', degree: '석사', cohort: '50기', company: '신한 DS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
-  { name: '강정근', degree: '석사', cohort: '50기', company: 'PNPSecure', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
+  { name: '강정근', degree: '석사', cohort: '50기', company: '피앤피시큐어', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '어진철', degree: '석사', cohort: '50기', company: '시큐아이', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/어진철.jpeg` },
   { name: '고병산', degree: '석사', cohort: '51기', company: '한국투자증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/고병산.jpg` },
   { name: '고영천', degree: '석사', cohort: '51기', company: '금융감독원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
-  { name: '국태호', degree: '석사', cohort: '51기', company: '버킷플레이스', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/국태호.jpg` },
+  { name: '국태호', degree: '석사', cohort: '51기', company: '오늘의집', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/국태호.jpg` },
   { name: '김동하', degree: '석사', cohort: '51기', company: '농협은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '김민혁', degree: '석사', cohort: '51기', company: '금융보안원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/김민혁.jpg` },
-  { name: '김승주', degree: '석사', cohort: '51기', company: '국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/김승주.jpg` },
-  { name: '김재관', degree: '석사', cohort: '51기', company: 'SECUDAim', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg` },
+  { name: '김승주', degree: '석사', cohort: '51기', company: 'KB국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/김승주.jpg` },
+  { name: '김재관', degree: '석사', cohort: '51기', company: '시큐다임', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/김재관.jpg` },
   { name: '김호창', degree: '석사', cohort: '51기', company: '우리금융지주', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '김효진', degree: '석사', cohort: '51기', company: '금융감독원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '박원민', degree: '석사', cohort: '51기', company: '카카오', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/박원민.png` },
-  { name: '박현민', degree: '석사', cohort: '51기', company: '신앤킴 법률사무소', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/박현민.jpg` },
-  { name: '배성민', degree: '석사', cohort: '51기', company: 'KLIA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/배성민.jpg` },
-  { name: '유지안', degree: '석사', cohort: '51기', company: '국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/유지안.jpeg` },
-  { name: '이원중', degree: '석사', cohort: '51기', company: 'GITSN', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이원중.jpeg` },
+  { name: '박현민', degree: '석사', cohort: '51기', company: '법무법인(유한) 세종', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/박현민.jpg` },
+  { name: '배성민', degree: '석사', cohort: '51기', company: '생명보험협회', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/배성민.jpg` },
+  { name: '유지안', degree: '석사', cohort: '51기', company: 'KB국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/유지안.jpeg` },
+  { name: '이원중', degree: '석사', cohort: '51기', company: '지슨', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이원중.jpeg` },
   { name: '이한석', degree: '석사', cohort: '51기', company: '우리은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이한석.jpeg` },
   { name: '이호연', degree: '석사', cohort: '51기', company: '신한금융지주', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이호연.jpeg` },
-  { name: '이진규', degree: '석사', cohort: '51기', company: 'TTA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이진규.png` },
+  { name: '이진규', degree: '석사', cohort: '51기', company: '한국정보통신기술협회', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/이진규.png` },
   { name: '이지유', degree: '석사', cohort: '51기', company: '한화생명', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
   { name: '제하성', degree: '석사', cohort: '51기', company: '한국투자캐피탈', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/익명.png` },
 ];
@@ -277,7 +277,7 @@ const AlumniTab = () => {
       <hr className="page-section-divider" />
       <div className="alumni-table-header">
         <span>이름</span>
-        <span>진로</span>
+        <span>직업</span>
         <span></span>
       </div>
       {alumniList.map((person, i) => (
