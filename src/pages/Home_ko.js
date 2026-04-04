@@ -32,7 +32,7 @@ const Home_ko = () => {
       </section>
 
       {/* Main Research Subjects */}
-      <div className="home-section animate-slide-up">
+      <div className="home-section animate-slide-up" style={{ paddingTop: '1.5cm', paddingBottom: '1.5cm' }}>
         <h2 className="home-section-title">주요 연구 분야</h2>
         <div className="research-grid-home">
           {researchCards.slice(0, 3).map((card, i) => (
@@ -59,7 +59,7 @@ const Home_ko = () => {
       </div>
 
       {/* News Section */}
-      <div className="home-section scroll-animate">
+      <div className="home-section scroll-animate" style={{ paddingTop: '0', paddingBottom: '1.5cm' }}>
         <div className="home-news-header">
           <h2>뉴스</h2>
           <Link to="/news" className="btn-more">더보기</Link>
