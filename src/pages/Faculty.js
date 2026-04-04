@@ -238,7 +238,13 @@ const ProfessorTab = () => (
 );
 
 const ResearcherTab = () => {
-  const [innerTab, setInnerTab] = useState('fulltime');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const innerTab = searchParams.get('subtab') || 'fulltime';
+  const setInnerTab = (key) => setSearchParams(prev => {
+    const next = new URLSearchParams(prev);
+    next.set('subtab', key);
+    return next;
+  });
   const innerTabs = [
     { key: 'fulltime', label: 'Master Students\n(Full-Time)' },
     { key: 'intern', label: 'Undergraduate Intern\n(Full-Time)' },

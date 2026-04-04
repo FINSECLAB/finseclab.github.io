@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams, Link } from 'react-router-dom';
 
@@ -233,7 +233,13 @@ const ProfessorTab = () => (
 );
 
 const ResearcherTab = () => {
-  const [innerTab, setInnerTab] = useState('fulltime');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const innerTab = searchParams.get('subtab') || 'fulltime';
+  const setInnerTab = (key) => setSearchParams(prev => {
+    const next = new URLSearchParams(prev);
+    next.set('subtab', key);
+    return next;
+  });
   const innerTabs = [
     { key: 'fulltime', label: '석사과정\n(Full-Time)' },
     { key: 'intern', label: '학부 인턴\n(Full-Time)' },

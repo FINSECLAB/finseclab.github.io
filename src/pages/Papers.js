@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useSearchParams } from 'react-router-dom';
 import './Papers.css';
 
 const ITEMS_PER_PAGE = 4;
@@ -23,8 +24,9 @@ const papers = [
 ];
 
 const Papers = () => {
-  const [activeTab, setActiveTab] = useState('total');
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'total';
+  const page = parseInt(searchParams.get('page') || '1', 10);
 
   const bannerSrc = `${process.env.PUBLIC_URL}/background/publications.jpg`;
 
@@ -35,10 +37,12 @@ const Papers = () => {
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const displayed = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setPage(1);
-  };
+  const handleTabChange = (tab) => setSearchParams({ tab, page: '1' });
+  const setPage = (p) => setSearchParams(prev => {
+    const next = new URLSearchParams(prev);
+    next.set('page', String(p));
+    return next;
+  });
 
   const getDisplayNo = (paper) => {
     const idx = papers.findIndex(p => p.title === paper.title);
