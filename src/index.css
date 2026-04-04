@@ -886,6 +886,7 @@ h1, h2, h3,
 .alumni-table-header {
   display: grid;
   grid-template-columns: 1fr 2fr 100px;
+  min-width: 480px;
   padding: var(--space-3) var(--space-4);
   background: #f5f0eb;
   border-top: 1px solid var(--border);
@@ -899,6 +900,7 @@ h1, h2, h3,
 .alumni-row {
   display: grid;
   grid-template-columns: 1fr 2fr 100px;
+  min-width: 480px;
   padding: var(--space-4) var(--space-4);
   border-bottom: 1px solid var(--border-light);
   gap: var(--space-4);
@@ -1208,6 +1210,4 @@ h1, h2, h3,
   .hero-title { font-size: 2rem; }
   .researcher-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .alumni-table-header, .alumni-row { grid-template-columns: 1fr 1fr; }
-  .alumni-cohort-cell { display: none; }
 }
