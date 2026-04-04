@@ -32,7 +32,7 @@ const Home_ko = () => {
       </section>
 
       {/* Main Research Subjects */}
-      <div className="home-section scroll-animate">
+      <div className="home-section animate-slide-up">
         <h2 className="home-section-title">주요 연구 분야</h2>
         <div className="research-grid-home">
           {researchCards.slice(0, 3).map((card, i) => (

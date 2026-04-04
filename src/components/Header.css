@@ -150,14 +150,16 @@
   color: var(--primary);
 }
 
-/* Language Toggle (Globe Icon) */
+/* Language Toggle (Globe Icon) & Theme Toggle */
 .lang-toggle-item {
   display: flex;
   align-items: center;
+  gap: var(--space-1);
   padding-left: var(--space-4);
 }
 
-.lang-toggle {
+.lang-toggle,
+.theme-toggle {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -170,14 +172,21 @@
   border-radius: 50%;
 }
 
-.lang-toggle:hover {
+.lang-toggle:hover,
+.theme-toggle:hover {
   color: var(--primary);
   background: rgba(123, 3, 29, 0.05);
 }
 
-.lang-toggle svg {
+.lang-toggle svg,
+.theme-toggle svg {
   width: 22px;
   height: 22px;
+}
+
+[data-theme="dark"] .lang-toggle,
+[data-theme="dark"] .theme-toggle {
+  color: #999999;
 }
 
 /* Hamburger */

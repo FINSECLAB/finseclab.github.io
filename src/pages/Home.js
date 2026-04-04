@@ -39,7 +39,7 @@ const Home = () => {
       </section>
 
       {/* Main Research Subjects */}
-      <div className="home-section scroll-animate">
+      <div className="home-section animate-slide-up">
         <h2 className="home-section-title">Main research subjects</h2>
         <div className="research-grid-home">
           {researchCards.slice(0, 3).map((card, i) => (
