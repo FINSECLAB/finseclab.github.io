@@ -6,7 +6,7 @@ const packageJsonPath = path.join(__dirname, '..', 'package.json');
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
 // 배포용 homepage 설정
-const deployHomepage = 'https://finseclab.github.io';
+const deployHomepage = 'https://finseclab.korea.ac.kr';
 const devHomepage = '.';
 
 // App.js의 모든 React 라우터 경로 (크롤러 HTTP 200 대응)
@@ -14,7 +14,6 @@ const routes = [
   'about',
   'news',
   'members',
-  'professor-kang',
   'publications',
   'contact',
   'projects',
