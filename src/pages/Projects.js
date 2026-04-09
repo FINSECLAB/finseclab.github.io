@@ -69,7 +69,7 @@ const Projects = () => {
         <h2 className="page-section-title">Projects</h2>
         <hr className="page-section-divider" />
 
-        <div className="tab-filter">
+        <div className="tab-filter tab-filter--single">
           <button className={activeTab === 'total' ? 'active' : ''} onClick={() => handleTabChange('total')}>Total</button>
           <button className={activeTab === 'ongoing' ? 'active' : ''} onClick={() => handleTabChange('ongoing')}>Ongoing</button>
           <button className={activeTab === 'completed' ? 'active' : ''} onClick={() => handleTabChange('completed')}>Completed</button>

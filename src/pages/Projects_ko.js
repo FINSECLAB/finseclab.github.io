@@ -67,7 +67,7 @@ const Projects_ko = () => {
         <h2 className="page-section-title">프로젝트</h2>
         <hr className="page-section-divider" />
 
-        <div className="tab-filter">
+        <div className="tab-filter tab-filter--single">
           <button className={activeTab === 'total' ? 'active' : ''} onClick={() => handleTabChange('total')}>전체</button>
           <button className={activeTab === 'ongoing' ? 'active' : ''} onClick={() => handleTabChange('ongoing')}>진행 중</button>
           <button className={activeTab === 'completed' ? 'active' : ''} onClick={() => handleTabChange('completed')}>완료</button>

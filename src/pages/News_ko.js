@@ -52,7 +52,7 @@ const News_ko = () => {
         <h2 className="page-section-title">최근 활동</h2>
         <hr className="page-section-divider" />
 
-        <div className="tab-filter">
+        <div className="tab-filter tab-filter--single">
           <button className={activeTab === 'total' ? 'active' : ''} onClick={() => handleTabChange('total')}>전체</button>
           {years.map(year => (
             <button key={year} className={activeTab === String(year) ? 'active' : ''} onClick={() => handleTabChange(String(year))}>

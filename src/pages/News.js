@@ -62,7 +62,7 @@ const News = () => {
         <hr className="page-section-divider" />
 
         {/* Tab Filter */}
-        <div className="tab-filter">
+        <div className="tab-filter tab-filter--single">
           <button className={activeTab === 'total' ? 'active' : ''} onClick={() => handleTabChange('total')}>
             Total
           </button>

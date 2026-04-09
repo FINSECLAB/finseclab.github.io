@@ -1197,6 +1197,10 @@ h1, h2, h3,
     border-bottom: 1px solid var(--border);
   }
 
+  .tab-filter--single button {
+    flex-basis: 100%;
+  }
+
   .exp-section-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
