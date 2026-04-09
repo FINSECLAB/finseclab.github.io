@@ -38,20 +38,20 @@ const Contact = () => {
             <img src={`${process.env.PUBLIC_URL}/call.png`} alt="Tel" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">Tel</p>
-              <p className="contact-info-box-value">+82-2-3290-5944</p>
+              <a href="tel:+82-2-3290-5944" className="contact-info-box-value contact-info-link">+82-2-3290-5944</a>
             </div>
           </div>
           <div className="contact-info-box">
             <img src={`${process.env.PUBLIC_URL}/mail.png`} alt="Mail" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">Mail</p>
-              <p className="contact-info-box-value">finseclab0717@gmail.com</p>
+              <a href="mailto:finseclab0717@gmail.com" className="contact-info-box-value contact-info-link">finseclab0717@gmail.com</a>
             </div>
           </div>
         </div>
 
         <p className="contact-cta">
-          If you are interested in FinSec Lab, please contact us by email.
+          If you are interested in Finsec Lab, please contact us by email.
         </p>
       </div>
     </div>

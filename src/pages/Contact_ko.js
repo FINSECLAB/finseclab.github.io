@@ -33,20 +33,20 @@ const Contact_ko = () => {
             <img src={`${process.env.PUBLIC_URL}/call.png`} alt="전화" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">전화</p>
-              <p className="contact-info-box-value">02-3290-5944</p>
+              <a href="tel:+82-2-3290-5944" className="contact-info-box-value contact-info-link">02-3290-5944</a>
             </div>
           </div>
           <div className="contact-info-box">
             <img src={`${process.env.PUBLIC_URL}/mail.png`} alt="이메일" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">이메일</p>
-              <p className="contact-info-box-value">finseclab0717@gmail.com</p>
+              <a href="mailto:finseclab0717@gmail.com" className="contact-info-box-value contact-info-link">finseclab0717@gmail.com</a>
             </div>
           </div>
         </div>
 
         <p className="contact-cta">
-          금융보안 연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
+          금융보안연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
         </p>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FooterKo from './components/Footer_ko';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import HomeKo from './pages/Home_ko';
@@ -50,7 +51,7 @@ function AppContent() {
           <Route path="/projects" element={isKo ? <ProjectsKo /> : <Projects />} />
         </Routes>
       </main>
-      <Footer />
+      {isKo ? <FooterKo /> : <Footer />}
     </div>
   );
 }
