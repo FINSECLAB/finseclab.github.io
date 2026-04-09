@@ -1,30 +1,56 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useSearchParams } from 'react-router-dom';
 import './Projects.css';
 
 const projects = [
+  {
+    logo: `${process.env.PUBLIC_URL}/project_logo/iitp.png`,
+    logoAlt: 'IITP',
+    period: '[2026 - 2030]',
+    title: '글로벌 표준 준용 AI 기반 한국형 제로트러스트 오픈 플랫폼 개발',
+    status: 'ongoing',
+  },
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/국가보안기술연구소.png`,
     logoAlt: 'National Security Research Institute',
     period: '[2026]',
     title: '국가·공공기관 정보인프라의 N2SF 적용을 위한 보안체계 구성 방안 연구',
+    status: 'ongoing',
   },
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/aws.png`,
     logoAlt: 'AWS Korea',
     period: '[2025 - 2026]',
     title: "Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector",
+    status: 'ongoing',
   },
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/iitp.png`,
     logoAlt: 'IITP',
     period: '[2024 - 2026]',
     title: 'Development of Digital Asset Transaction Tracking Technology to Prevent Malicious Financial Conduct in the Digital Asset Market',
+    status: 'completed',
   },
 ];
 
+const StatusBadge = ({ status }) => (
+  <div className={`project-status-badge project-status-badge--${status}`}>
+    {status === 'ongoing' ? 'Ongoing' : 'Completed'}
+  </div>
+);
+
 const Projects = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'total';
+
   const bannerSrc = `${process.env.PUBLIC_URL}/background/projects.jpg`;
+
+  const filtered = activeTab === 'total'
+    ? projects
+    : projects.filter(p => p.status === activeTab);
+
+  const handleTabChange = (tab) => setSearchParams({ tab });
 
   return (
     <div className="projects-page">
@@ -43,9 +69,16 @@ const Projects = () => {
         <h2 className="page-section-title">Projects</h2>
         <hr className="page-section-divider" />
 
+        <div className="tab-filter">
+          <button className={activeTab === 'total' ? 'active' : ''} onClick={() => handleTabChange('total')}>Total</button>
+          <button className={activeTab === 'ongoing' ? 'active' : ''} onClick={() => handleTabChange('ongoing')}>Ongoing</button>
+          <button className={activeTab === 'completed' ? 'active' : ''} onClick={() => handleTabChange('completed')}>Completed</button>
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project, i) => (
+          {filtered.map((project, i) => (
             <div key={i} className="project-card">
+              <StatusBadge status={project.status} />
               <div className="project-card-logo">
                 <img src={project.logo} alt={project.logoAlt} />
               </div>
@@ -53,10 +86,6 @@ const Projects = () => {
               <p className="project-card-title">{project.title}</p>
             </div>
           ))}
-        </div>
-
-        <div className="pagination" style={{ marginTop: '3rem' }}>
-          <button className="active">1</button>
         </div>
       </div>
     </div>
