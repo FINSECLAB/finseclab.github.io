@@ -23,14 +23,14 @@ const projects = [
     logoAlt: 'AWS Korea',
     period: '[2025 - 2026]',
     title: "Research paper on leveraging cloud for enhanced R&D networks in Korea's financial sector",
-    status: 'ongoing',
+    status: 'completed',
   },
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/iitp.png`,
     logoAlt: 'IITP',
     period: '[2024 - 2026]',
     title: 'Development of Digital Asset Transaction Tracking Technology to Prevent Malicious Financial Conduct in the Digital Asset Market',
-    status: 'completed',
+    status: 'ongoing',
   },
 ];
 
