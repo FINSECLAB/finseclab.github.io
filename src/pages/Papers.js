@@ -54,6 +54,7 @@ const Papers = () => {
       <Helmet>
         <title>Publications | 고려대 금융보안연구실</title>
         <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 연구 논문 및 발표 목록. 고려대 정보보호대학원 금융보안 연구 성과." />
+        <link rel="canonical" href="https://finseclab.korea.ac.kr/publications" />
       </Helmet>
 
       {/* Banner */}

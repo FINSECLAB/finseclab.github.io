@@ -19,6 +19,7 @@ const About = () => {
       <Helmet>
         <title>About | 고려대 금융보안연구실</title>
         <meta name="description" content="고려대학교 정보보호대학원 소속 금융보안연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실." />
+        <link rel="canonical" href="https://finseclab.korea.ac.kr/about" />
       </Helmet>
 
       {/* Banner */}
