@@ -72,7 +72,7 @@ const partTimeStudents = [
   { name: 'Yong Jun Jeong', nameKo: '정용준', degree: 'M.S.', cohort: '49th', company: 'Shinhan Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정용준.png` },
   { name: 'Seung Mi Baek', nameKo: '백승미', degree: 'M.S.', cohort: '49th', company: 'Samsung SDS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/백승미.png` },
   { name: 'Jeong Jae Yoo', nameKo: '유정재', degree: 'M.S.', cohort: '49th', company: 'IR KUDOS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Shin Young Ryu', nameKo: '류신영', degree: 'M.S.', cohort: '49th', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Shin Young Lue', nameKo: '류신영', degree: 'M.S.', cohort: '49th', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
   { name: 'Se In Jang', nameKo: '장세인', degree: 'M.S.', cohort: '49th', company: 'Toss Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Jeong Hoon Kim', nameKo: '김정훈', degree: 'M.S.', cohort: '49th', company: 'Netmarble', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
   { name: 'Ha Na Baek', nameKo: '백하나', degree: 'M.S.', cohort: '49th', company: 'Korea Development Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },

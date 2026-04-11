@@ -71,7 +71,7 @@ const partTimeStudents = [
   { name: '정용준', degree: '석사', cohort: '49기', company: '신한투자증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정용준.png` },
   { name: '백승미', degree: '석사', cohort: '49기', company: '삼성 SDS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/백승미.png` },
   { name: '유정재', degree: '석사', cohort: '49기', company: 'IR 큐더스', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: '류신영', degree: '석사', cohort: '49기', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: '류신영', degree: '석사', cohort: '49기', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
   { name: '장세인', degree: '석사', cohort: '49기', company: '토스증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '김정훈', degree: '석사', cohort: '49기', company: '넷마블', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
   { name: '백하나', degree: '석사', cohort: '49기', company: '한국산업은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
