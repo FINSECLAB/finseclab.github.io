@@ -62,6 +62,17 @@
   </head>
   <body>
     <script>
+      // github.io → korea.ac.kr 정규 도메인으로 리다이렉트
+      if (window.location.hostname === 'finseclab.github.io') {
+        window.location.replace(
+          'https://finseclab.korea.ac.kr' +
+          window.location.pathname +
+          window.location.search +
+          window.location.hash
+        );
+      }
+    </script>
+    <script>
       // GitHub Pages SPA redirect restore
       (function(l) {
         if (l.search[1] === '/' ) {

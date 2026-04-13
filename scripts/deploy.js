@@ -17,6 +17,7 @@ const routes = [
   'publications',
   'contact',
   'projects',
+  'professor-kang',
 ];
 
 console.log('🚀 배포 시작...');
@@ -31,18 +32,20 @@ try {
   console.log('🔨 빌드 중...');
   execSync('npm run build', { stdio: 'inherit' });
 
-  // 3. 각 라우트 디렉토리에 index.html 복사
-  console.log('📄 SEO용 라우트별 index.html 생성 중...');
+  // 3. 각 라우트에 route.html 파일 생성 (서브디렉토리 방식 → 직접 파일 방식)
+  // 이유: 서브디렉토리 방식은 /members → /members/ 301 리다이렉트를 유발해 Google이 오류로 인식
+  console.log('📄 SEO용 라우트별 HTML 생성 중...');
   const buildDir = path.join(__dirname, '..', 'build');
   const indexHtmlPath = path.join(buildDir, 'index.html');
+  const baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
   for (const route of routes) {
-    const routeDir = path.join(buildDir, route);
-    if (!fs.existsSync(routeDir)) {
-      fs.mkdirSync(routeDir, { recursive: true });
-    }
-    fs.copyFileSync(indexHtmlPath, path.join(routeDir, 'index.html'));
-    console.log(`  ✅ build/${route}/index.html 생성`);
+    const routeHtml = baseHtml.replace(
+      '<link rel="canonical" href="https://finseclab.korea.ac.kr/" />',
+      `<link rel="canonical" href="https://finseclab.korea.ac.kr/${route}" />`
+    );
+    fs.writeFileSync(path.join(buildDir, `${route}.html`), routeHtml);
+    console.log(`  ✅ build/${route}.html 생성`);
   }
 
   // 4. sitemap.xml lastmod를 오늘 날짜로 업데이트
