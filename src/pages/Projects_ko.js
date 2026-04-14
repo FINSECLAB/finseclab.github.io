@@ -7,7 +7,7 @@ const projects = [
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/iitp.png`,
     logoAlt: '정보통신기획평가원',
-    period: '[2026 - 2030]',
+    period: '[2026 - 2029]',
     title: '글로벌 표준 준용 AI 기반 한국형 제로트러스트 오픈 플랫폼 개발',
     status: 'ongoing',
   },
