@@ -73,6 +73,10 @@ try {
   console.log('✅ 배포 완료!');
 } catch (error) {
   console.error('❌ 배포 실패:', error.message);
+  // process.exit() 전에 homepage 복구 (finally는 process.exit에서 실행 안 됨)
+  packageJson.homepage = devHomepage;
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n');
+  console.log(`📝 homepage를 "${devHomepage}"로 되돌림`);
   process.exit(1);
 } finally {
   // 6. homepage를 개발용으로 되돌림
