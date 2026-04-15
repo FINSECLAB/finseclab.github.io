@@ -10,8 +10,6 @@ import Contact from './pages/Contact';
 import ContactKo from './pages/Contact_ko';
 import Faculty from './pages/Faculty';
 import FacultyKo from './pages/Faculty_ko';
-import ProfessorKang from './pages/ProfessorKang';
-import ProfessorKangKo from './pages/ProfessorKang_ko';
 import Papers from './pages/Papers';
 import PapersKo from './pages/Papers_ko';
 import Projects from './pages/Projects';
@@ -45,7 +43,6 @@ function AppContent() {
           <Route path="/about" element={isKo ? <AboutKo /> : <About />} />
           <Route path="/news" element={isKo ? <NewsKo /> : <News />} />
           <Route path="/members" element={isKo ? <FacultyKo /> : <Faculty />} />
-          <Route path="/professor-kang" element={isKo ? <ProfessorKangKo /> : <ProfessorKang />} />
           <Route path="/publications" element={isKo ? <PapersKo /> : <Papers />} />
           <Route path="/contact" element={isKo ? <ContactKo /> : <Contact />} />
           <Route path="/projects" element={isKo ? <ProjectsKo /> : <Projects />} />

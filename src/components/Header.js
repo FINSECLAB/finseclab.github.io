@@ -69,7 +69,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/members" className={`nav-link ${isActive('/members') || isActive('/professor-kang') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to="/members" className={`nav-link ${isActive('/members') ? 'active' : ''}`} onClick={closeMenu}>
                 Members
               </Link>
               <div className="nav-dropdown">
