@@ -40,8 +40,8 @@ const News_ko = () => {
   return (
     <div className="news-page">
       <Helmet>
-        <title>News | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 최신 소식 및 활동." />
+        <title>News | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 최신 소식 및 활동." />
       </Helmet>
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>

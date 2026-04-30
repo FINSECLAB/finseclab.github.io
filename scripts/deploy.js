@@ -12,28 +12,28 @@ const devHomepage = '.';
 // Google이 페이지를 고유하게 인식하려면 title/description이 달라야 함
 const routes = {
   about: {
-    title: 'About | 고려대 금융보안연구실',
-    description: '고려대학교 정보보호대학원 소속 금융보안연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실.',
+    title: 'About | 고려대 금융보안 연구실',
+    description: '고려대학교 정보보호대학원 소속 금융보안 연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실.',
   },
   news: {
-    title: 'News | 고려대 금융보안연구실',
-    description: '고려대학교 금융보안연구실(Finsec Lab) 최신 소식 및 활동. 고려대 정보보호대학원 금융보안연구실 뉴스.',
+    title: 'News | 고려대 금융보안 연구실',
+    description: '고려대학교 금융보안 연구실(Finsec Lab) 최신 소식 및 활동. 고려대 정보보호대학원 금융보안 연구실 뉴스.',
   },
   members: {
-    title: 'Members | 고려대 금융보안연구실',
-    description: '고려대학교 금융보안연구실(Finsec Lab) 구성원 소개. 고려대 정보보호대학원 금융보안 연구원.',
+    title: 'Members | 고려대 금융보안 연구실',
+    description: '고려대학교 금융보안 연구실(Finsec Lab) 구성원 소개. 고려대 정보보호대학원 금융보안 연구원.',
   },
   publications: {
-    title: 'Publications | 고려대 금융보안연구실',
-    description: '고려대학교 금융보안연구실(Finsec Lab) 연구 논문 및 발표 목록. 고려대 정보보호대학원 금융보안 연구 성과.',
+    title: 'Publications | 고려대 금융보안 연구실',
+    description: '고려대학교 금융보안 연구실(Finsec Lab) 연구 논문 및 발표 목록. 고려대 정보보호대학원 금융보안 연구 성과.',
   },
   contact: {
-    title: 'Contact | 고려대 금융보안연구실',
-    description: '고려대학교 금융보안연구실(Finsec Lab) 위치 및 연락처 안내. 고려대학교 정보보호대학원 금융보안연구실.',
+    title: 'Contact | 고려대 금융보안 연구실',
+    description: '고려대학교 금융보안 연구실(Finsec Lab) 위치 및 연락처 안내. 고려대학교 정보보호대학원 금융보안 연구실.',
   },
   projects: {
-    title: 'Projects | 고려대 금융보안연구실',
-    description: '고려대학교 금융보안연구실(Finsec Lab) 진행 중인 연구 프로젝트. 고려대 정보보호대학원 금융보안 프로젝트.',
+    title: 'Projects | 고려대 금융보안 연구실',
+    description: '고려대학교 금융보안 연구실(Finsec Lab) 진행 중인 연구 프로젝트. 고려대 정보보호대학원 금융보안 프로젝트.',
   },
 };
 
@@ -62,19 +62,19 @@ try {
         `<link rel="canonical" href="${url}"/>`
       )
       .replace(
-        '<title>고려대학교 금융보안연구실 | Finsec Lab</title>',
+        '<title>고려대학교 금융보안 연구실 | Finsec Lab</title>',
         `<title>${meta.title}</title>`
       )
       .replace(
-        '<meta name="description" content="고려대학교 금융보안연구실"/>',
+        '<meta name="description" content="고려대학교 금융보안 연구실"/>',
         `<meta name="description" content="${meta.description}"/>`
       )
       .replace(
-        '<meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab"/>',
+        '<meta property="og:title" content="고려대학교 금융보안 연구실 | Finsec Lab"/>',
         `<meta property="og:title" content="${meta.title}"/>`
       )
       .replace(
-        '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실."/>',
+        '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안 연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안 연구실, 강형우 교수 연구실."/>',
         `<meta property="og:description" content="${meta.description}"/>`
       )
       .replace(

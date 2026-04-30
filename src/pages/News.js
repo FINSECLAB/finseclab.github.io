@@ -47,8 +47,8 @@ const News = () => {
   return (
     <div className="news-page">
       <Helmet>
-        <title>News | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 최신 소식 및 활동. 고려대 정보보호대학원 금융보안연구실 뉴스." />
+        <title>News | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 최신 소식 및 활동. 고려대 정보보호대학원 금융보안 연구실 뉴스." />
         <link rel="canonical" href="https://finseclab.korea.ac.kr/news" />
       </Helmet>
 

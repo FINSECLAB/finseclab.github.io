@@ -26,8 +26,8 @@ const Home = () => {
   return (
     <div className="home-page">
       <Helmet>
-        <title>고려대학교 금융보안연구실 | Finsec Lab</title>
-        <meta name="description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 고려대학교 금융보안, 금융보안연구실, 강형우 교수 연구실." />
+        <title>고려대학교 금융보안 연구실 | Finsec Lab</title>
+        <meta name="description" content="고려대학교 정보보호대학원 금융보안 연구실(Finsec Lab)입니다. 고려대 금융보안, 고려대학교 금융보안, 금융보안 연구실, 강형우 교수 연구실." />
         <link rel="canonical" href="https://finseclab.korea.ac.kr/" />
       </Helmet>
 

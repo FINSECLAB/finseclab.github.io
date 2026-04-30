@@ -17,8 +17,8 @@ const About_ko = () => {
   return (
     <div className="about-page">
       <Helmet>
-        <title>About | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 정보보호대학원 소속 금융보안연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실." />
+        <title>About | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 정보보호대학원 소속 금융보안 연구실(Finsec Lab)을 소개합니다. 고려대 금융보안, 고려대학교 정보보호대학원 연구실." />
       </Helmet>
 
       {/* Banner */}
@@ -35,7 +35,7 @@ const About_ko = () => {
           지속되고 있는 금융권 해킹사고, 개인정보 유출 사고 등으로 인해 금융회사들은 정보보호를 강화하기 위한 노력을 기울이고 있습니다.
         </p>
         <p className="about-intro-text">
-          금융보안연구실은 금융권에 특화된 정보보호 법규 및 정책 연구와 정보보호 기술 연구를 병행하고 있습니다.
+          금융보안 연구실은 금융권에 특화된 정보보호 법규 및 정책 연구와 정보보호 기술 연구를 병행하고 있습니다.
         </p>
         <br></br>
 

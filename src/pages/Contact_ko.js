@@ -8,8 +8,8 @@ const Contact_ko = () => {
   return (
     <div className="contact-page">
       <Helmet>
-        <title>Contact | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 위치 및 연락처 안내." />
+        <title>Contact | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 위치 및 연락처 안내." />
       </Helmet>
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
@@ -46,7 +46,7 @@ const Contact_ko = () => {
         </div>
 
         <p className="contact-cta">
-          금융보안연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
+          금융보안 연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
         </p>
       </div>
     </div>

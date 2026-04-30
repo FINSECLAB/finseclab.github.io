@@ -311,8 +311,8 @@ const Faculty_ko = () => {
   return (
     <div>
       <Helmet>
-        <title>Members | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 구성원 소개." />
+        <title>Members | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 구성원 소개." />
       </Helmet>
 
       {/* Mobile-only tab bar */}

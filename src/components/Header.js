@@ -49,7 +49,9 @@ const Header = () => {
     closeMenu();
   };
 
-  const logoSrc = `${process.env.PUBLIC_URL}/logo/금융보안연구실 로고 02.png`;
+  const logoSrc = theme === 'dark'
+    ? `${process.env.PUBLIC_URL}/logo/main-logo-03.png`
+    : `${process.env.PUBLIC_URL}/logo/main-logo-02.png`;
 
   return (
     <header className="header">
@@ -58,7 +60,6 @@ const Header = () => {
           <div className="nav-logo">
             <Link to="/" onClick={handleLogoClick}>
               <img src={logoSrc} alt="Finsec Lab Logo" className="nav-logo-img" />
-              <h1>Finsec Lab</h1>
             </Link>
           </div>
 

@@ -45,8 +45,8 @@ const Papers_ko = () => {
   return (
     <div className="papers-page">
       <Helmet>
-        <title>Publications | 고려대 금융보안연구실</title>
-        <meta name="description" content="고려대학교 금융보안연구실(Finsec Lab) 연구 논문 및 발표 목록." />
+        <title>Publications | 고려대 금융보안 연구실</title>
+        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 연구 논문 및 발표 목록." />
       </Helmet>
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
