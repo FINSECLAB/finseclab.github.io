@@ -6,6 +6,11 @@ import './Papers.css';
 const ITEMS_PER_PAGE = 4;
 
 const papers = [
+  { year: '2026', title: 'A Practical Approach to LLM-Assisted CTI-to-MITRE ATT&CK Mapping for Threat Hunting in Financial Institutions', authors: 'Jae-Hyeong Lee, Hyung-Woo Kang - JKIISC 2026 vol.36 no.2 pp.681 - 696', type: 'domestic' },
+  { year: '2026', title: 'Identifying Threats to AI Systems in the Financial Sector: MITRE ATLAS-Based Scenario Mapping and Technical and Managerial Controls', authors: 'Hye-Seong Jeong, Hyung-Woo Kang - JKIISC 2026 vol.36 no.2 pp.697 - 717', type: 'domestic' },
+  { year: '2026', title: 'AutoFlow: Enterprise-Tailored Attack Flow Generation Using Large Language Model', authors: 'Eun-Ji Jang, Hyung-Woo Kang - JKIISC 2026 vol.36 no.2 pp.735 - 751', type: 'domestic' },
+  { year: '2026', title: 'A Study on the Development and Utilization of AI Models in Network-Separated Financial Environments', authors: 'Sion Lim, Hyungwoo Kang - CISC 36 (1)', type: 'conference' },
+  { year: '2026', title: 'Design of Sponsor-Based Revocation Mechanism for EIP-7702 Delegation', authors: 'Eun Jo, Junho Bae, Hyungwoo Kang - CISC 36 (1)', type: 'conference' },
   { year: '2025', title: 'Analysis of Financial Security Risks in Decentralized Finance (DeFi) Using Real Transaction Data', authors: 'Junho Bae, Cheonho Park, Cholsoo Go, Hyungwoo Kang - CISC 35 (2), 968-971', type: 'conference' },
   { year: '2024', title: 'Concurrent two-party key exchange with forward unlinkability in internet of drones', authors: 'JY Jeong, HW Kang, IR Jeong - IEEE Access 12, 77250-77256', type: 'international' },
   { year: '2021', title: 'The Meaning and Issues of the Reform of the Electronic Financial Transaction Act', authors: 'H Kang - KISO Journal 44 (KISO), pp. 19-22', type: 'domestic' },

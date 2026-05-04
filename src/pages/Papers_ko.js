@@ -6,6 +6,11 @@ import './Papers.css';
 const ITEMS_PER_PAGE = 4;
 
 const papers = [
+  { year: '2026', title: '금융회사에서 LLM을 활용한 CTI-to-MITRE ATT&CK 매핑 기반 위협 헌팅', authors: '이재형, 강형우 - 정보보호학회논문지 36권 2호 pp.681 - 696', type: 'domestic' },
+  { year: '2026', title: '금융권 AI 시스템 위협 식별: MITRE ATLAS 기반 시나리오 매핑 및 기술적 • 관리적 통제 방안', authors: '정혜성, 강형우 - 정보보호학회논문지 36권 2호 pp.697 - 717', type: 'domestic' },
+  { year: '2026', title: 'AutoFlow：Large Language Model을 이용한 엔터프라이즈 맞춤 Attack Flow 생성', authors: '장은지, 강형우 - 정보보호학회논문지 36권 2호 pp.735 - 751', type: 'domestic' },
+  { year: '2026' ,title: '금융권 망분리 환경에서 AI 모델 개발 및 활용에 관한 연구', authors: '임시온, 강형우 - 한국정보보호학회 학술발표논문집 36 (1)', type: 'conference' },
+  { year: '2026' ,title: 'EIP-7702 스폰서 기반 위임 철회 메커니즘 설계', authors: '조은, 배준호, 강형우 - 한국정보보호학회 학술발표논문집 36 (1)', type: 'conference' },
   { year: '2025', title: '탈중앙화 금융(DeFi) 환경에서의 실거래 데이터 기반 금융보안 리스크 분석', authors: '배준호, 박천호, 고철수, 강형우 - 한국정보보호학회 학술발표논문집 35 (2), 968-971', type: 'conference' },
   { year: '2024', title: 'Concurrent two-party key exchange with forward unlinkability in internet of drones', authors: 'JY Jeong, HW Kang, IR Jeong - IEEE Access 12, 77250-77256', type: 'international' },
   { year: '2021', title: '전자금융거래법 개정의 의의 및 쟁점', authors: '강형우 - KISO Journal 44 (KISO), pp. 19-22', type: 'domestic' },
