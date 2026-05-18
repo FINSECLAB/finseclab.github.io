@@ -1,9 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
+import { useLanguage } from '../LanguageContext';
 
 const Contact_ko = () => {
+  const { theme } = useLanguage();
   const bannerSrc = `${process.env.PUBLIC_URL}/background/contact.jpg`;
+  const callIcon = `${process.env.PUBLIC_URL}/etc_logo/${theme === 'dark' ? 'call_w' : 'call'}.png`;
+  const mailIcon = `${process.env.PUBLIC_URL}/etc_logo/${theme === 'dark' ? 'mail_w' : 'mail'}.png`;
 
   return (
     <div className="contact-page">
@@ -30,14 +34,14 @@ const Contact_ko = () => {
 
         <div className="contact-info-boxes">
           <div className="contact-info-box">
-            <img src={`${process.env.PUBLIC_URL}/call.png`} alt="전화" className="contact-info-box-icon" />
+            <img src={callIcon} alt="전화" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">전화</p>
               <a href="tel:+82-2-3290-5944" className="contact-info-box-value contact-info-link">02-3290-5944</a>
             </div>
           </div>
           <div className="contact-info-box">
-            <img src={`${process.env.PUBLIC_URL}/mail.png`} alt="이메일" className="contact-info-box-icon" />
+            <img src={mailIcon} alt="이메일" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">이메일</p>
               <a href="mailto:finseclab0717@gmail.com" className="contact-info-box-value contact-info-link">finseclab0717@gmail.com</a>

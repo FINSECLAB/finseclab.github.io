@@ -1,9 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
+import { useLanguage } from '../LanguageContext';
 
 const Contact = () => {
+  const { theme } = useLanguage();
   const bannerSrc = `${process.env.PUBLIC_URL}/background/contact.jpg`;
+  const callIcon = `${process.env.PUBLIC_URL}/etc_logo/${theme === 'dark' ? 'call_w' : 'call'}.png`;
+  const mailIcon = `${process.env.PUBLIC_URL}/etc_logo/${theme === 'dark' ? 'mail_w' : 'mail'}.png`;
 
   return (
     <div className="contact-page">
@@ -35,14 +39,14 @@ const Contact = () => {
         {/* Contact Info Boxes */}
         <div className="contact-info-boxes">
           <div className="contact-info-box">
-            <img src={`${process.env.PUBLIC_URL}/call.png`} alt="Tel" className="contact-info-box-icon" />
+            <img src={callIcon} alt="Tel" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">Tel</p>
               <a href="tel:+82-2-3290-5944" className="contact-info-box-value contact-info-link">+82-2-3290-5944</a>
             </div>
           </div>
           <div className="contact-info-box">
-            <img src={`${process.env.PUBLIC_URL}/mail.png`} alt="Mail" className="contact-info-box-icon" />
+            <img src={mailIcon} alt="Mail" className="contact-info-box-icon" />
             <div>
               <p className="contact-info-box-label">Mail</p>
               <a href="mailto:finseclab0717@gmail.com" className="contact-info-box-value contact-info-link">finseclab0717@gmail.com</a>
