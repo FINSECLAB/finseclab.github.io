@@ -189,6 +189,10 @@
   color: #999999;
 }
 
+[data-theme="dark"] .bar {
+  background-color: #ffffff;
+}
+
 /* Dark mode: mobile nav menu */
 [data-theme="dark"] .nav-menu {
   background: #1a1a1a;
