@@ -22,7 +22,7 @@ const experience = [
   { title: '고려대학교 정보보호대학원 전임교수', date: '2025.03 – 현재' },
   { title: '금융위원회 "금융보안규제선진화TF" 민간자문위원', date: '2023.02 – 2024.01' },
   { title: '(주)KG이니시스 사외이사', date: '2022.03 – 2024.02' },
-  { title: '김·장 법률사무소 전문위원', date: '2021.04 – 2025.02' },
+  { title: '김 · 장 법률사무소 전문위원', date: '2021.04 – 2025.02' },
   { title: '건국대학교 정보통신대학원 겸임교수', date: '2018.09 – 2019.12' },
   { title: '금융감독원 정보보안팀 팀장', date: '2006.09 – 2021.02' },
   { title: '한국전자통신연구원(ETRI) 부호기술부 선임연구원', date: '1999.02 – 2006.09' },
@@ -313,6 +313,7 @@ const Faculty_ko = () => {
       <Helmet>
         <title>Members | 고려대 금융보안 연구실</title>
         <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 구성원 소개." />
+        <link rel="canonical" href="https://finseclab.korea.ac.kr/members" />
       </Helmet>
 
       {/* Mobile-only tab bar */}

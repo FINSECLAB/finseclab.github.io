@@ -52,6 +52,7 @@ const Papers_ko = () => {
       <Helmet>
         <title>Publications | 고려대 금융보안 연구실</title>
         <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 연구 논문 및 발표 목록." />
+        <link rel="canonical" href="https://finseclab.korea.ac.kr/publications" />
       </Helmet>
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
