@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
+import Seo from '../components/Seo';
 import './News.css';
 import { getAllNewsSortedKo } from '../data/newsData_ko';
 
@@ -43,6 +44,7 @@ const News_ko = () => {
         <title>News | 고려대 금융보안 연구실</title>
         <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 최신 소식 및 활동." />
       </Helmet>
+      <Seo routeKey="news" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
         <h1>News</h1>

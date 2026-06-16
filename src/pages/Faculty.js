@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams, Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 /* ===== DATA ===== */
 const faculty = {
@@ -346,14 +347,14 @@ const Faculty = () => {
       <Helmet>
         <title>Members | 고려대 금융보안 연구실</title>
         <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 구성원 소개. 고려대 정보보호대학원 금융보안 연구원." />
-        <link rel="canonical" href="https://finseclab.korea.ac.kr/members" />
       </Helmet>
+      <Seo routeKey="members" />
 
       {/* Mobile-only tab bar */}
       <div className="mobile-members-tabs">
-        <Link to="/members?tab=professor" className={activeTab === 'professor' ? 'active' : ''}>Professor</Link>
-        <Link to="/members?tab=researcher" className={activeTab === 'researcher' ? 'active' : ''}>Researcher</Link>
-        <Link to="/members?tab=alumni" className={activeTab === 'alumni' ? 'active' : ''}>Alumni</Link>
+        <Link to="/en/members?tab=professor" className={activeTab === 'professor' ? 'active' : ''}>Professor</Link>
+        <Link to="/en/members?tab=researcher" className={activeTab === 'researcher' ? 'active' : ''}>Researcher</Link>
+        <Link to="/en/members?tab=alumni" className={activeTab === 'alumni' ? 'active' : ''}>Alumni</Link>
       </div>
 
       {/* Banner */}

@@ -39,10 +39,15 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const isActive = (path) => location.pathname === path;
+  // 언어 접두사 + 접두사를 제외한 현재 경로
+  const langPrefix = lang === 'EN' ? 'en' : 'ko';
+  const to = (path) => `/${langPrefix}${path}`;
+  const subPath = '/' + location.pathname.split('/').slice(2).join('/');
+
+  const isActive = (path) => subPath === path;
 
   const handleLogoClick = (e) => {
-    if (location.pathname === '/') {
+    if (subPath === '/') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -58,55 +63,55 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <Link to="/" onClick={handleLogoClick}>
+            <Link to={to('/')} onClick={handleLogoClick}>
               <img src={logoSrc} alt="Finsec Lab Logo" className="nav-logo-img" />
             </Link>
           </div>
 
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/about')} className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>
                 About
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/members" className={`nav-link ${isActive('/members') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/members')} className={`nav-link ${isActive('/members') ? 'active' : ''}`} onClick={closeMenu}>
                 Members
               </Link>
               <div className="nav-dropdown">
-                <Link to="/members?tab=professor" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '교수' : 'Professor'}</Link>
-                <Link to="/members?tab=researcher" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '연구원' : 'Researcher'}</Link>
-                <Link to="/members?tab=alumni" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '졸업생' : 'Alumni'}</Link>
+                <Link to={to('/members?tab=professor')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '교수' : 'Professor'}</Link>
+                <Link to={to('/members?tab=researcher')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '연구원' : 'Researcher'}</Link>
+                <Link to={to('/members?tab=alumni')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '졸업생' : 'Alumni'}</Link>
               </div>
             </li>
             <li className="nav-item">
-              <Link to="/publications" className={`nav-link ${isActive('/publications') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/publications')} className={`nav-link ${isActive('/publications') ? 'active' : ''}`} onClick={closeMenu}>
                 Publications
               </Link>
               <div className="nav-dropdown">
-                <Link to="/publications?tab=total" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
-                <Link to="/publications?tab=international" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국제' : 'International'}</Link>
-                <Link to="/publications?tab=domestic" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국내' : 'Domestic'}</Link>
-                <Link to="/publications?tab=conference" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '학술대회' : 'Conference'}</Link>
+                <Link to={to('/publications?tab=total')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
+                <Link to={to('/publications?tab=international')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국제' : 'International'}</Link>
+                <Link to={to('/publications?tab=domestic')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국내' : 'Domestic'}</Link>
+                <Link to={to('/publications?tab=conference')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '학술대회' : 'Conference'}</Link>
               </div>
             </li>
             <li className="nav-item">
-              <Link to="/news" className={`nav-link ${isActive('/news') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/news')} className={`nav-link ${isActive('/news') ? 'active' : ''}`} onClick={closeMenu}>
                 News
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/projects')} className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>
                 Projects
               </Link>
               <div className="nav-dropdown">
-                <Link to="/projects?tab=total" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
-                <Link to="/projects?tab=ongoing" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '진행 중' : 'Ongoing'}</Link>
-                <Link to="/projects?tab=completed" className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '완료' : 'Completed'}</Link>
+                <Link to={to('/projects?tab=total')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
+                <Link to={to('/projects?tab=ongoing')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '진행 중' : 'Ongoing'}</Link>
+                <Link to={to('/projects?tab=completed')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '완료' : 'Completed'}</Link>
               </div>
             </li>
             <li className="nav-item">
-              <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>
+              <Link to={to('/contact')} className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>
                 Contact
               </Link>
             </li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 import { getLatestNews, getAllNewsSorted } from '../data/newsData';
 
 const researchCards = [
@@ -28,8 +29,8 @@ const Home = () => {
       <Helmet>
         <title>고려대학교 금융보안 연구실 | Finsec Lab</title>
         <meta name="description" content="고려대학교 정보보호대학원 금융보안 연구실(Finsec Lab)입니다. 고려대 금융보안, 고려대학교 금융보안, 금융보안 연구실, 강형우 교수 연구실." />
-        <link rel="canonical" href="https://finseclab.korea.ac.kr/" />
       </Helmet>
+      <Seo routeKey="" />
 
       {/* Hero Section */}
       <section className="hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background/main.jpg)` }}>
@@ -70,7 +71,7 @@ const Home = () => {
       <div className="home-section scroll-animate" style={{ paddingTop: '0', paddingBottom: '1.5cm' }}>
         <div className="home-news-header">
           <h2>News</h2>
-          <Link to="/news" className="btn-more">More</Link>
+          <Link to="/en/news" className="btn-more">More</Link>
         </div>
         <div className="table-scroll-wrapper">
           <table className="data-table">

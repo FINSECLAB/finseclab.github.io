@@ -85,6 +85,18 @@
         }
       }(window.location))
     </script>
+    <script>
+      // 실제 루트('/') 직접 방문 시에만 브라우저 언어로 분기.
+      // (위 SPA 복원이 먼저 실행돼 깊은 경로는 이미 pathname이 바뀐 상태이므로 여기서 걸리지 않음)
+      (function() {
+        var l = window.location;
+        if (l.pathname === '/' && l.search.charAt(1) !== '/') {
+          var nav = (navigator.language || '').toLowerCase();
+          var lang = nav.indexOf('ko') === 0 ? 'ko' : 'en';
+          l.replace('/' + lang + '/' + l.hash);
+        }
+      })();
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

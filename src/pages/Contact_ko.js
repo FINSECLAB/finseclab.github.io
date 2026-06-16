@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import './Contact.css';
 import { useLanguage } from '../LanguageContext';
 
@@ -15,6 +16,7 @@ const Contact_ko = () => {
         <title>Contact | 고려대 금융보안 연구실</title>
         <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 위치 및 연락처 안내." />
       </Helmet>
+      <Seo routeKey="contact" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
         <h1>Contact</h1>

@@ -1,43 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://finseclab.korea.ac.kr/</loc>
+    <loc>https://finseclab.korea.ac.kr/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/about</loc>
+    <loc>https://finseclab.korea.ac.kr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/ko/about</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/about"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/news</loc>
+    <loc>https://finseclab.korea.ac.kr/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/about"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/ko/news</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/news"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/members</loc>
+    <loc>https://finseclab.korea.ac.kr/en/news</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/news"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/ko/members</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/members"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/members"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/members"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/publications</loc>
+    <loc>https://finseclab.korea.ac.kr/en/members</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/members"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/members"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/members"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/projects</loc>
+    <loc>https://finseclab.korea.ac.kr/ko/publications</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/publications"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/publications"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/publications"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finseclab.korea.ac.kr/contact</loc>
+    <loc>https://finseclab.korea.ac.kr/en/publications</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/publications"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/publications"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/publications"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/ko/projects</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/projects"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/projects"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/ko/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/contact"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/contact"/>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
