@@ -14,7 +14,7 @@ const Footer = () => {
             <a href="mailto:finseclab0717@gmail.com" className="footer-link">finseclab0717@gmail.com</a>
           </p>
           <p className="footer-address">
-            Room 211, Robot Convergence Building, 145 Anam-ro, Seongbuk-gu, Seoul, 02841
+            Room 210-211, Robot Convergence Building, 145 Anam-ro, Seongbuk-gu, Seoul, 02841
           </p>
           <p className="footer-copyright">
             COPYRIGHT ⓒ 2026 Finsec Lab, Korea University. All rights reserved.

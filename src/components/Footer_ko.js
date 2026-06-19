@@ -14,7 +14,7 @@ const Footer_ko = () => {
             <a href="mailto:finseclab0717@gmail.com" className="footer-link">finseclab0717@gmail.com</a>
           </p>
           <p className="footer-address">
-            (우 02841) 서울특별시 성북구 안암로 145 고려대학교 자연계캠퍼스 로봇융합관 211호
+            (우 02841) 서울특별시 성북구 안암로 145 고려대학교 자연계캠퍼스 로봇융합관 210-211호
           </p>
           <p className="footer-copyright">
             COPYRIGHT ⓒ 2026 Finsec Lab, Korea University. All rights reserved.

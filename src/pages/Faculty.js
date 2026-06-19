@@ -51,7 +51,7 @@ const fullTimeStudents = [
 ];
 
 const undergraduateInterns = [
-  { name: 'Jin Ho Jung', degree: '', cohort: '', major: '', email: 'wlsgh0062@naver.com', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
+  { name: 'Jin Ho Jung', degree: '', cohort: '', major: '', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
   { name: 'Eun Jo', degree: '', cohort: '', major: '', email: 's1lv3r@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/조은.png` },
 ];
 
