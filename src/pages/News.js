@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
+import useTab from '../utils/useTab';
 import './News.css';
 import { getAllNewsSorted } from '../data/newsData';
 
@@ -18,9 +18,10 @@ const News = () => {
   const allNews = getAllNewsSorted();
   const totalCount = allNews.length;
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'total';
-  const page = parseInt(searchParams.get('page') || '1', 10);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [activeTab, handleTabChange] = useTab('total');
+  const page = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
 
   const bannerSrc = `${process.env.PUBLIC_URL}/background/news.jpg`;
 
@@ -33,12 +34,12 @@ const News = () => {
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const displayed = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
 
-  const handleTabChange = (tab) => setSearchParams({ tab, page: '1' });
-  const setPage = (p) => setSearchParams(prev => {
-    const next = new URLSearchParams(prev);
-    next.set('page', String(p));
-    return next;
-  });
+  // 페이지 이동 시 해시(현재 탭)를 보존
+  const setPage = (p) => {
+    const params = new URLSearchParams(location.search);
+    params.set('page', String(p));
+    navigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
+  };
 
   const getDisplayNo = (news) => {
     const sortedIdx = allNews.findIndex(n => n.id === news.id);
@@ -47,10 +48,6 @@ const News = () => {
 
   return (
     <div className="news-page">
-      <Helmet>
-        <title>News | 고려대 금융보안 연구실</title>
-        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 최신 소식 및 활동. 고려대 정보보호대학원 금융보안 연구실 뉴스." />
-      </Helmet>
       <Seo routeKey="news" />
 
       {/* Banner */}

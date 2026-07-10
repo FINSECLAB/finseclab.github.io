@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { getLatestNewsKo, getAllNewsSortedKo } from '../data/newsData_ko';
@@ -19,17 +18,13 @@ const Home_ko = () => {
 
   return (
     <div className="home-page">
-      <Helmet>
-        <title>고려대학교 금융보안 연구실 | Finsec Lab</title>
-        <meta name="description" content="고려대학교 정보보호대학원 금융보안 연구실(Finsec Lab)입니다. 고려대 금융보안, 고려대학교 금융보안, 금융보안 연구실, 강형우 교수 연구실." />
-      </Helmet>
       <Seo routeKey="" />
 
       {/* Hero Section */}
       <section className="hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background/main.jpg)` }}>
         <div className="hero-content animate-slide-up">
           <p className="hero-subtitle">고려대학교</p>
-          <h1 className="hero-title notranslate">금융보안 연구실</h1>
+          <h1 className="hero-title notranslate">금융보안연구실</h1>
         </div>
       </section>
 

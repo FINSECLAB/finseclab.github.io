@@ -1,7 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useSearchParams } from 'react-router-dom';
 import Seo from '../components/Seo';
+import useTab from '../utils/useTab';
 import './Projects.css';
 
 const projects = [
@@ -42,8 +41,7 @@ const StatusBadge = ({ status }) => (
 );
 
 const Projects = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'total';
+  const [activeTab, handleTabChange] = useTab('total');
 
   const bannerSrc = `${process.env.PUBLIC_URL}/background/projects.jpg`;
 
@@ -51,14 +49,8 @@ const Projects = () => {
     ? projects
     : projects.filter(p => p.status === activeTab);
 
-  const handleTabChange = (tab) => setSearchParams({ tab });
-
   return (
     <div className="projects-page">
-      <Helmet>
-        <title>Projects | 고려대 금융보안 연구실</title>
-        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 진행 중인 연구 프로젝트. 고려대 정보보호대학원 금융보안 프로젝트." />
-      </Helmet>
       <Seo routeKey="projects" />
 
       {/* Banner */}

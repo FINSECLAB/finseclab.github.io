@@ -79,9 +79,10 @@ const Header = () => {
                 Members
               </Link>
               <div className="nav-dropdown">
-                <Link to={to('/members?tab=professor')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '교수' : 'Professor'}</Link>
-                <Link to={to('/members?tab=researcher')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '연구원' : 'Researcher'}</Link>
-                <Link to={to('/members?tab=alumni')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '졸업생' : 'Alumni'}</Link>
+                {/* 탭 딥링크는 해시 사용 — ?tab= 쿼리는 Google이 중복 URL로 크롤링함 */}
+                <Link to={to('/members')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '교수' : 'Professor'}</Link>
+                <Link to={to('/members#researcher')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '연구원' : 'Researcher'}</Link>
+                <Link to={to('/members#alumni')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '졸업생' : 'Alumni'}</Link>
               </div>
             </li>
             <li className="nav-item">
@@ -89,10 +90,10 @@ const Header = () => {
                 Publications
               </Link>
               <div className="nav-dropdown">
-                <Link to={to('/publications?tab=total')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
-                <Link to={to('/publications?tab=international')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국제' : 'International'}</Link>
-                <Link to={to('/publications?tab=domestic')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국내' : 'Domestic'}</Link>
-                <Link to={to('/publications?tab=conference')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '학술대회' : 'Conference'}</Link>
+                <Link to={to('/publications')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
+                <Link to={to('/publications#international')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국제' : 'International'}</Link>
+                <Link to={to('/publications#domestic')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '국내' : 'Domestic'}</Link>
+                <Link to={to('/publications#conference')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '학술대회' : 'Conference'}</Link>
               </div>
             </li>
             <li className="nav-item">
@@ -105,9 +106,9 @@ const Header = () => {
                 Projects
               </Link>
               <div className="nav-dropdown">
-                <Link to={to('/projects?tab=total')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
-                <Link to={to('/projects?tab=ongoing')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '진행 중' : 'Ongoing'}</Link>
-                <Link to={to('/projects?tab=completed')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '완료' : 'Completed'}</Link>
+                <Link to={to('/projects')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
+                <Link to={to('/projects#ongoing')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '진행 중' : 'Ongoing'}</Link>
+                <Link to={to('/projects#completed')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '완료' : 'Completed'}</Link>
               </div>
             </li>
             <li className="nav-item">

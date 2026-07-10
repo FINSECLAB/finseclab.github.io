@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useSearchParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import useTab from '../utils/useTab';
 
 /* ===== DATA ===== */
 const faculty = {
@@ -239,13 +239,8 @@ const ProfessorTab = () => (
 );
 
 const ResearcherTab = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const innerTab = searchParams.get('subtab') || 'fulltime';
-  const setInnerTab = (key) => setSearchParams(prev => {
-    const next = new URLSearchParams(prev);
-    next.set('subtab', key);
-    return next;
-  });
+  // URL에 노출할 필요 없는 내부 토글이라 로컬 상태로 관리 (쿼리 URL 생성 방지)
+  const [innerTab, setInnerTab] = useState('fulltime');
   const innerTabs = [
     { key: 'fulltime', label: 'Master Students\n(Full-Time)' },
     { key: 'intern', label: 'Undergraduate Intern\n(Full-Time)' },
@@ -332,8 +327,7 @@ const AlumniTab = () => {
 
 /* ===== MAIN COMPONENT ===== */
 const Faculty = () => {
-  const [searchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'professor';
+  const [activeTab] = useTab('professor');
   const bannerSrc = `${process.env.PUBLIC_URL}/background/members.jpg`;
 
   const bannerTitle = {
@@ -344,17 +338,13 @@ const Faculty = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Members | 고려대 금융보안 연구실</title>
-        <meta name="description" content="고려대학교 금융보안 연구실(Finsec Lab) 구성원 소개. 고려대 정보보호대학원 금융보안 연구원." />
-      </Helmet>
       <Seo routeKey="members" />
 
-      {/* Mobile-only tab bar */}
+      {/* Mobile-only tab bar — 탭 딥링크는 해시 사용 (?tab= 쿼리는 Google이 중복 URL로 크롤링함) */}
       <div className="mobile-members-tabs">
-        <Link to="/en/members?tab=professor" className={activeTab === 'professor' ? 'active' : ''}>Professor</Link>
-        <Link to="/en/members?tab=researcher" className={activeTab === 'researcher' ? 'active' : ''}>Researcher</Link>
-        <Link to="/en/members?tab=alumni" className={activeTab === 'alumni' ? 'active' : ''}>Alumni</Link>
+        <Link to="/en/members" className={activeTab === 'professor' ? 'active' : ''}>Professor</Link>
+        <Link to="/en/members#researcher" className={activeTab === 'researcher' ? 'active' : ''}>Researcher</Link>
+        <Link to="/en/members#alumni" className={activeTab === 'alumni' ? 'active' : ''}>Alumni</Link>
       </div>
 
       {/* Banner */}
