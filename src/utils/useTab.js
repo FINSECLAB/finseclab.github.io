@@ -8,7 +8,8 @@ export default function useTab(defaultTab) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const fromHash = decodeURIComponent(location.hash.replace(/^#/, ''));
+  // 중첩 탭은 #researcher/intern 형태를 사용하며, 상위 탭은 첫 조각으로 판별한다.
+  const fromHash = decodeURIComponent(location.hash.replace(/^#/, '')).split('/')[0];
   const legacy = new URLSearchParams(location.search).get('tab');
   const tab = fromHash || legacy || defaultTab;
 
@@ -18,6 +19,25 @@ export default function useTab(defaultTab) {
       pathname: location.pathname,
       search: '',
       hash: next === defaultTab ? '' : `#${next}`,
+    });
+
+  return [tab, setTab];
+}
+
+// 상위 탭 아래의 내부 탭 상태를 같은 URL 해시에 저장한다.
+// 언어 전환 시 path만 바뀌고 해시는 보존되므로 동일한 내부 탭이 유지된다.
+export function useNestedTab(parentTab, defaultTab, validTabs) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [hashParent, hashChild] = decodeURIComponent(location.hash.replace(/^#/, '')).split('/');
+  const tab = hashParent === parentTab && validTabs.includes(hashChild) ? hashChild : defaultTab;
+
+  const setTab = (next) =>
+    navigate({
+      pathname: location.pathname,
+      search: '',
+      hash: next === defaultTab ? `#${parentTab}` : `#${parentTab}/${next}`,
     });
 
   return [tab, setTab];

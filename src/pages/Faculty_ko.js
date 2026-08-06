@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import useTab from '../utils/useTab';
+import useTab, { useNestedTab } from '../utils/useTab';
 
 /* ===== DATA ===== */
 const faculty = {
@@ -42,7 +42,7 @@ const affiliations = [
 ];
 
 const fullTimeStudents = [
-  { name: '배준호', degree: '석사', cohort: '47기', major: '융합보안', email: 'bjhbae@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배준호.png` },
+  { name: '정진호', degree: '석사', cohort: '52기', major: '정보보호', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
   { name: '손예원', degree: '석사', cohort: '48기', major: '정보보안', email: 'fjqm4155@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/손예원.png` },
   { name: '박천호', degree: '석사', cohort: '50기', major: '정보보안', email: 'pch3467@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박천호.png` },
   { name: '임시온', degree: '석사', cohort: '50기', major: '정보보안', email: 'ssionn02@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/임시온.png` },
@@ -50,7 +50,6 @@ const fullTimeStudents = [
 ];
 
 const undergraduateInterns = [
-  { name: '정진호', degree: '', cohort: '', major: '', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
   { name: '조은', degree: '', cohort: '', major: '', email: 's1lv3r@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/조은.png` },
 ];
 
@@ -61,7 +60,6 @@ const doctoralStudents = [
 ];
 
 const partTimeStudents = [
-  { name: '남현수', degree: '석사', cohort: '47기', company: '금융감독원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '성호열', degree: '석사', cohort: '49기', company: '우리은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '이동운', degree: '석사', cohort: '49기', company: '안랩', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이동운.png` },
   { name: '박성수', degree: '석사', cohort: '49기', company: '농협은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
@@ -72,9 +70,9 @@ const partTimeStudents = [
   { name: '정용준', degree: '석사', cohort: '49기', company: '신한투자증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정용준.png` },
   { name: '백승미', degree: '석사', cohort: '49기', company: '삼성 SDS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/백승미.png` },
   { name: '유정재', degree: '석사', cohort: '49기', company: 'IR 큐더스', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: '류신영', degree: '석사', cohort: '49기', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
+  { name: '류신영', degree: '석사', cohort: '49기', company: '딜로이트', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
   { name: '장세인', degree: '석사', cohort: '49기', company: '토스증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: '김정훈', degree: '석사', cohort: '49기', company: '넷마블', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
+  { name: '김정훈', degree: '석사', cohort: '49기', company: '딜로이트', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
   { name: '백하나', degree: '석사', cohort: '49기', company: '한국산업은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '양병수', degree: '석사', cohort: '49기', company: '교보증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/양병수.png` },
   { name: '박지영', degree: '석사', cohort: '50기', company: '신한카드', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
@@ -96,7 +94,7 @@ const partTimeStudents = [
   { name: '박원민', degree: '석사', cohort: '51기', company: '카카오', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박원민.png` },
   { name: '박현민', degree: '석사', cohort: '51기', company: '법무법인(유한) 세종', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박현민.png` },
   { name: '배성민', degree: '석사', cohort: '51기', company: '생명보험협회', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배성민.png` },
-  { name: '유지안', degree: '석사', cohort: '51기', company: 'KB국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
+  { name: '유지안', degree: '석사', cohort: '51기', company: '금융감독원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
   { name: '이원중', degree: '석사', cohort: '51기', company: '지슨', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
   { name: '이한석', degree: '석사', cohort: '51기', company: '우리은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
   { name: '이호연', degree: '석사', cohort: '51기', company: '신한금융지주', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
@@ -105,19 +103,33 @@ const partTimeStudents = [
   { name: '제하성', degree: '석사', cohort: '51기', company: '한국투자캐피탈', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
 
-const cohortOrder = { '47기': 1, '49기': 2, '50기': 3, '51기': 4 };
-const sortedPartTime = [...partTimeStudents].sort((a, b) => {
-  const co = (cohortOrder[a.cohort] || 9) - (cohortOrder[b.cohort] || 9);
-  if (co !== 0) return co;
+const getCohortNumber = cohort => {
+  const match = cohort?.match(/\d+/);
+  return match ? Number(match[0]) : Number.POSITIVE_INFINITY;
+};
+
+const sortByCohortAndKoreanName = (people, { descending = false } = {}) => [...people].sort((a, b) => {
+  const aCohort = getCohortNumber(a.cohort);
+  const bCohort = getCohortNumber(b.cohort);
+  if (aCohort !== bCohort) return descending ? bCohort - aCohort : aCohort - bCohort;
   return a.name.localeCompare(b.name, 'ko-KR');
 });
 
+const sortedFullTime = sortByCohortAndKoreanName(fullTimeStudents);
+const sortedUndergraduateInterns = sortByCohortAndKoreanName(undergraduateInterns);
+const sortedDoctoral = sortByCohortAndKoreanName(doctoralStudents);
+const sortedPartTime = sortByCohortAndKoreanName(partTimeStudents);
+
 const alumniList = [
+  { name: '배준호', degree: '석사', cohort: '47기', company: '엔키화이트햇' },
+  { name: '남현수', degree: '석사', cohort: '47기', company: '금융감독원' },
   { name: '박민주', degree: '석사', cohort: '47기', company: 'UBS 증권' },
   { name: '이상훈', degree: '석사', cohort: '47기', company: '금융감독원' },
   { name: '김강철', degree: '석사', cohort: '47기', company: '한국예탁결제원' },
   { name: '유범석', degree: '석사', cohort: '47기', company: 'LS 증권' },
 ];
+
+const sortedAlumni = sortByCohortAndKoreanName(alumniList, { descending: true });
 
 /* ===== SUB COMPONENTS ===== */
 const ResearcherCard = ({ student }) => {
@@ -234,8 +246,11 @@ const ProfessorTab = () => (
 );
 
 const ResearcherTab = () => {
-  // URL에 노출할 필요 없는 내부 토글이라 로컬 상태로 관리 (쿼리 URL 생성 방지)
-  const [innerTab, setInnerTab] = useState('fulltime');
+  const [innerTab, setInnerTab] = useNestedTab(
+    'researcher',
+    'fulltime',
+    ['fulltime', 'intern', 'phd', 'parttime']
+  );
   const innerTabs = [
     { key: 'fulltime', label: '석사과정\n(Full-Time)' },
     { key: 'intern', label: '학부 인턴\n(Full-Time)' },
@@ -244,9 +259,9 @@ const ResearcherTab = () => {
   ];
 
   const getStudents = () => {
-    if (innerTab === 'fulltime') return fullTimeStudents;
-    if (innerTab === 'intern') return undergraduateInterns;
-    if (innerTab === 'phd') return doctoralStudents;
+    if (innerTab === 'fulltime') return sortedFullTime;
+    if (innerTab === 'intern') return sortedUndergraduateInterns;
+    if (innerTab === 'phd') return sortedDoctoral;
     if (innerTab === 'parttime') return sortedPartTime;
     return [];
   };
@@ -283,14 +298,13 @@ const AlumniTab = () => {
           <span>직업</span>
           <span></span>
         </div>
-        {alumniList.map((person, i) => (
+        {sortedAlumni.map((person, i) => (
           <div key={i} className="alumni-row">
             <span className="alumni-name-cell">{person.name}</span>
             <span className="alumni-company-cell">{person.company}</span>
             <span className="alumni-cohort-cell">{person.degree} {person.cohort}</span>
           </div>
         ))}
-        {alumniList.length > 4 && <div className="alumni-more">...</div>}
       </div>
     </div>
   );

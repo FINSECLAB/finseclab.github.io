@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import useTab from '../utils/useTab';
+import useTab, { useNestedTab } from '../utils/useTab';
 
 /* ===== DATA ===== */
 const faculty = {
@@ -43,26 +43,24 @@ const affiliations = [
 ];
 
 const fullTimeStudents = [
-  { name: 'Jun Ho Bae', degree: 'M.S.', cohort: '47th', major: 'Convergence Security', email: 'bjhbae@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배준호.png` },
-  { name: 'Ye Won Son', degree: 'M.S.', cohort: '48th', major: 'Information Security', email: 'fjqm4155@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/손예원.png` },
-  { name: 'Cheon Ho Park', degree: 'M.S.', cohort: '50th', major: 'Information Security', email: 'pch3467@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박천호.png` },
-  { name: 'Si On Lim', degree: 'M.S.', cohort: '50th', major: 'Information Security', email: 'ssionn02@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/임시온.png` },
-  { name: 'Gi Dan Min', degree: 'M.S.', cohort: '51th', major: 'Convergence Security', email: 'airmass@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/민기단.png` },
+  { name: 'Jin Ho Jung', nameKo: '정진호', degree: 'M.S.', cohort: '52nd', major: 'Department of Information Security', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
+  { name: 'Ye Won Son', nameKo: '손예원', degree: 'M.S.', cohort: '48th', major: 'Department of Cyber Security', email: 'fjqm4155@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/손예원.png` },
+  { name: 'Cheon Ho Park', nameKo: '박천호', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'pch3467@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박천호.png` },
+  { name: 'Si On Lim', nameKo: '임시온', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'ssionn02@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/임시온.png` },
+  { name: 'Gi Dan Min', nameKo: '민기단', degree: 'M.S.', cohort: '51th', major: 'Department of Convergence Security', email: 'airmass@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/민기단.png` },
 ];
 
 const undergraduateInterns = [
-  { name: 'Jin Ho Jung', degree: '', cohort: '', major: '', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
-  { name: 'Eun Jo', degree: '', cohort: '', major: '', email: 's1lv3r@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/조은.png` },
+  { name: 'Eun Jo', nameKo: '조은', degree: '', cohort: '', major: '', email: 's1lv3r@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/조은.png` },
 ];
 
 const doctoralStudents = [
-  { name: 'Young Seol Son', degree: 'Ph.D.', cohort: '51th', company: 'Samsung Card', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Yeong Gwang Lee', degree: 'Ph.D.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Young Min Lee', degree: 'Ph.D.', cohort: '51th', company: 'Hanwha Life', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Young Seol Son', nameKo: '손영설', degree: 'Ph.D.', cohort: '51th', company: 'Samsung Card', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Yeong Gwang Lee', nameKo: '이영광', degree: 'Ph.D.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Young Min Lee', nameKo: '이영민', degree: 'Ph.D.', cohort: '51th', company: 'Hanwha Life', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
 
 const partTimeStudents = [
-  { name: 'Hyun Soo Nam', nameKo: '남현수', degree: 'M.S.', cohort: '47th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Ho Yeol Seong', nameKo: '성호열', degree: 'M.S.', cohort: '49th', company: 'Woori Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Dong Woon Lee', nameKo: '이동운', degree: 'M.S.', cohort: '49th', company: 'AhnLab', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이동운.png` },
   { name: 'Seong Soo Park', nameKo: '박성수', degree: 'M.S.', cohort: '49th', company: 'NH Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
@@ -73,9 +71,9 @@ const partTimeStudents = [
   { name: 'Yong Jun Jeong', nameKo: '정용준', degree: 'M.S.', cohort: '49th', company: 'Shinhan Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정용준.png` },
   { name: 'Seung Mi Baek', nameKo: '백승미', degree: 'M.S.', cohort: '49th', company: 'Samsung SDS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/백승미.png` },
   { name: 'Jeong Jae Yoo', nameKo: '유정재', degree: 'M.S.', cohort: '49th', company: 'IR KUDOS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Shin Young Lue', nameKo: '류신영', degree: 'M.S.', cohort: '49th', company: '-', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
+  { name: 'Shin Young Lue', nameKo: '류신영', degree: 'M.S.', cohort: '49th', company: 'Deloitte', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/류신영.png` },
   { name: 'Se In Jang', nameKo: '장세인', degree: 'M.S.', cohort: '49th', company: 'Toss Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Jeong Hoon Kim', nameKo: '김정훈', degree: 'M.S.', cohort: '49th', company: 'Netmarble', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
+  { name: 'Jeong Hoon Kim', nameKo: '김정훈', degree: 'M.S.', cohort: '49th', company: 'Deloitte', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김정훈.png` },
   { name: 'Ha Na Baek', nameKo: '백하나', degree: 'M.S.', cohort: '49th', company: 'Korea Development Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Byung Soo Yang', nameKo: '양병수', degree: 'M.S.', cohort: '49th', company: 'Kyobo Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/양병수.png` },
   { name: 'Ji Young Park', nameKo: '박지영', degree: 'M.S.', cohort: '50th', company: 'Shinhan Card', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
@@ -97,7 +95,7 @@ const partTimeStudents = [
   { name: 'Won Min Park', nameKo: '박원민', degree: 'M.S.', cohort: '51th', company: 'Kakao Corp.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박원민.png` },
   { name: 'Hyun Min Park', nameKo: '박현민', degree: 'M.S.', cohort: '51th', company: 'SHIN & KIM LLC.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박현민.png` },
   { name: 'Seong Min Bae', nameKo: '배성민', degree: 'M.S.', cohort: '51th', company: 'KLIA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배성민.png` },
-  { name: 'Ji Ahn Ryu', nameKo: '유지안', degree: 'M.S.', cohort: '51th', company: 'Kookmin Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
+  { name: 'Ji Ahn Ryu', nameKo: '유지안', degree: 'M.S.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
   { name: 'Won Joong Lee', nameKo: '이원중', degree: 'M.S.', cohort: '51th', company: 'GITSN', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
   { name: 'Han Seok Lee', nameKo: '이한석', degree: 'M.S.', cohort: '51th', company: 'Woori Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
   { name: 'Ho Yeon Lee', nameKo: '이호연', degree: 'M.S.', cohort: '51th', company: 'Shinhan Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
@@ -106,19 +104,33 @@ const partTimeStudents = [
   { name: 'Ha Sung Jea', nameKo: '제하성', degree: 'M.S.', cohort: '51th', company: 'Korea Investment Capital', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
 
-const cohortOrder = { '47th': 1, '49th': 2, '50th': 3, '51th': 4 };
-const sortedPartTime = [...partTimeStudents].sort((a, b) => {
-  const co = (cohortOrder[a.cohort] || 9) - (cohortOrder[b.cohort] || 9);
-  if (co !== 0) return co;
+const getCohortNumber = cohort => {
+  const match = cohort?.match(/\d+/);
+  return match ? Number(match[0]) : Number.POSITIVE_INFINITY;
+};
+
+const sortByCohortAndKoreanName = (people, { descending = false } = {}) => [...people].sort((a, b) => {
+  const aCohort = getCohortNumber(a.cohort);
+  const bCohort = getCohortNumber(b.cohort);
+  if (aCohort !== bCohort) return descending ? bCohort - aCohort : aCohort - bCohort;
   return (a.nameKo || a.name).localeCompare(b.nameKo || b.name, 'ko-KR');
 });
 
+const sortedFullTime = sortByCohortAndKoreanName(fullTimeStudents);
+const sortedUndergraduateInterns = sortByCohortAndKoreanName(undergraduateInterns);
+const sortedDoctoral = sortByCohortAndKoreanName(doctoralStudents);
+const sortedPartTime = sortByCohortAndKoreanName(partTimeStudents);
+
 const alumniList = [
-  { name: 'Min Ju Park', degree: 'M.S.', cohort: '47th', company: 'UBS Securities' },
-  { name: 'Sang Hoon Lee', degree: 'M.S.', cohort: '47th', company: 'FSS' },
-  { name: 'Kang Cheol Kim', degree: 'M.S.', cohort: '47th', company: 'Korea Securities Depository' },
-  { name: 'Beom Seok Yoo', degree: 'M.S.', cohort: '47th', company: 'LS Securities' },
+  { name: 'Jun Ho Bae', nameKo: '배준호', degree: 'M.S.', cohort: '47th', company: 'ENKI Co.' },
+  { name: 'Hyun Soo Nam', nameKo: '남현수', degree: 'M.S.', cohort: '47th', company: 'FSS' },
+  { name: 'Min Ju Park', nameKo: '박민주', degree: 'M.S.', cohort: '47th', company: 'UBS Securities' },
+  { name: 'Sang Hoon Lee', nameKo: '이상훈', degree: 'M.S.', cohort: '47th', company: 'FSS' },
+  { name: 'Kang Cheol Kim', nameKo: '김강철', degree: 'M.S.', cohort: '47th', company: 'Korea Securities Depository' },
+  { name: 'Beom Seok Yoo', nameKo: '유범석', degree: 'M.S.', cohort: '47th', company: 'LS Securities' },
 ];
+
+const sortedAlumni = sortByCohortAndKoreanName(alumniList, { descending: true });
 
 /* ===== SUB COMPONENTS ===== */
 
@@ -239,8 +251,11 @@ const ProfessorTab = () => (
 );
 
 const ResearcherTab = () => {
-  // URL에 노출할 필요 없는 내부 토글이라 로컬 상태로 관리 (쿼리 URL 생성 방지)
-  const [innerTab, setInnerTab] = useState('fulltime');
+  const [innerTab, setInnerTab] = useNestedTab(
+    'researcher',
+    'fulltime',
+    ['fulltime', 'intern', 'phd', 'parttime']
+  );
   const innerTabs = [
     { key: 'fulltime', label: 'Master Students\n(Full-Time)' },
     { key: 'intern', label: 'Undergraduate Intern\n(Full-Time)' },
@@ -249,9 +264,9 @@ const ResearcherTab = () => {
   ];
 
   const getStudents = () => {
-    if (innerTab === 'fulltime') return fullTimeStudents;
-    if (innerTab === 'intern') return undergraduateInterns;
-    if (innerTab === 'phd') return doctoralStudents;
+    if (innerTab === 'fulltime') return sortedFullTime;
+    if (innerTab === 'intern') return sortedUndergraduateInterns;
+    if (innerTab === 'phd') return sortedDoctoral;
     if (innerTab === 'parttime') return sortedPartTime;
     return [];
   };
@@ -286,8 +301,8 @@ const ResearcherTab = () => {
 const AlumniTab = () => {
   const ITEMS_PER_PAGE = 10;
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(alumniList.length / ITEMS_PER_PAGE);
-  const displayed = alumniList.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(sortedAlumni.length / ITEMS_PER_PAGE);
+  const displayed = sortedAlumni.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
 
   return (
     <div className="page-content">
@@ -307,7 +322,7 @@ const AlumniTab = () => {
             <span className="alumni-cohort-cell">{person.degree} {person.cohort}</span>
           </div>
         ))}
-        {alumniList.length > ITEMS_PER_PAGE && (
+        {sortedAlumni.length > ITEMS_PER_PAGE && (
           <div className="alumni-more">...</div>
         )}
       </div>
