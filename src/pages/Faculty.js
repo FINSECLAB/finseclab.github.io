@@ -309,7 +309,7 @@ const AlumniTab = () => {
       <h2 className="page-section-title">Alumni</h2>
       <hr className="page-section-divider" />
 
-      <div className="table-scroll-wrapper">
+      <div className="table-scroll-wrapper alumni-table-scroll--en">
         <div className="alumni-table-header">
           <span>Name</span>
           <span>Career</span>

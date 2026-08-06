@@ -1256,6 +1256,14 @@ h1, h2, h3,
     padding: 0 var(--space-4);
   }
 
+  /* Keep every Career cell aligned after English names of varying lengths. */
+  .alumni-table-scroll--en .alumni-table-header,
+  .alumni-table-scroll--en .alumni-row {
+    grid-template-columns: 140px minmax(220px, 1fr) 100px;
+    min-width: 540px;
+    gap: var(--space-5);
+  }
+
   .data-table {
     min-width: 500px;
   }
