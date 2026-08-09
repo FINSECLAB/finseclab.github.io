@@ -11,22 +11,25 @@ const devHomepage = '.';
 // 라우트별 언어 메타 — src/data/seoMeta.js 단일 소스 (Seo 컴포넌트와 공유)
 const routes = require('../src/data/seoMeta');
 
-// 빌드된 index.html(미니파이됨) 내 치환 앵커
+// 빌드된 index.html(미니파이됨) 내 치환 앵커.
+// Helmet(Seo) 관리 태그는 public/index.html에서 data-rh="true"를 달아두므로 앵커도 이를 포함해야 함
+// (그래야 런타임에 Helmet이 정적 태그를 '교체'하고 canonical 등이 중복되지 않음).
 const ANCHORS = {
   htmlLang: '<html lang="ko">',
   title: '<title>고려대학교 금융보안연구실 | Finsec Lab</title>',
-  description: '<meta name="description" content="고려대학교 금융보안연구실"/>',
-  canonical: '<link rel="canonical" href="https://finseclab.korea.ac.kr/"/>',
-  ogTitle: '<meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab"/>',
-  ogDescription: '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실."/>',
-  ogUrl: '<meta property="og:url" content="https://finseclab.korea.ac.kr"/>',
+  description: '<meta name="description" content="고려대학교 금융보안연구실" data-rh="true"/>',
+  canonical: '<link rel="canonical" href="https://finseclab.korea.ac.kr/" data-rh="true"/>',
+  ogTitle: '<meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab" data-rh="true"/>',
+  ogDescription: '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실." data-rh="true"/>',
+  ogUrl: '<meta property="og:url" content="https://finseclab.korea.ac.kr" data-rh="true"/>',
   ogType: '<meta property="og:type" content="website"/>',
 };
 
+// Helmet 관리 태그와 동일하게 data-rh="true"를 부여 (canonical/hreflang/og:locale/description/og:* 공통)
 const hreflangLinks = (koUrl, enUrl) =>
-  `<link rel="alternate" hreflang="ko" href="${koUrl}"/>` +
-  `<link rel="alternate" hreflang="en" href="${enUrl}"/>` +
-  `<link rel="alternate" hreflang="x-default" href="${koUrl}"/>`;
+  `<link rel="alternate" hreflang="ko" href="${koUrl}" data-rh="true"/>` +
+  `<link rel="alternate" hreflang="en" href="${enUrl}" data-rh="true"/>` +
+  `<link rel="alternate" hreflang="x-default" href="${koUrl}" data-rh="true"/>`;
 
 // 치환이 실제로 일어났는지 검증하며 replace (미니파이 산출물이 바뀌면 즉시 실패)
 function replaceOrThrow(html, find, replaceWith, label) {
@@ -46,18 +49,18 @@ function renderPage(base, lang, route, meta) {
   let html = base;
   html = replaceOrThrow(html, ANCHORS.htmlLang, `<html lang="${lang}">`, 'html lang');
   html = replaceOrThrow(html, ANCHORS.canonical,
-    `<link rel="canonical" href="${selfUrl}"/>` + hreflangLinks(koUrl, enUrl), 'canonical');
+    `<link rel="canonical" href="${selfUrl}" data-rh="true"/>` + hreflangLinks(koUrl, enUrl), 'canonical');
   html = replaceOrThrow(html, ANCHORS.title, `<title>${meta.title}</title>`, 'title');
   html = replaceOrThrow(html, ANCHORS.description,
-    `<meta name="description" content="${meta.description}"/>`, 'description');
+    `<meta name="description" content="${meta.description}" data-rh="true"/>`, 'description');
   html = replaceOrThrow(html, ANCHORS.ogTitle,
-    `<meta property="og:title" content="${meta.title}"/>`, 'og:title');
+    `<meta property="og:title" content="${meta.title}" data-rh="true"/>`, 'og:title');
   html = replaceOrThrow(html, ANCHORS.ogDescription,
-    `<meta property="og:description" content="${meta.description}"/>`, 'og:description');
+    `<meta property="og:description" content="${meta.description}" data-rh="true"/>`, 'og:description');
   html = replaceOrThrow(html, ANCHORS.ogUrl,
-    `<meta property="og:url" content="${selfUrl}"/>`, 'og:url');
+    `<meta property="og:url" content="${selfUrl}" data-rh="true"/>`, 'og:url');
   html = replaceOrThrow(html, ANCHORS.ogType,
-    `${ANCHORS.ogType}<meta property="og:locale" content="${locale}"/>`, 'og:locale');
+    `${ANCHORS.ogType}<meta property="og:locale" content="${locale}" data-rh="true"/>`, 'og:locale');
   return html;
 }
 
@@ -67,9 +70,9 @@ function renderRoot(base) {
   const enUrl = `${HP}/en/`;
   let html = base;
   html = replaceOrThrow(html, ANCHORS.canonical,
-    `<link rel="canonical" href="${koUrl}"/>` + hreflangLinks(koUrl, enUrl), 'root canonical');
+    `<link rel="canonical" href="${koUrl}" data-rh="true"/>` + hreflangLinks(koUrl, enUrl), 'root canonical');
   html = replaceOrThrow(html, ANCHORS.ogType,
-    `${ANCHORS.ogType}<meta property="og:locale" content="ko_KR"/>`, 'root og:locale');
+    `${ANCHORS.ogType}<meta property="og:locale" content="ko_KR" data-rh="true"/>`, 'root og:locale');
   return html;
 }
 

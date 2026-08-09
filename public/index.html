@@ -13,15 +13,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/logo/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="고려대학교 금융보안연구실" />
-    <link rel="canonical" href="https://finseclab.korea.ac.kr/" />
+    <!-- data-rh="true": Helmet(Seo 컴포넌트)이 런타임에 관리하는 태그임을 표시.
+         이게 없으면 클라이언트에서 Helmet이 같은 태그를 append 해 canonical 등이 중복되고,
+         Google이 중복 canonical을 무시하고 자체 표준(/ko/)을 선택해 '중복 페이지' 오류가 발생함. -->
+    <meta name="description" content="고려대학교 금융보안연구실" data-rh="true" />
+    <link rel="canonical" href="https://finseclab.korea.ac.kr/" data-rh="true" />
     <meta name="naver-site-verification" content="8c04ffdc37da8f5597f9100070a6bc1eaee319cf" />
     <meta name="google-site-verification" content="5eOCFk5PEMrJQ2OVKDAtOA80e0v_FixAtpB8Ey4orDQ" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="고려대학교 금융보안연구실 | Finsec Lab" />
-    <meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab" />
-    <meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실." />
-    <meta property="og:url" content="https://finseclab.korea.ac.kr" />
+    <meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab" data-rh="true" />
+    <meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실." data-rh="true" />
+    <meta property="og:url" content="https://finseclab.korea.ac.kr" data-rh="true" />
     <meta property="og:image" content="https://finseclab.korea.ac.kr/logo/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo/favicon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
