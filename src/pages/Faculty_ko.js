@@ -98,7 +98,7 @@ const partTimeStudents = [
   { name: '이원중', degree: '석사', cohort: '51기', company: '지슨', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
   { name: '이한석', degree: '석사', cohort: '51기', company: '우리은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
   { name: '이호연', degree: '석사', cohort: '51기', company: '신한금융지주', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
-  { name: '이진규', degree: '석사', cohort: '51기', company: '한국정보통신기술협회', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규.png` },
+  { name: '이진규', degree: '석사', cohort: '51기', company: '한국정보통신기술협회', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규 02.png` },
   { name: '이지유', degree: '석사', cohort: '51기', company: '한화생명', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '제하성', degree: '석사', cohort: '51기', company: '한국투자캐피탈', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
