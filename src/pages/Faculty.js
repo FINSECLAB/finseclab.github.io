@@ -43,11 +43,11 @@ const affiliations = [
 ];
 
 const fullTimeStudents = [
-  { name: 'Jin Ho Jung', nameKo: '정진호', degree: 'M.S.', cohort: '52th', major: 'Department of Information Security', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
+  { name: 'Jin Ho Jung', nameKo: '정진호', degree: 'M.S.', cohort: '52nd', major: 'Department of Information Security', email: 'wlsgh62@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
   { name: 'Ye Won Son', nameKo: '손예원', degree: 'M.S.', cohort: '48th', major: 'Department of Cyber Security', email: 'fjqm4155@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/손예원.png` },
   { name: 'Cheon Ho Park', nameKo: '박천호', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'pch3467@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박천호.png` },
   { name: 'Si On Lim', nameKo: '임시온', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'ssionn02@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/임시온.png` },
-  { name: 'Gi Dan Min', nameKo: '민기단', degree: 'M.S.', cohort: '51th', major: 'Department of Convergence Security', email: 'airmass@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/민기단.png` },
+  { name: 'Gi Dan Min', nameKo: '민기단', degree: 'M.S.', cohort: '51st', major: 'Department of Convergence Security', email: 'airmass@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/민기단.png` },
 ];
 
 const undergraduateInterns = [
@@ -55,9 +55,9 @@ const undergraduateInterns = [
 ];
 
 const doctoralStudents = [
-  { name: 'Young Seol Son', nameKo: '손영설', degree: 'Ph.D.', cohort: '51th', company: 'Samsung Card', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Yeong Gwang Lee', nameKo: '이영광', degree: 'Ph.D.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Young Min Lee', nameKo: '이영민', degree: 'Ph.D.', cohort: '51th', company: 'Hanwha Life', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Young Seol Son', nameKo: '손영설', degree: 'Ph.D.', cohort: '51st', company: 'Samsung Card', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Yeong Gwang Lee', nameKo: '이영광', degree: 'Ph.D.', cohort: '51st', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Young Min Lee', nameKo: '이영민', degree: 'Ph.D.', cohort: '51st', company: 'Hanwha Life', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
 
 const partTimeStudents = [
@@ -83,25 +83,25 @@ const partTimeStudents = [
   { name: 'Sang Hee Ji', nameKo: '지상희', degree: 'M.S.', cohort: '50th', company: 'Shinhan DS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Jeong Geun Kang', nameKo: '강정근', degree: 'M.S.', cohort: '50th', company: 'PNPSecure', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Jin Cheol Eo', nameKo: '어진철', degree: 'M.S.', cohort: '50th', company: 'SECUI', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/어진철.png` },
-  { name: 'Byeong San Ko', nameKo: '고병산', degree: 'M.S.', cohort: '51th', company: 'Korea Investment & Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/고병산.png` },
-  { name: 'Yeong Cheon Go', nameKo: '고영천', degree: 'M.S.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Tae Ho Kuk', nameKo: '국태호', degree: 'M.S.', cohort: '51th', company: 'Bucketplace', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/국태호.png` },
-  { name: 'Dong Ha Kim', nameKo: '김동하', degree: 'M.S.', cohort: '51th', company: 'NH Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Min Hyuk Kim', nameKo: '김민혁', degree: 'M.S.', cohort: '51th', company: 'Financial Security Institute', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김민혁.png` },
-  { name: 'Seung Joo Kim', nameKo: '김승주', degree: 'M.S.', cohort: '51th', company: 'Kookmin Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김승주.png` },
-  { name: 'Jae Kwan Kim', nameKo: '김재관', degree: 'M.S.', cohort: '51th', company: 'SECUDAim', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김재관.png` },
-  { name: 'Ho Chang Kim', nameKo: '김호창', degree: 'M.S.', cohort: '51th', company: 'Woori Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Hyo Jin Kim', nameKo: '김효진', degree: 'M.S.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Won Min Park', nameKo: '박원민', degree: 'M.S.', cohort: '51th', company: 'Kakao Corp.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박원민.png` },
-  { name: 'Hyun Min Park', nameKo: '박현민', degree: 'M.S.', cohort: '51th', company: 'SHIN & KIM LLC.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박현민.png` },
-  { name: 'Seong Min Bae', nameKo: '배성민', degree: 'M.S.', cohort: '51th', company: 'KLIA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배성민.png` },
-  { name: 'Ji Ahn Ryu', nameKo: '유지안', degree: 'M.S.', cohort: '51th', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
-  { name: 'Won Joong Lee', nameKo: '이원중', degree: 'M.S.', cohort: '51th', company: 'GITSN', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
-  { name: 'Han Seok Lee', nameKo: '이한석', degree: 'M.S.', cohort: '51th', company: 'Woori Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
-  { name: 'Ho Yeon Lee', nameKo: '이호연', degree: 'M.S.', cohort: '51th', company: 'Shinhan Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
-  { name: 'Jin Gyu Lee', nameKo: '이진규', degree: 'M.S.', cohort: '51th', company: 'TTA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규.png` },
-  { name: 'Ji Yu Lee', nameKo: '이지유', degree: 'M.S.', cohort: '51th', company: 'Hanwha Life Insurance', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: 'Ha Sung Jea', nameKo: '제하성', degree: 'M.S.', cohort: '51th', company: 'Korea Investment Capital', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Byeong San Ko', nameKo: '고병산', degree: 'M.S.', cohort: '51st', company: 'Korea Investment & Securities', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/고병산.png` },
+  { name: 'Yeong Cheon Go', nameKo: '고영천', degree: 'M.S.', cohort: '51st', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Tae Ho Kuk', nameKo: '국태호', degree: 'M.S.', cohort: '51st', company: 'Bucketplace', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/국태호.png` },
+  { name: 'Dong Ha Kim', nameKo: '김동하', degree: 'M.S.', cohort: '51st', company: 'NH Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Min Hyuk Kim', nameKo: '김민혁', degree: 'M.S.', cohort: '51st', company: 'Financial Security Institute', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김민혁.png` },
+  { name: 'Seung Joo Kim', nameKo: '김승주', degree: 'M.S.', cohort: '51st', company: 'Kookmin Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김승주.png` },
+  { name: 'Jae Kwan Kim', nameKo: '김재관', degree: 'M.S.', cohort: '51st', company: 'SECUDAim', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김재관.png` },
+  { name: 'Ho Chang Kim', nameKo: '김호창', degree: 'M.S.', cohort: '51st', company: 'Woori Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Hyo Jin Kim', nameKo: '김효진', degree: 'M.S.', cohort: '51st', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Won Min Park', nameKo: '박원민', degree: 'M.S.', cohort: '51st', company: 'Kakao Corp.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박원민.png` },
+  { name: 'Hyun Min Park', nameKo: '박현민', degree: 'M.S.', cohort: '51st', company: 'SHIN & KIM LLC.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박현민.png` },
+  { name: 'Seong Min Bae', nameKo: '배성민', degree: 'M.S.', cohort: '51st', company: 'KLIA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/배성민.png` },
+  { name: 'Ji Ahn Ryu', nameKo: '유지안', degree: 'M.S.', cohort: '51st', company: 'FSS', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/유지안.png` },
+  { name: 'Won Joong Lee', nameKo: '이원중', degree: 'M.S.', cohort: '51st', company: 'GITSN', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
+  { name: 'Han Seok Lee', nameKo: '이한석', degree: 'M.S.', cohort: '51st', company: 'Woori Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
+  { name: 'Ho Yeon Lee', nameKo: '이호연', degree: 'M.S.', cohort: '51st', company: 'Shinhan Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
+  { name: 'Jin Gyu Lee', nameKo: '이진규', degree: 'M.S.', cohort: '51st', company: 'TTA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규.png` },
+  { name: 'Ji Yu Lee', nameKo: '이지유', degree: 'M.S.', cohort: '51st', company: 'Hanwha Life Insurance', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Ha Sung Jea', nameKo: '제하성', degree: 'M.S.', cohort: '51st', company: 'Korea Investment Capital', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
 ];
 
 const getCohortNumber = cohort => {
