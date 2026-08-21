@@ -52,6 +52,8 @@ const Contact = () => {
 
         <p className="contact-cta">
           If you are interested in Finsec Lab, please contact us by email.
+          <br />
+          ※ CV and Academic Transcript attachment required ※
         </p>
       </div>
     </div>

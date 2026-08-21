@@ -48,6 +48,8 @@ const Contact_ko = () => {
 
         <p className="contact-cta">
           금융보안연구실에 관심이 있으신 분들은 이메일로 연락주시기 바랍니다.
+          <br />
+          ※ CV 및 학부 성적증명서 첨부 필수 ※
         </p>
       </div>
     </div>
