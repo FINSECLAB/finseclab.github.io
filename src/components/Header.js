@@ -113,7 +113,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to={to('/contact')} className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>
-                {lang === 'KO' ? '연락처' : 'Contact'}
+                Contact
               </Link>
             </li>
             <li className="nav-item lang-toggle-item">

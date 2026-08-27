@@ -1,7 +1,11 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
+import Pagination from '../components/Pagination';
 import useTab from '../utils/useTab';
 import './Projects.css';
+
+const ITEMS_PER_PAGE = 6;
 
 const projects = [
   {
@@ -41,13 +45,26 @@ const StatusBadge = ({ status }) => (
 );
 
 const Projects_ko = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeTab, handleTabChange] = useTab('total');
+  const page = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
 
   const bannerSrc = `${process.env.PUBLIC_URL}/background/projects.jpg`;
 
   const filtered = activeTab === 'total'
     ? projects
     : projects.filter(p => p.status === activeTab);
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const displayed = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+
+  // 페이지 이동 시 해시(현재 탭)를 보존
+  const setPage = (p) => {
+    const params = new URLSearchParams(location.search);
+    params.set('page', String(p));
+    navigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
+  };
 
   return (
     <div className="projects-page">
@@ -68,7 +85,7 @@ const Projects_ko = () => {
         </div>
 
         <div className="projects-grid">
-          {filtered.map((project, i) => (
+          {displayed.map((project, i) => (
             <div key={i} className="project-card">
               <StatusBadge status={project.status} />
               <div className="project-card-logo">
@@ -79,6 +96,8 @@ const Projects_ko = () => {
             </div>
           ))}
         </div>
+
+        <Pagination page={page} totalPages={totalPages} onChange={setPage} />
       </div>
     </div>
   );

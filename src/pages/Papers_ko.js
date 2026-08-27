@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
+import Pagination from '../components/Pagination';
 import useTab from '../utils/useTab';
 import './Papers.css';
 
@@ -92,13 +93,7 @@ const Papers_ko = () => {
         </table>
         </div>
 
-        {totalPages > 0 && (
-          <div className="pagination">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
-              <button key={p} className={p === page ? 'active' : ''} onClick={() => setPage(p)}>{p}</button>
-            ))}
-          </div>
-        )}
+        <Pagination page={page} totalPages={totalPages} onChange={setPage} />
       </div>
     </div>
   );
