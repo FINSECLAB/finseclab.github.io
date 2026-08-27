@@ -317,7 +317,7 @@ const Faculty_ko = () => {
   const [activeTab] = useTab('professor');
   const bannerSrc = `${process.env.PUBLIC_URL}/background/members.jpg`;
 
-  const bannerTitle = { professor: 'Professor', researcher: 'Researcher', alumni: 'Alumni' }[activeTab];
+  const bannerTitle = { professor: '교수', researcher: '연구원', alumni: '졸업생' }[activeTab];
 
   return (
     <div>

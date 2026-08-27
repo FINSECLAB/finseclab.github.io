@@ -14,7 +14,7 @@ const Contact_ko = () => {
       <Seo routeKey="contact" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
-        <h1>Contact</h1>
+        <h1>연락처</h1>
       </div>
 
       <div className="page-content">

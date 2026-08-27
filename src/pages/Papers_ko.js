@@ -54,7 +54,7 @@ const Papers_ko = () => {
       <Seo routeKey="publications" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
-        <h1>Publications</h1>
+        <h1>논문</h1>
       </div>
 
       <div className="page-content">

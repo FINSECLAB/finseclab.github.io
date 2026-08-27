@@ -54,7 +54,7 @@ const Projects_ko = () => {
       <Seo routeKey="projects" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
-        <h1>Projects</h1>
+        <h1>프로젝트</h1>
       </div>
 
       <div className="page-content">

@@ -44,7 +44,7 @@ const News_ko = () => {
       <Seo routeKey="news" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
-        <h1>News</h1>
+        <h1>소식</h1>
       </div>
 
       <div className="page-content">

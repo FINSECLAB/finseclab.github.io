@@ -20,7 +20,7 @@ const About_ko = () => {
 
       {/* Banner */}
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
-        <h1>About</h1>
+        <h1>소개</h1>
       </div>
 
       {/* Content */}
