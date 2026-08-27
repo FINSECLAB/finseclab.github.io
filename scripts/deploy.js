@@ -16,11 +16,11 @@ const routes = require('../src/data/seoMeta');
 // (그래야 런타임에 Helmet이 정적 태그를 '교체'하고 canonical 등이 중복되지 않음).
 const ANCHORS = {
   htmlLang: '<html lang="ko">',
-  title: '<title>고려대학교 금융보안연구실 | Finsec Lab</title>',
+  title: '<title>고려대학교 금융보안연구실 | FinSec Lab</title>',
   description: '<meta name="description" content="고려대학교 금융보안연구실" data-rh="true"/>',
   canonical: '<link rel="canonical" href="https://finseclab.korea.ac.kr/" data-rh="true"/>',
-  ogTitle: '<meta property="og:title" content="고려대학교 금융보안연구실 | Finsec Lab" data-rh="true"/>',
-  ogDescription: '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(Finsec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실." data-rh="true"/>',
+  ogTitle: '<meta property="og:title" content="고려대학교 금융보안연구실 | FinSec Lab" data-rh="true"/>',
+  ogDescription: '<meta property="og:description" content="고려대학교 정보보호대학원 금융보안연구실(FinSec Lab)입니다. 고려대 금융보안, 금융보안연구실, 강형우 교수 연구실." data-rh="true"/>',
   ogUrl: '<meta property="og:url" content="https://finseclab.korea.ac.kr" data-rh="true"/>',
   ogType: '<meta property="og:type" content="website"/>',
 };
@@ -81,7 +81,7 @@ function redirectStub(route) {
   const target = `/ko/${route}`;
   const canonical = `${HP}/ko/${route}`;
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"/>` +
-    `<title>Finsec Lab</title>` +
+    `<title>FinSec Lab</title>` +
     `<link rel="canonical" href="${canonical}"/>` +
     `<meta http-equiv="refresh" content="0; url=${target}"/>` +
     `<script>location.replace('${target}'+location.search+location.hash);</script>` +

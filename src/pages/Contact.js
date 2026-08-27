@@ -51,7 +51,7 @@ const Contact = () => {
         </div>
 
         <p className="contact-cta">
-          If you are interested in Finsec Lab, please contact us by email.
+          If you are interested in FinSec Lab, please contact us by email.
         </p>
       </div>
     </div>

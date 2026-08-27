@@ -64,19 +64,19 @@ const Header = () => {
         <div className="nav-container">
           <div className="nav-logo">
             <Link to={to('/')} onClick={handleLogoClick}>
-              <img src={logoSrc} alt="Finsec Lab Logo" className="nav-logo-img" />
+              <img src={logoSrc} alt="FinSec Lab Logo" className="nav-logo-img" />
             </Link>
           </div>
 
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
               <Link to={to('/about')} className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>
-                About
+                {lang === 'KO' ? '소개' : 'About'}
               </Link>
             </li>
             <li className="nav-item">
               <Link to={to('/members')} className={`nav-link ${isActive('/members') ? 'active' : ''}`} onClick={closeMenu}>
-                Members
+                {lang === 'KO' ? '구성원' : 'Members'}
               </Link>
               <div className="nav-dropdown">
                 {/* 탭 딥링크는 해시 사용 — ?tab= 쿼리는 Google이 중복 URL로 크롤링함 */}
@@ -87,7 +87,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to={to('/publications')} className={`nav-link ${isActive('/publications') ? 'active' : ''}`} onClick={closeMenu}>
-                Publications
+                {lang === 'KO' ? '논문' : 'Publications'}
               </Link>
               <div className="nav-dropdown">
                 <Link to={to('/publications')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
@@ -98,12 +98,12 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to={to('/news')} className={`nav-link ${isActive('/news') ? 'active' : ''}`} onClick={closeMenu}>
-                News
+                {lang === 'KO' ? '소식' : 'News'}
               </Link>
             </li>
             <li className="nav-item">
               <Link to={to('/projects')} className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>
-                Projects
+                {lang === 'KO' ? '프로젝트' : 'Projects'}
               </Link>
               <div className="nav-dropdown">
                 <Link to={to('/projects')} className="nav-dropdown-item" onClick={closeMenu}>{lang === 'KO' ? '전체' : 'Total'}</Link>
@@ -113,7 +113,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to={to('/contact')} className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>
-                Contact
+                {lang === 'KO' ? '연락처' : 'Contact'}
               </Link>
             </li>
             <li className="nav-item lang-toggle-item">

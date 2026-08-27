@@ -32,7 +32,7 @@ const About = () => {
           Ongoing hacking incidents in the financial sector and personal information leaks have prompted financial companies to intensify their efforts to strengthen information security.
         </p>
         <p className="about-intro-text">
-          The Finsec Lab concurrently conducts research on information security regulations and policies tailored to the financial sector, alongside research into information security technologies.
+          The FinSec Lab concurrently conducts research on information security regulations and policies tailored to the financial sector, alongside research into information security technologies.
         </p>
         <br></br>
 

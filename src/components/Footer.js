@@ -8,16 +8,16 @@ const Footer = () => {
       <div className="footer-inner">
         <div className="footer-left">
           <p className="footer-lab-name">
-            Finsec Lab, Korea University &nbsp;|&nbsp;{' '}
+            FinSec Lab, Korea University &nbsp;|&nbsp;{' '}
             <a href="tel:+82-2-3290-5944" className="footer-link">+82-2-3290-5944</a>
             &nbsp;|&nbsp;{' '}
             <a href="mailto:finseclab0717@gmail.com" className="footer-link">finseclab0717@gmail.com</a>
           </p>
           <p className="footer-address">
-            Room 210-211, Robot Convergence Building, 145 Anam-ro, Seongbuk-gu, Seoul, 02841
+            Room 211, Robot Convergence Building, 145 Anam-ro, Seongbuk-gu, Seoul, 02841
           </p>
           <p className="footer-copyright">
-            COPYRIGHT ⓒ 2026 Finsec Lab, Korea University. All rights reserved.
+            COPYRIGHT ⓒ 2026 FinSec Lab, Korea University. All rights reserved.
           </p>
         </div>
         <div className="footer-right">
