@@ -102,6 +102,11 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to={to('/gallery')} className={`nav-link ${isActive('/gallery') ? 'active' : ''}`} onClick={closeMenu}>
+                {lang === 'KO' ? '갤러리' : 'Gallery'}
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to={to('/projects')} className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>
                 {lang === 'KO' ? '프로젝트' : 'Projects'}
               </Link>

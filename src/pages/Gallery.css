@@ -1,0 +1,15 @@
+/* ===== Gallery Page Styles ===== */
+.gallery-page {
+  background: #ffffff;
+}
+
+.gallery-detail-content {
+  max-width: 900px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  .gallery-detail-title {
+    font-size: 1.5rem;
+  }
+}

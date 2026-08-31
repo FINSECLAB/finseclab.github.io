@@ -56,6 +56,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://finseclab.korea.ac.kr/ko/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/gallery"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/gallery"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finseclab.korea.ac.kr/en/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/gallery"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finseclab.korea.ac.kr/ko/gallery"/>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://finseclab.korea.ac.kr/ko/members</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://finseclab.korea.ac.kr/ko/members"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://finseclab.korea.ac.kr/en/members"/>

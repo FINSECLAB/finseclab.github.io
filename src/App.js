@@ -18,6 +18,10 @@ import About from './pages/About';
 import AboutKo from './pages/About_ko';
 import News from './pages/News';
 import NewsKo from './pages/News_ko';
+import Gallery from './pages/Gallery';
+import GalleryKo from './pages/Gallery_ko';
+import GalleryDetail from './pages/GalleryDetail';
+import GalleryDetailKo from './pages/GalleryDetail_ko';
 import { setupPageAnimations } from './utils/scrollAnimation';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
@@ -72,6 +76,8 @@ function AppContent() {
             <Route index element={isKo ? <HomeKo /> : <Home />} />
             <Route path="about" element={isKo ? <AboutKo /> : <About />} />
             <Route path="news" element={isKo ? <NewsKo /> : <News />} />
+            <Route path="gallery" element={isKo ? <GalleryKo /> : <Gallery />} />
+            <Route path="gallery/:id" element={isKo ? <GalleryDetailKo /> : <GalleryDetail />} />
             <Route path="members" element={isKo ? <FacultyKo /> : <Faculty />} />
             <Route path="publications" element={isKo ? <PapersKo /> : <Papers />} />
             <Route path="contact" element={isKo ? <ContactKo /> : <Contact />} />
@@ -82,6 +88,7 @@ function AppContent() {
           {/* 기존 bare URL → 한국어로 영구 이전 */}
           <Route path="/about" element={<Navigate to="/ko/about" replace />} />
           <Route path="/news" element={<Navigate to="/ko/news" replace />} />
+          <Route path="/gallery" element={<Navigate to="/ko/gallery" replace />} />
           <Route path="/members" element={<Navigate to="/ko/members" replace />} />
           <Route path="/publications" element={<Navigate to="/ko/publications" replace />} />
           <Route path="/contact" element={<Navigate to="/ko/contact" replace />} />
