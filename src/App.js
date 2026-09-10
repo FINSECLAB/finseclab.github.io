@@ -25,15 +25,10 @@ import GalleryDetailKo from './pages/GalleryDetail_ko';
 import { setupPageAnimations } from './utils/scrollAnimation';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
-// 브라우저 언어 기준으로 ko/en 선택
-const detectLang = () => {
-  const nav = (typeof navigator !== 'undefined' ? navigator.language : '') || '';
-  return nav.toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en';
-};
-
-// 루트('/') 클라이언트 진입 시 브라우저 언어로 분기
-function RootRedirect() {
-  return <Navigate to={`/${detectLang()}/`} replace />;
+// 정적 HTML 리디렉션과 동일하게 기존 링크의 쿼리와 해시를 보존한다.
+function PageRedirect({ to }) {
+  const { search, hash } = useLocation();
+  return <Navigate to={{ pathname: to, search, hash }} replace />;
 }
 
 // /:lang 가 ko/en 이 아니면 한국어로 정규화, 맞으면 하위 라우트 렌더
@@ -69,7 +64,8 @@ function AppContent() {
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<RootRedirect />} />
+          {/* 루트 canonical(/ko/)과 실제 이동 대상을 일치시킨다. */}
+          <Route path="/" element={<PageRedirect to="/ko/" />} />
 
           {/* 언어 접두사 라우트 (/ko/*, /en/*) */}
           <Route path="/:lang" element={<LangLayout />}>
@@ -86,13 +82,13 @@ function AppContent() {
           </Route>
 
           {/* 기존 bare URL → 한국어로 영구 이전 */}
-          <Route path="/about" element={<Navigate to="/ko/about" replace />} />
-          <Route path="/news" element={<Navigate to="/ko/news" replace />} />
-          <Route path="/gallery" element={<Navigate to="/ko/gallery" replace />} />
-          <Route path="/members" element={<Navigate to="/ko/members" replace />} />
-          <Route path="/publications" element={<Navigate to="/ko/publications" replace />} />
-          <Route path="/contact" element={<Navigate to="/ko/contact" replace />} />
-          <Route path="/projects" element={<Navigate to="/ko/projects" replace />} />
+          <Route path="/about" element={<PageRedirect to="/ko/about" />} />
+          <Route path="/news" element={<PageRedirect to="/ko/news" />} />
+          <Route path="/gallery" element={<PageRedirect to="/ko/gallery" />} />
+          <Route path="/members" element={<PageRedirect to="/ko/members" />} />
+          <Route path="/publications" element={<PageRedirect to="/ko/publications" />} />
+          <Route path="/contact" element={<PageRedirect to="/ko/contact" />} />
+          <Route path="/projects" element={<PageRedirect to="/ko/projects" />} />
 
           {/* 그 외 → 한국어 홈 */}
           <Route path="*" element={<Navigate to="/ko/" replace />} />

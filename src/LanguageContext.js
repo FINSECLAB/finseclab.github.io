@@ -28,19 +28,16 @@ export const LanguageProvider = ({ children }) => {
   }, [lang]);
 
   // 언어 전환: 현재 경로의 언어 접두사만 교체하고 path·query·hash 보존
-  const setLang = (newLang) => {
+  const getLanguagePath = (newLang) => {
     const target = newLang === 'EN' ? 'en' : 'ko';
-    const parts = location.pathname.split('/');
-    if (parts[1] === 'ko' || parts[1] === 'en') {
-      parts[1] = target;
-    } else {
-      parts.splice(1, 0, target);
-    }
-    navigate(parts.join('/') + location.search + location.hash);
+    const suffix = location.pathname.replace(/^\/(?:ko|en)(?=\/|$)/, '') || '/';
+    return `/${target}${suffix}${location.search}${location.hash}`;
   };
 
+  const setLang = (newLang) => navigate(getLanguagePath(newLang));
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, theme, setTheme }}>
+    <LanguageContext.Provider value={{ lang, setLang, getLanguagePath, theme, setTheme }}>
       {children}
     </LanguageContext.Provider>
   );

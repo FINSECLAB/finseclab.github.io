@@ -34,7 +34,7 @@ const SunIcon = () => (
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const { lang, setLang, theme, setTheme } = useLanguage();
+  const { lang, getLanguagePath, theme, setTheme } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -122,13 +122,15 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item lang-toggle-item">
-              <button
+              <Link
                 className="lang-toggle"
-                onClick={() => setLang(lang === 'EN' ? 'KO' : 'EN')}
+                to={getLanguagePath(lang === 'EN' ? 'KO' : 'EN')}
+                hrefLang={lang === 'EN' ? 'ko' : 'en'}
+                aria-label={lang === 'EN' ? '한국어로 전환' : 'Switch to English'}
                 title={lang === 'EN' ? '한국어로 전환' : 'Switch to English'}
               >
                 <GlobeIcon />
-              </button>
+              </Link>
               <button
                 className="theme-toggle"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
