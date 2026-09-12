@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+# Requests compliant crawlers to avoid gallery pages and original photos.
+# Blocked crawlers cannot read page noindex tags; existing indexing may remain.
+Disallow: /gallery
+Disallow: /ko/gallery
+Disallow: /en/gallery
+Disallow: /background/gallery.jpg
 Sitemap: https://finseclab.korea.ac.kr/sitemap.xml
