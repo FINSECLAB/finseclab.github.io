@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import Pagination from '../components/Pagination';
+import GalleryPage from '../components/GalleryPage';
 import './Gallery.css';
 import { getAllGallerySorted } from '../data/galleryData';
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 6;
 
 const Gallery = () => {
   const allGallery = getAllGallerySorted();
@@ -26,7 +27,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-page">
+    <GalleryPage>
       <Seo routeKey="gallery" />
 
       {/* Banner */}
@@ -43,7 +44,7 @@ const Gallery = () => {
           {displayed.map((item) => (
             <Link key={item.id} to={`${location.pathname}/${item.id}`} className="gallery-card">
               <div className="gallery-card-image">
-                <img src={item.images[0]} alt={item.title} draggable={false} onContextMenu={(e) => e.preventDefault()} />
+                <img src={item.images[0]} alt={item.title} draggable={false} />
               </div>
               <div className="gallery-card-body">
                 <p className="gallery-card-title">{item.title}</p>
@@ -55,7 +56,7 @@ const Gallery = () => {
 
         <Pagination page={page} totalPages={totalPages} onChange={setPage} />
       </div>
-    </div>
+    </GalleryPage>
   );
 };
 

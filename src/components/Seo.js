@@ -8,7 +8,7 @@ const BASE = 'https://finseclab.korea.ac.kr';
 // 현재 URL의 언어를 기준으로 언어별 title/description + 자기참조 canonical + hreflang(ko/en/x-default) 출력.
 // title/description을 여기서 함께 관리해야 영어 페이지가 한국어 메타로 덮이는 사고를 막는다
 // (한/영 메타가 같으면 Google이 /en/을 /ko/의 중복 페이지로 판단함).
-// routeKey: '' (홈) | 'about' | 'news' | 'members' | 'publications' | 'projects' | 'contact'
+// routeKey: '' (홈) | 'about' | 'news' | 'gallery' | 'members' | 'publications' | 'projects' | 'contact'
 const Seo = ({ routeKey = '' }) => {
   const { pathname } = useLocation();
   const lang = pathname.split('/')[1] === 'en' ? 'en' : 'ko';
@@ -19,13 +19,15 @@ const Seo = ({ routeKey = '' }) => {
   const enUrl = `${BASE}/en${suffix}`;
   const selfUrl = lang === 'en' ? enUrl : koUrl;
 
-  const meta = (seoMeta.find(r => r.route === routeKey) || seoMeta[0])[lang];
+  const routeMeta = seoMeta.find(r => r.route === routeKey) || seoMeta[0];
+  const meta = routeMeta[lang];
 
   return (
     <Helmet>
       <html lang={lang} />
       <title>{meta.title}</title>
       <meta name="description" content={meta.description} />
+      {routeMeta.robots && <meta name="robots" content={routeMeta.robots} />}
       <link rel="canonical" href={selfUrl} />
       <link rel="alternate" hrefLang="ko" href={koUrl} />
       <link rel="alternate" hrefLang="en" href={enUrl} />

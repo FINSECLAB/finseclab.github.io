@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import Pagination from '../components/Pagination';
+import GalleryPage from '../components/GalleryPage';
 import './Gallery.css';
 import { getAllGallerySortedKo } from '../data/galleryData_ko';
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 6;
 
 const Gallery_ko = () => {
   const allGallery = getAllGallerySortedKo();
@@ -26,7 +27,7 @@ const Gallery_ko = () => {
   };
 
   return (
-    <div className="gallery-page">
+    <GalleryPage>
       <Seo routeKey="gallery" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
@@ -41,7 +42,7 @@ const Gallery_ko = () => {
           {displayed.map((item) => (
             <Link key={item.id} to={`${location.pathname}/${item.id}`} className="gallery-card">
               <div className="gallery-card-image">
-                <img src={item.images[0]} alt={item.title} draggable={false} onContextMenu={(e) => e.preventDefault()} />
+                <img src={item.images[0]} alt={item.title} draggable={false} />
               </div>
               <div className="gallery-card-body">
                 <p className="gallery-card-title">{item.title}</p>
@@ -53,7 +54,7 @@ const Gallery_ko = () => {
 
         <Pagination page={page} totalPages={totalPages} onChange={setPage} />
       </div>
-    </div>
+    </GalleryPage>
   );
 };
 

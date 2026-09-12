@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import Seo from '../components/Seo';
+import GalleryPage from '../components/GalleryPage';
 import './Gallery.css';
 import { getAllGallerySorted, getGalleryById } from '../data/galleryData';
 
@@ -20,7 +21,7 @@ const GalleryDetail = () => {
   const bannerSrc = `${process.env.PUBLIC_URL}/background/gallery.jpg`;
 
   return (
-    <div className="gallery-page gallery-detail-page">
+    <GalleryPage className="gallery-detail-page">
       <Seo routeKey="gallery" />
 
       <div className="page-banner" style={{ backgroundImage: `url(${bannerSrc})` }}>
@@ -43,7 +44,7 @@ const GalleryDetail = () => {
 
         <div className="gallery-detail-images">
           {item.images.map((src, i) => (
-            <div key={i} className="gallery-detail-image-wrapper" onContextMenu={(e) => e.preventDefault()}>
+            <div key={i} className="gallery-detail-image-wrapper">
               <img
                 src={src}
                 alt={item.title}
@@ -63,6 +64,7 @@ const GalleryDetail = () => {
           ) : (
             <span className="gallery-detail-nav-link disabled">
               <span className="gallery-detail-nav-label">&lsaquo; Previous</span>
+              <span className="gallery-detail-nav-title">There is no previous post.</span>
             </span>
           )}
           {nextItem ? (
@@ -73,11 +75,12 @@ const GalleryDetail = () => {
           ) : (
             <span className="gallery-detail-nav-link gallery-detail-nav-next disabled">
               <span className="gallery-detail-nav-label">Next &rsaquo;</span>
+              <span className="gallery-detail-nav-title">There is no next post.</span>
             </span>
           )}
         </div>
       </div>
-    </div>
+    </GalleryPage>
   );
 };
 

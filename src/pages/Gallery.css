@@ -7,6 +7,40 @@
   max-width: 900px;
 }
 
+/* Discourage direct image interaction while retaining card navigation and scrolling. */
+.gallery-card-image,
+.gallery-detail-image-wrapper,
+.gallery-page .page-banner {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-card-image::after,
+.gallery-detail-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-page img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+@media print {
+  .gallery-page .gallery-card-image,
+  .gallery-page .gallery-detail-images {
+    display: none !important;
+  }
+
+  .gallery-page .page-banner {
+    background-image: none !important;
+  }
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 480px) {
   .gallery-detail-title {

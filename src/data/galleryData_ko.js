@@ -61,6 +61,17 @@ export const galleryDataKo = [
       `${process.env.PUBLIC_URL}/gallery/260831.jpeg`,
     ],
   },
+  {
+    id: 7,
+    title: '2026 제5회 금융보안워크숍',
+    date: '2026.09.11.(금)',
+    sortDate: '2026-09-11',
+    location: '서울 여의도 FKI타워',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/260911_02.jpg`,
+    ],
+  },
 ];
 
 // 날짜 기준 최신순 정렬

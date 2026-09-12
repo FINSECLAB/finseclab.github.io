@@ -1139,8 +1139,8 @@ h1, h2, h3,
   overflow: hidden;
 }
 
-/* 원본 이미지 확대/복사/다운로드 방지: 컨텍스트 메뉴는 wrapper의 onContextMenu에서 차단,
-   pointer-events:none으로 이미지 자체의 클릭(확대 트리거)·롱프레스·드래그 저장을 원천 차단 */
+/* 일반적인 이미지 클릭·롱프레스·드래그를 제한한다.
+   공개 이미지 URL의 직접 다운로드나 화면 캡처까지 차단하는 접근 제어는 아니다. */
 .gallery-detail-image {
   width: 100%;
   height: auto;

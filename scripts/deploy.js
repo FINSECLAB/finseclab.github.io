@@ -31,6 +31,10 @@ const hreflangLinks = (koUrl, enUrl) =>
   `<link rel="alternate" hreflang="en" href="${enUrl}" data-rh="true"/>` +
   `<link rel="alternate" hreflang="x-default" href="${koUrl}" data-rh="true"/>`;
 
+const robotsMetaTag = (robots) => robots
+  ? `<meta name="robots" content="${robots}" data-rh="true"/>`
+  : '';
+
 // 치환이 실제로 일어났는지 검증하며 replace (미니파이 산출물이 바뀌면 즉시 실패)
 function replaceOrThrow(html, find, replaceWith, label) {
   if (!html.includes(find)) {
@@ -39,7 +43,7 @@ function replaceOrThrow(html, find, replaceWith, label) {
   return html.split(find).join(replaceWith);
 }
 
-function renderPage(base, lang, route, meta) {
+function renderPage(base, lang, route, meta, robots) {
   const suffix = route ? `/${route}` : '/';
   const koUrl = `${HP}/ko${suffix}`;
   const enUrl = `${HP}/en${suffix}`;
@@ -52,7 +56,7 @@ function renderPage(base, lang, route, meta) {
     `<link rel="canonical" href="${selfUrl}" data-rh="true"/>` + hreflangLinks(koUrl, enUrl), 'canonical');
   html = replaceOrThrow(html, ANCHORS.title, `<title>${meta.title}</title>`, 'title');
   html = replaceOrThrow(html, ANCHORS.description,
-    `<meta name="description" content="${meta.description}" data-rh="true"/>`, 'description');
+    `<meta name="description" content="${meta.description}" data-rh="true"/>` + robotsMetaTag(robots), 'description');
   html = replaceOrThrow(html, ANCHORS.ogTitle,
     `<meta property="og:title" content="${meta.title}" data-rh="true"/>`, 'og:title');
   html = replaceOrThrow(html, ANCHORS.ogDescription,
@@ -77,11 +81,12 @@ function renderRoot(base) {
 }
 
 // 기존 bare URL → /ko/<route> 정적 리다이렉트 스텁 (마이그레이션용, HTTP 200)
-function redirectStub(route) {
+function redirectStub(route, robots) {
   const target = `/ko/${route}`;
   const canonical = `${HP}/ko/${route}`;
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"/>` +
     `<title>FinSec Lab</title>` +
+    robotsMetaTag(robots) +
     `<link rel="canonical" href="${canonical}"/>` +
     `<meta http-equiv="refresh" content="0; url=${target}"/>` +
     `<script>location.replace('${target}'+location.search+location.hash);</script>` +
@@ -107,9 +112,9 @@ try {
   }
 
   // (언어 × 라우트) 정적 HTML 생성
-  for (const { route, ko, en } of routes) {
+  for (const { route, ko, en, robots } of routes) {
     for (const [lang, meta] of [['ko', ko], ['en', en]]) {
-      const html = renderPage(baseHtml, lang, route, meta);
+      const html = renderPage(baseHtml, lang, route, meta, robots);
       const outPath = route
         ? path.join(buildDir, lang, `${route}.html`)
         : path.join(buildDir, lang, 'index.html');
@@ -119,9 +124,9 @@ try {
   }
 
   // 기존 bare URL 마이그레이션 스텁
-  for (const { route } of routes) {
+  for (const { route, robots } of routes) {
     if (!route) continue;
-    fs.writeFileSync(path.join(buildDir, `${route}.html`), redirectStub(route));
+    fs.writeFileSync(path.join(buildDir, `${route}.html`), redirectStub(route, robots));
     console.log(`  ↪️  build/${route}.html → /ko/${route}`);
   }
 

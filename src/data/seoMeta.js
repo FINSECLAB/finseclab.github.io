@@ -39,6 +39,7 @@ const routes = [
   },
   {
     route: 'gallery',
+    robots: 'noindex, nofollow, noimageindex, max-image-preview:none',
     ko: {
       title: 'Gallery | 고려대 금융보안연구실',
       description: '고려대학교 금융보안연구실(FinSec Lab) 활동 사진 갤러리. 고려대 정보보호대학원 금융보안연구실 행사 및 세미나 사진.',

@@ -61,6 +61,17 @@ export const galleryData = [
       `${process.env.PUBLIC_URL}/gallery/260831.jpeg`,
     ],
   },
+  {
+    id: 7,
+    title: '2026 5th Financial Security Workshop',
+    date: '2026.09.11. (Fri)',
+    sortDate: '2026-09-11',
+    location: 'FKI Tower, Yeouido, Seoul',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/260911_02.jpg`,
+    ],
+  },
 ];
 
 // 날짜 기준 최신순 정렬
