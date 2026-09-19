@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import Pagination from '../components/Pagination';
 import GalleryPage from '../components/GalleryPage';
+import GalleryCard from '../components/GalleryCard';
 import './Gallery.css';
 import { getAllGallerySortedKo } from '../data/galleryData_ko';
 
@@ -40,15 +41,7 @@ const Gallery_ko = () => {
 
         <div className="gallery-grid">
           {displayed.map((item) => (
-            <Link key={item.id} to={`${location.pathname}/${item.id}`} className="gallery-card">
-              <div className="gallery-card-image">
-                <img src={item.images[0]} alt={item.title} draggable={false} />
-              </div>
-              <div className="gallery-card-body">
-                <p className="gallery-card-title">{item.title}</p>
-                <p className="gallery-card-date">{item.date}</p>
-              </div>
-            </Link>
+            <GalleryCard key={item.id} item={item} to={`${location.pathname}/${item.id}`} lang="ko" />
           ))}
         </div>
 

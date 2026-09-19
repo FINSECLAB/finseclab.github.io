@@ -25,7 +25,7 @@ export const galleryDataKo = [
     title: '봄맞이 청계산 등산',
     date: '2026.04.08.(수)',
     sortDate: '2026-04-08',
-    location: '',
+    location: '청계산',
     images: [
       `${process.env.PUBLIC_URL}/gallery/260408_01.jpeg`,
       `${process.env.PUBLIC_URL}/gallery/260408_02.jpeg`,
@@ -70,6 +70,18 @@ export const galleryDataKo = [
     images: [
       `${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`,
       `${process.env.PUBLIC_URL}/gallery/260911_02.jpg`,
+    ],
+  },
+  {
+    id: 8,
+    title: '2026 고려대학교 정보보호대학원 교우회 정기등반대회',
+    date: '2026.09.19.(토)',
+    sortDate: '2026-09-19',
+    location: '청계산',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/260919_01.jpg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_02.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_03.jpeg`,
     ],
   },
 ];

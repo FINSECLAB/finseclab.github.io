@@ -25,7 +25,7 @@ export const galleryData = [
     title: 'Spring Hike on Mt. Cheonggye',
     date: '2026.04.08. (Wed)',
     sortDate: '2026-04-08',
-    location: '',
+    location: 'Mt. Cheonggye',
     images: [
       `${process.env.PUBLIC_URL}/gallery/260408_01.jpeg`,
       `${process.env.PUBLIC_URL}/gallery/260408_02.jpeg`,
@@ -70,6 +70,18 @@ export const galleryData = [
     images: [
       `${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`,
       `${process.env.PUBLIC_URL}/gallery/260911_02.jpg`,
+    ],
+  },
+  {
+    id: 8,
+    title: '2026 KUSC Alumni Hike',
+    date: '2026.09.19. (Sat)',
+    sortDate: '2026-09-19',
+    location: 'Mt. Cheonggye',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/260919_01.jpg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_02.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_03.jpeg`,
     ],
   },
 ];

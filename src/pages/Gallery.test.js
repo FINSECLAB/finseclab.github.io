@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
 import Seo from '../components/Seo';
@@ -26,12 +26,96 @@ const renderGallery = (lang, detail = false) => render(
   </HelmetProvider>
 );
 
+const carouselGalleries = [
+  {
+    lang: 'ko',
+    title: '2026 고려대학교 정보보호대학원 교우회 정기등반대회',
+    workshopTitle: '2026 제5회 금융보안워크숍',
+    singlePhotoTitle: '2026 한미 공동 세미나',
+    previousLabel: '이전 사진',
+    nextLabel: '다음 사진',
+    heading: '갤러리',
+  },
+  {
+    lang: 'en',
+    title: '2026 KUSC Alumni Hike',
+    workshopTitle: '2026 5th Financial Security Workshop',
+    singlePhotoTitle: '2026 ROK-U.S. Joint Seminar',
+    previousLabel: 'Previous photo',
+    nextLabel: 'Next photo',
+    heading: 'Gallery',
+  },
+];
+
+test.each(carouselGalleries)('$lang card arrows wrap photos without opening the post or changing other cards', ({
+  lang, title, workshopTitle, previousLabel, nextLabel, heading,
+}) => {
+  renderGallery(lang);
+  const photo = () => screen.getByRole('img', { name: title }).getAttribute('src');
+  const workshopPhoto = () => screen.getByRole('img', { name: workshopTitle }).getAttribute('src');
+  const previous = screen.getByRole('button', { name: `${title}: ${previousLabel}` });
+  const next = screen.getByRole('button', { name: `${title}: ${nextLabel}` });
+  const images = ['260919_01.jpg', '260919_02.jpeg', '260919_03.jpeg']
+    .map(filename => `${process.env.PUBLIC_URL}/gallery/${filename}`);
+
+  expect(photo()).toBe(images[0]);
+  expect(previous.closest('a')).toBeNull();
+  expect(next.closest('a')).toBeNull();
+  for (const index of [2, 1, 0]) {
+    fireEvent.click(previous);
+    expect(photo()).toBe(images[index]);
+  }
+  for (const index of [1, 2, 0]) {
+    fireEvent.click(next);
+    expect(photo()).toBe(images[index]);
+  }
+
+  fireEvent.click(next);
+  expect(workshopPhoto()).toBe(`${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`);
+  fireEvent.click(screen.getByRole('button', { name: `${workshopTitle}: ${nextLabel}` }));
+  expect(workshopPhoto()).toBe(`${process.env.PUBLIC_URL}/gallery/260911_02.jpg`);
+  expect(photo()).toBe(images[1]);
+  fireEvent.click(screen.getByRole('button', { name: `${workshopTitle}: ${previousLabel}` }));
+  expect(workshopPhoto()).toBe(`${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`);
+  expect(photo()).toBe(images[1]);
+  expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(heading);
+});
+
+test.each(carouselGalleries)('$lang single-photo cards have no carousel controls', ({ lang, singlePhotoTitle }) => {
+  renderGallery(lang);
+  const photo = screen.getByRole('img', { name: singlePhotoTitle });
+  const card = photo.closest('article');
+
+  expect(card).not.toBeNull();
+  expect(within(card).queryAllByRole('button')).toHaveLength(0);
+  expect(photo.closest('a').getAttribute('href')).toBe(`/${lang}/gallery/6`);
+});
+
+test.each(carouselGalleries.flatMap(gallery => ['photo', 'body'].map(surface => ({ ...gallery, surface }))))(
+  '$lang $surface link still opens a multi-photo post after changing the card photo',
+  ({ lang, title, nextLabel, surface }) => {
+    renderGallery(lang);
+    fireEvent.click(screen.getByRole('button', { name: `${title}: ${nextLabel}` }));
+    const photo = screen.getByRole('img', { name: title });
+    const link = surface === 'photo' ? photo.closest('a') : screen.getByText(title).closest('a');
+
+    expect(link.getAttribute('href')).toBe(`/${lang}/gallery/8`);
+    fireEvent.click(link);
+    expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(title);
+    expect(screen.getAllByRole('img').map(img => img.getAttribute('src'))).toEqual([
+      `${process.env.PUBLIC_URL}/gallery/260919_01.jpg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_02.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/260919_03.jpeg`,
+    ]);
+  }
+);
+
 test.each([
   ['ko', '2026 제5회 금융보안워크숍', '서울 여의도 FKI타워'],
   ['en', '2026 5th Financial Security Workshop', 'FKI Tower, Yeouido, Seoul'],
-])('%s workshop is first and opens both requested photos', (lang, title, location) => {
+])('%s workshop opens both requested photos', (lang, title, location) => {
   renderGallery(lang);
-  const thumbnail = screen.getAllByRole('img')[0];
+  const thumbnail = screen.getByRole('img', { name: title });
   expect(thumbnail.alt).toBe(title);
   expect(thumbnail.closest('a').getAttribute('href')).toBe(`/${lang}/gallery/7`);
 
@@ -50,7 +134,7 @@ test.each([
   const previous = screen.getByRole('link', { name: /2026 (한미 공동 세미나|ROK-U.S. Joint Seminar)/ });
   expect(previous.getAttribute('href')).toBe(`/${lang}/gallery/6`);
   fireEvent.click(screen.getByRole('link', { name: /갤러리로 돌아가기|Back to Gallery/ }));
-  expect(screen.getAllByRole('img')[0].alt).toBe(title);
+  expect(screen.getByRole('img', { name: title })).toBeTruthy();
 });
 
 test.each([
