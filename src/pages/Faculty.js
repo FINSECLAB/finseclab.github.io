@@ -100,8 +100,8 @@ const partTimeStudents = [
   { name: 'Won Joong Lee', nameKo: '이원중', degree: 'M.S.', cohort: '51st', company: 'GITSN', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이원중.png` },
   { name: 'Han Seok Lee', nameKo: '이한석', degree: 'M.S.', cohort: '51st', company: 'Woori Bank', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이한석.png` },
   { name: 'Ho Yeon Lee', nameKo: '이호연', degree: 'M.S.', cohort: '51st', company: 'Shinhan Financial Group', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이호연.png` },
-  { name: 'Jin Gyu Lee', nameKo: '이진규', degree: 'M.S.', cohort: '51st', company: 'TTA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규 03.png` },
-  { name: 'Ji Yu Lee', nameKo: '이지유', degree: 'M.S.', cohort: '51st', company: 'Hanwha Life Insurance', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
+  { name: 'Jin Gyu Lee', nameKo: '이진규', degree: 'M.S.', cohort: '51st', company: 'TTA', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이진규 02.png` },
+  { name: 'Ji Yu Lee', nameKo: '이지유', degree: 'M.S.', cohort: '51st', company: 'Hanwha Life Insurance', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/이지유 02.png` },
   { name: 'Ha Sung Jea', nameKo: '제하성', degree: 'M.S.', cohort: '51st', company: 'Korea Investment Capital', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: 'Tae Been Hwang', nameKo: '황태빈', degree: 'M.S.', cohort: '52nd', company: 'Korea Rating & Data.', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/황태빈.png` },
 ];
