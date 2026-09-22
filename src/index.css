@@ -865,14 +865,20 @@ h1, h2, h3,
   display: block;
 }
 
-.researcher-email {
+.researcher-email,
+.researcher-homepage {
   font-size: 0.875rem;
   color: var(--primary);
   text-decoration: none;
 }
 
-.researcher-email:hover {
+.researcher-email:hover,
+.researcher-homepage:hover {
   text-decoration: underline;
+}
+
+.researcher-homepage {
+  display: block;
 }
 
 .researcher-photo {

@@ -43,7 +43,7 @@ const affiliations = [
 ];
 
 const fullTimeStudents = [
-  { name: 'Jin Ho Jung', nameKo: '정진호', degree: 'M.S.', cohort: '52nd', major: 'Department of Information Security', email: 'jungjinho@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
+  { name: 'Jin Ho Jung', nameKo: '정진호', degree: 'M.S.', cohort: '52nd', major: 'Department of Information Security', email: 'jungjinho@korea.ac.kr', homepage: 'https://zinh00.github.io/ko/', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/정진호.png` },
   { name: 'Ye Won Son', nameKo: '손예원', degree: 'M.S.', cohort: '48th', major: 'Department of Cyber Security', email: 'fjqm4155@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/손예원.png` },
   { name: 'Cheon Ho Park', nameKo: '박천호', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'pch3467@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/박천호.png` },
   { name: 'Si On Lim', nameKo: '임시온', degree: 'M.S.', cohort: '50th', major: 'Department of Cyber Security', email: 'ssionn02@korea.ac.kr', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/임시온.png` },
@@ -146,6 +146,9 @@ const ResearcherCard = ({ student }) => {
         {cohortDisplay && <span className="researcher-cohort">{cohortDisplay}</span>}
         {student.email && (
           <a href={`mailto:${student.email}`} className="researcher-email">[E-Mail]</a>
+        )}
+        {student.homepage && (
+          <a href={student.homepage} className="researcher-homepage" target="_blank" rel="noopener noreferrer">[Homepage]</a>
         )}
         {student.company && !student.email && (
           <span className="researcher-major">{student.company}</span>
