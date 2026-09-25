@@ -1,7 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext';
 
 const Footer = () => {
-  const logoSrc = `${process.env.PUBLIC_URL}/logo/정보보호대학원 03.png`;
+  const { theme } = useLanguage();
+  const logoSrc = `${process.env.PUBLIC_URL}/logo/정보보호대학원 ${theme === 'dark' ? '03' : '02'}.png`;
 
   return (
     <footer className="footer">

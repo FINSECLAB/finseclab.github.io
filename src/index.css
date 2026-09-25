@@ -1548,6 +1548,11 @@ h1, h2, h3,
   border-top-color: #2a2a2a;
 }
 
+[data-theme="dark"] .footer-logo-img {
+  /* 회색 단색 로고의 명암을 반전해 어두운 배경에서도 선명하게 표시한다. */
+  filter: invert(1);
+}
+
 /* Mobile members tabs */
 [data-theme="dark"] .mobile-members-tabs {
   background: #1a1a1a;

@@ -2,6 +2,13 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const LanguageContext = createContext();
+const colorSchemeQuery = '(prefers-color-scheme: dark)';
+
+const getSystemTheme = () => (
+  typeof window.matchMedia === 'function' && window.matchMedia(colorSchemeQuery).matches
+    ? 'dark'
+    : 'light'
+);
 
 // pathname의 첫 세그먼트로 언어 판별 (기본값: 한국어)
 const langFromPath = (pathname) => {
@@ -15,11 +22,29 @@ export const LanguageProvider = ({ children }) => {
   const navigate = useNavigate();
   const lang = langFromPath(location.pathname);
 
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(getSystemTheme);
+
+  useEffect(() => {
+    if (typeof window.matchMedia !== 'function') return undefined;
+
+    const mediaQuery = window.matchMedia(colorSchemeQuery);
+    const syncSystemTheme = ({ matches }) => setTheme(matches ? 'dark' : 'light');
+
+    // 매 방문 및 시스템 설정 변경 시 시스템 테마를 따른다.
+    syncSystemTheme(mediaQuery);
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', syncSystemTheme);
+      return () => mediaQuery.removeEventListener('change', syncSystemTheme);
+    }
+
+    // 구형 Safari의 MediaQueryList API 지원.
+    mediaQuery.addListener(syncSystemTheme);
+    return () => mediaQuery.removeListener(syncSystemTheme);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    document.documentElement.style.colorScheme = theme;
   }, [theme]);
 
   // <html lang> 을 현재 언어와 동기화 (접근성/SEO)
