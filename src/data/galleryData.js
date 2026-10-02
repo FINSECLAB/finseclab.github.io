@@ -66,7 +66,7 @@ export const galleryData = [
     title: '2026 5th Financial Security Workshop',
     date: '2026.09.11. (Fri)',
     sortDate: '2026-09-11',
-    location: 'FKI Tower, Yeouido, Seoul',
+    location: 'FKI Tower, Yeoui-do, Seoul',
     images: [
       `${process.env.PUBLIC_URL}/gallery/260911_01.jpeg`,
       `${process.env.PUBLIC_URL}/gallery/260911_02.jpg`,
@@ -84,11 +84,43 @@ export const galleryData = [
       `${process.env.PUBLIC_URL}/gallery/260919_03.jpeg`,
     ],
   },
+  {
+    id: 9,
+    title: '2026 19th CPS Security Workshop',
+    date: '2026.10.01. (Thu) - 2026.10.02. (Fri)',
+    sortDate: '2026-10-01',
+    location: 'MAISON GLAD Hotel, Jeju-si, Jeju',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/261001_00.jpeg`,
+    ],
+  },
+  {
+    id: 10,
+    title: 'FinSec LAB Autumn MT',
+    date: '2026.10.01. (Thu) - 2026.10.02. (Fri)',
+    sortDate: '2026-10-01',
+    location: 'Jeju Island',
+    layout: 'mosaic',
+    coverImage: `${process.env.PUBLIC_URL}/gallery/261001_02.png`,
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/261001_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_02.png`,
+      `${process.env.PUBLIC_URL}/gallery/261001_03.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_04.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_05.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_02.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_03.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_04.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_05.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_06.jpeg`,
+    ],
+  },
 ];
 
 // 날짜 기준 최신순 정렬
 export const getAllGallerySorted = () => {
-  return [...galleryData].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
+  return [...galleryData].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate) || b.id - a.id);
 };
 
 export const getGalleryById = (id) => galleryData.find(g => String(g.id) === String(id));

@@ -28,7 +28,7 @@ const GalleryDetail_ko = () => {
         <h1>갤러리</h1>
       </div>
 
-      <div className="page-content gallery-detail-content">
+      <div className={`page-content gallery-detail-content${item.layout === 'mosaic' ? ' gallery-detail-content--mosaic' : ''}`}>
         <Link to="/ko/gallery" className="gallery-detail-back">&larr; 갤러리로 돌아가기</Link>
 
         <h2 className="gallery-detail-title">{item.title}</h2>
@@ -42,7 +42,7 @@ const GalleryDetail_ko = () => {
           )}
         </div>
 
-        <div className="gallery-detail-images">
+        <div className={`gallery-detail-images${item.layout === 'mosaic' ? ' gallery-detail-images--mosaic' : ''}`}>
           {item.images.map((src, i) => (
             <div key={i} className="gallery-detail-image-wrapper">
               <img

@@ -1,0 +1,144 @@
+.hero.hero-carousel {
+  isolation: isolate;
+  overflow: hidden;
+  background: #111111;
+  dynamic-range-limit: standard;
+}
+
+.hero-slides,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slides {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-slide {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-image-position, center);
+  dynamic-range-limit: standard;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero.hero-carousel::before {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15) 35%, transparent 70%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), transparent 25%);
+}
+
+.hero-carousel .hero-content {
+  z-index: 2;
+  padding-right: var(--space-8);
+  padding-bottom: 48px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.hero-carousel .hero-title,
+.hero-carousel .hero-subtitle {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.hero-controls {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9));
+}
+
+.hero-controls button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.hero-controls .hero-dot {
+  width: 28px;
+}
+
+.hero-dot-mark {
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+  transition: background-color 180ms ease;
+}
+
+.hero-dot.is-active .hero-dot-mark {
+  background: #ffffff;
+}
+
+.hero-controls button:hover {
+  opacity: 0.7;
+}
+
+.hero-controls button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+
+@media (min-width: 769px) {
+  .hero-slide-image {
+    object-position: var(--hero-image-position-desktop, var(--hero-image-position, center));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-controls {
+    bottom: 18px;
+  }
+
+  .hero-controls button {
+    width: 30px;
+  }
+
+  .hero-controls .hero-dot {
+    width: 22px;
+  }
+
+  .hero-carousel .hero-content {
+    padding-right: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-dot-mark {
+    transition: none;
+  }
+
+  .hero-carousel .hero-content {
+    animation: none;
+  }
+}

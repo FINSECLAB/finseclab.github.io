@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import HeroCarousel from '../components/HeroCarousel';
 import { getLatestNewsKo, getAllNewsSortedKo } from '../data/newsData_ko';
 
 const researchCards = [
@@ -21,12 +22,7 @@ const Home_ko = () => {
       <Seo routeKey="" />
 
       {/* Hero Section */}
-      <section className="hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background/main.jpg)` }}>
-        <div className="hero-content animate-slide-up">
-          <p className="hero-subtitle">고려대학교</p>
-          <h1 className="hero-title notranslate">금융보안연구실</h1>
-        </div>
-      </section>
+      <HeroCarousel lang="ko" />
 
       {/* Main Research Subjects */}
       <div className="home-section animate-slide-up" style={{ paddingTop: '1.5cm', paddingBottom: '1.5cm' }}>

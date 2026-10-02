@@ -1356,8 +1356,8 @@ h1, h2, h3,
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.1rem; }
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.3rem; }
   .page-banner h1 { font-size: 3rem; }
   .page-banner { height: 200px; }
 
@@ -1486,7 +1486,8 @@ h1, h2, h3,
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 2rem; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-subtitle { font-size: 1.2rem; }
   .researcher-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }

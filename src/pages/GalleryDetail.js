@@ -28,7 +28,7 @@ const GalleryDetail = () => {
         <h1>Gallery</h1>
       </div>
 
-      <div className="page-content gallery-detail-content">
+      <div className={`page-content gallery-detail-content${item.layout === 'mosaic' ? ' gallery-detail-content--mosaic' : ''}`}>
         <Link to="/en/gallery" className="gallery-detail-back">&larr; Back to Gallery</Link>
 
         <h2 className="gallery-detail-title">{item.title}</h2>
@@ -42,7 +42,7 @@ const GalleryDetail = () => {
           )}
         </div>
 
-        <div className="gallery-detail-images">
+        <div className={`gallery-detail-images${item.layout === 'mosaic' ? ' gallery-detail-images--mosaic' : ''}`}>
           {item.images.map((src, i) => (
             <div key={i} className="gallery-detail-image-wrapper">
               <img

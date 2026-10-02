@@ -84,11 +84,43 @@ export const galleryDataKo = [
       `${process.env.PUBLIC_URL}/gallery/260919_03.jpeg`,
     ],
   },
+  {
+    id: 9,
+    title: '2026 제19회 CPS 보안 워크숍',
+    date: '2026.10.01.(목)-2026.10.02.(금)',
+    sortDate: '2026-10-01',
+    location: '제주 메종 글래드호텔',
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/261001_00.jpeg`,
+    ],
+  },
+  {
+    id: 10,
+    title: '가을맞이 금융보안연구실 MT',
+    date: '2026.10.01.(목)-2026.10.02.(금)',
+    sortDate: '2026-10-01',
+    location: '제주도',
+    layout: 'mosaic',
+    coverImage: `${process.env.PUBLIC_URL}/gallery/261001_02.png`,
+    images: [
+      `${process.env.PUBLIC_URL}/gallery/261001_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_02.png`,
+      `${process.env.PUBLIC_URL}/gallery/261001_03.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_04.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261001_05.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_01.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_02.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_03.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_04.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_05.jpeg`,
+      `${process.env.PUBLIC_URL}/gallery/261002_06.jpeg`,
+    ],
+  },
 ];
 
 // 날짜 기준 최신순 정렬
 export const getAllGallerySortedKo = () => {
-  return [...galleryDataKo].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
+  return [...galleryDataKo].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate) || b.id - a.id);
 };
 
 export const getGalleryByIdKo = (id) => galleryDataKo.find(g => String(g.id) === String(id));

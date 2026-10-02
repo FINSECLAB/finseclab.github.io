@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const GalleryCard = ({ item, to, lang }) => {
-  const [photoIndex, setPhotoIndex] = useState(0);
+  const [photoIndex, setPhotoIndex] = useState(() => Math.max(0, item.images.indexOf(item.coverImage)));
   const hasMultiplePhotos = item.images.length > 1;
   const isKo = lang === 'ko';
 

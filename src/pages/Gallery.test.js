@@ -112,7 +112,7 @@ test.each(carouselGalleries.flatMap(gallery => ['photo', 'body'].map(surface => 
 
 test.each([
   ['ko', '2026 제5회 금융보안워크숍', '서울 여의도 FKI타워'],
-  ['en', '2026 5th Financial Security Workshop', 'FKI Tower, Yeouido, Seoul'],
+  ['en', '2026 5th Financial Security Workshop', 'FKI Tower, Yeoui-do, Seoul'],
 ])('%s workshop opens both requested photos', (lang, title, location) => {
   renderGallery(lang);
   const thumbnail = screen.getByRole('img', { name: title });
