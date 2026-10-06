@@ -85,7 +85,7 @@ const partTimeStudents = [
   { name: '어진철', degree: '석사', cohort: '50기', company: '시큐아이', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/어진철.png` },
   { name: '고병산', degree: '석사', cohort: '51기', company: '한국투자증권', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/고병산.png` },
   { name: '고영천', degree: '석사', cohort: '51기', company: '금융감독원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
-  { name: '국태호', degree: '석사', cohort: '51기', company: '오늘의집', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/국태호.png` },
+  { name: '국태호', degree: '석사', cohort: '51기', company: '티빙', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/국태호.png` },
   { name: '김동하', degree: '석사', cohort: '51기', company: '농협은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/익명.png` },
   { name: '김민혁', degree: '석사', cohort: '51기', company: '금융보안원', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김민혁.png` },
   { name: '김승주', degree: '석사', cohort: '51기', company: 'KB국민은행', email: '', photo: `${process.env.PUBLIC_URL}/people-photos/no_background/김승주.png` },
