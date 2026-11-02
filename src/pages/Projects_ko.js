@@ -20,7 +20,7 @@ const projects = [
     logoAlt: '국가보안기술연구소',
     period: '[2026]',
     title: '국가 · 공공기관 정보인프라의 N2SF 적용을 위한 보안체계 구성 방안 연구',
-    status: 'ongoing',
+    status: 'completed',
   },
   {
     logo: `${process.env.PUBLIC_URL}/project_logo/aws.png`,
